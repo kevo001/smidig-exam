@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const db = require('./db');
-const path = require('path'); // Import the path module
+const path = require('path');
 
 const app = express();
 
@@ -12,10 +12,49 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, '../public')));
 
+// Route to serve login.html as the default page
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/login.html'));
+});
+
 // Route to handle form submission
-app.post('/submit', (req, res) => {
-    const { name, email, message } = req.body;
-    db.query('INSERT INTO your_table_name (name, email, message) VALUES (?, ?, ?)', [name, email, message], (err, results) => {
+app.post('/submit1', (req, res) => {
+    const {
+        land,
+        orgNavn,
+        orgNummer,
+        borsnotert,
+        aksjeklasse,
+        antall,
+        driftstatus,
+        fra,
+        til,
+        kommentar,
+        habilitet
+    } = req.body;
+
+    const sql = `
+        INSERT INTO Ownership_Interests (
+            country, organization_name, organization_number, is_listed, share_class,
+            number_of_shares, status, ownership_start, ownership_end, comment, relevant_to_habilitation
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `;
+
+    const values = [
+        land,
+        orgNavn,
+        orgNummer,
+        borsnotert === 'ja', // Convert 'ja'/'nei' to boolean
+        aksjeklasse,
+        antall,
+        driftstatus,
+        fra || null, // If no date is provided, set it to null
+        til || null, // If no date is provided, set it to null
+        kommentar,
+        habilitet === 'ja' // Convert 'ja'/'nei' to boolean
+    ];
+
+    db.query(sql, values, (err, results) => {
         if (err) {
             console.error(err);
             return res.status(500).json({ success: false, message: 'Internal server error' });

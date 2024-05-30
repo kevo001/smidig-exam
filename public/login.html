@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #F4F4F4;
+      flex-direction: column;
+      position: relative;
+    }
+    .line {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      background-color: #193583;
+    }
+    .line.bottom {
+      top: auto;
+      bottom: 0;
+      height: 20px;
+    }
+    .login-container {
+      width: 275px;
+      padding: 20px;
+      background: #D9E3FD;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .login-container::before,
+    .login-container::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background-color: #193583;
+    }
+    .login-container::before {
+      top: 0;
+      border-radius: 8px 8px 0 0;
+    }
+    .login-container::after {
+      bottom: 0;
+      border-radius: 0 0 8px 8px;
+    }
+    .login-container h2 {
+      margin-bottom: 20px;
+    }
+    .login-container form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .login-container label {
+      align-self: flex-start;
+      margin: 10px 0 5px;
+    }
+    .login-container input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #F4F4F4;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    .login-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #193583;
+      border: none;
+      border-radius: 4px;
+      color: #F4F4F4;
+      cursor: pointer;
+    }
+    .login-container button:hover {
+      background-color: #193583;
+    }
+    .forgot-password {
+      background: none;
+      border: none;
+      color: #193583;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    .forgot-password:hover {
+      color: #0056b3;
+    }
+    .bottom-left-image {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 200px;
+      height: auto;
+    }
+    .login-icon {
+      width: 100px;
+      height: auto;
+      margin-bottom: 20px; /* Space between the icon and the login form */
+    }
+    .language-flags {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      display: flex;
+      gap: 10px;
+    }
+    .flag {
+      width: 30px;
+      height: auto;
+      cursor: pointer;
+    }
+    .flag:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+<div class="language-flags">
+  <img src="bilder/norway.png" alt="Norwegian Flag" class="flag" onclick="changeLanguage('norwegian')">
+  <img src="bilder/flag.png" alt="English Flag" class="flag" onclick="changeLanguage('english')">
+</div>
+
+<div class="line"></div>
+<img src="bilder/lock2.png" alt="Icon" class="login-icon"> <!-- Bilde over login, usericon -->
+<div class="login-container">
+  <h2 id="loginText">Logg inn</h2>
+  <form id="loginForm">
+    <label for="username" id="usernameLabel">Brukernavn:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="password" id="passwordLabel">Passord:</label>
+    <input type="password" id="password" name="password" required>
+
+    <button type="submit" id="loginButton">Logg inn</button>
+  </form>
+</div>
+
+<button class="forgot-password" onclick="location.href='forgotten.html'" id="forgotPasswordButton">Glemt passord?</button>
+<button class="forgot-password" onclick="location.href='registration.html'" id="registerButton">Registrer deg</button>
+
+<div class="line bottom"></div> <!-- Blå bunnmarg -->
+<img src="bilder/Kpmg.png" alt="Bottom Left Image" class="bottom-left-image"> <!-- KPMG logo nede venstre -->
+
+<script>
+  function changeLanguage(language) {
+    if (language === 'norwegian') {
+      document.getElementById('loginText').textContent = 'Logg inn';
+      document.getElementById('usernameLabel').textContent = 'Brukernavn:';
+      document.getElementById('passwordLabel').textContent = 'Passord:';
+      document.getElementById('loginButton').textContent = 'Logg inn';
+      document.getElementById('forgotPasswordButton').textContent = 'Glemt passord?';
+      document.getElementById('registerButton').textContent = 'Registrer deg';
+    } else if (language === 'english') {
+      document.getElementById('loginText').textContent = 'Login';
+      document.getElementById('usernameLabel').textContent = 'Username:';
+      document.getElementById('passwordLabel').textContent = 'Password:';
+      document.getElementById('loginButton').textContent = 'Login';
+      document.getElementById('forgotPasswordButton').textContent = 'Forgot password?';
+      document.getElementById('registerButton').textContent = 'Register';
+    }
+  }
+
+  document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting
+
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Basic validation
+    if (username === '' || password === '') {
+      alert('Please enter both username and password');
+    } else {
+      // Simple authentication check (for demonstration purposes only)
+      if (username === 'user' && password === 'pass') {
+        alert('Login successful!');
+      } else {
+        alert('Invalid username or password');
+      }
+    }
+  });
+</script>
+</body>
+</html>

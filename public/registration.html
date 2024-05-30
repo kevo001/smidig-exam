@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #F4F4F4;
+    }
+    .line {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      background-color: #193583;
+    }
+    .line.bottom {
+      top: auto;
+      bottom: 0;
+      height: 20px;
+    }
+    .registration-container {
+      width: 500px;
+      padding: 20px;
+      background: #D9E3FD;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      position: relative;
+    }
+    .registration-container::before,
+    .registration-container::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background-color: #193583;
+    }
+    .registration-container::before {
+      top: 0;
+      border-radius: 8px 8px 0 0;
+    }
+    .registration-container::after {
+      bottom: 0;
+      border-radius: 0 0 8px 8px;
+    }
+    .registration-container h2 {
+      margin-bottom: 20px;
+    }
+    .registration-container form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .registration-container label {
+      align-self: flex-start;
+      margin: 10px 0 5px;
+    }
+    .registration-container input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #F4F4F4;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    .registration-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #193583;
+      border: none;
+      border-radius: 4px;
+      color: #F4F4F4;
+      cursor: pointer;
+    }
+    .registration-container button:hover {
+      background-color: #193583;
+    }
+    .bottom-left-image {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 200px;
+      height: auto;
+    }
+    .language-flags {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      display: flex;
+      gap: 10px;
+    }
+    .flag {
+      width: 30px;
+      height: auto;
+      cursor: pointer;
+    }
+    .flag:hover {
+      transform: scale(1.1);
+    }
+    .back-arrow {
+      position: absolute;
+      top: 30px;
+      left: 20px;
+      width: 50px;
+      height: auto;
+      cursor: pointer;
+    }
+    .back-arrow:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+<div class="language-flags">
+  <img src="bilder/norway.png" alt="Norwegian Flag" class="flag" onclick="changeLanguage('norwegian')">
+  <img src="bilder/flag.png" alt="English Flag" class="flag" onclick="changeLanguage('english')">
+</div>
+
+<div class="line"></div> <!-- Top line -->
+<div class="registration-container">
+  <h2 id="registrationText">Regristrering</h2>
+  <form id="registrationForm">
+    <label for="fname">Navn:</label>
+    <input type="text" id="fname" name="fname" required>
+
+    <label for="lname">Etternavn:</label>
+    <input type="text" id="lname" name="lname" required>
+
+    <label for="department">Avdeling:</label>
+    <input type="text" id="department" name="department" required>
+
+    <label for="position">Posisjon:</label>
+    <input type="text" id="position" name="position" required>
+
+    <label for="dateOfBirth">Date of Birth:</label>
+    <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+
+    <label for="adress">Adresse:</label>
+    <input type="text" id="adress" name="adress" required>
+
+    <label for="email">E-Mail:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="tlf">Telefon:</label>
+    <input type="text" id="tlf" name="tlf" required>
+
+    <label for="password">Passord:</label>
+    <input type="password" id="password" name="password" required>
+
+    <button type="submit">Register</button>
+  </form>
+</div>
+<div class="line bottom"></div>
+<img src="bilder/Kpmg.png" alt="Bottom Left Image" class="bottom-left-image">
+
+<a href="login.html"><img src="bilder/back.png" alt="Back Arrow" class="back-arrow"></a> <!-- Tilbake knapp -->
+
+<script>
+  function changeLanguage(language) {
+    const registrationText = document.getElementById('registrationText');
+    const labels = document.querySelectorAll('.registration-container label');
+    const buttons = document.querySelectorAll('.registration-container button');
+
+    if (language === 'norwegian') {
+      registrationText.textContent = 'Registrering';
+      labels.forEach(label => {
+        if (label.getAttribute('for') === 'fname') label.textContent = 'Navn:';
+        else if (label.getAttribute('for') === 'lname') label.textContent = 'Etternavn:';
+        else if (label.getAttribute('for') === 'department') label.textContent = 'Avdeling:';
+        else if (label.getAttribute('for') === 'position') label.textContent = 'Posisjon:';
+        else if (label.getAttribute('for') === 'dateOfBirth') label.textContent = 'Fødselsdato:';
+        else if (label.getAttribute('for') === 'adress') label.textContent = 'Adresse:';
+        else if (label.getAttribute('for') === 'email') label.textContent = 'E-post:';
+        else if (label.getAttribute('for') === 'tlf') label.textContent = 'Telefon:';
+        else if (label.getAttribute('for') === 'password') label.textContent = 'Passord:';
+      });
+      buttons.forEach(button => {
+        button.textContent = 'Registrer';
+      });
+    } else if (language === 'english') {
+      registrationText.textContent = 'Registration';
+      labels.forEach(label => {
+        if (label.getAttribute('for') === 'fname') label.textContent = 'First Name:';
+        else if (label.getAttribute('for') === 'lname') label.textContent = 'Last Name:';
+        else if (label.getAttribute('for') ===
+          'department') label.textContent = 'Department:';
+        else if (label.getAttribute('for') === 'position') label.textContent = 'Position:';
+        else if (label.getAttribute('for') === 'dateOfBirth') label.textContent = 'Date of Birth:';
+        else if (label.getAttribute('for') === 'adress') label.textContent = 'Address:';
+        else if (label.getAttribute('for') === 'email') label.textContent = 'Email:';
+        else if (label.getAttribute('for') === 'tlf') label.textContent = 'Phone:';
+        else if (label.getAttribute('for') === 'password') label.textContent = 'Password:';
+      });
+      buttons.forEach(button => {
+        button.textContent = 'Register';
+      });
+    }
+  }
+
+  document.getElementById('registrationForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting
+
+    const fname = document.getElementById('fname').value;
+    const lname = document.getElementById('lname').value;
+    const department = document.getElementById('department').value;
+    const position = document.getElementById('position').value;
+    const dateOfBirth = document.getElementById('dateOfBirth').value;
+    const adress = document.getElementById('adress').value;
+    const email = document.getElementById('email').value;
+    const tlf = document.getElementById('tlf').value;
+    const password = document.getElementById('password').value;
+
+    // Basic validation
+    if (fname === ''
+      || lname === ''
+      || department === ''
+      || position === ''
+      || dateOfBirth === ''
+      || adress === ''
+      || email === ''
+      || tlf === ''
+      || password === '') {
+      alert('Please fill in all fields');
+    } else {
+
+      // Placeholder for actual registration logic
+      alert('Form submitted successfully');
+    }
+  });
+</script>
+</body>
+</html>

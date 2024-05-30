@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Profile</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #F4F4F4;
+      flex-direction: column;
+      position: relative;
+    }
+    .line {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      background-color: #193583;
+    }
+    .line.bottom {
+      top: auto;
+      bottom: 0;
+      height: 20px;
+    }
+    .profile-content {
+      width: 300px; /* Adjusted width */
+      text-align: center;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    .profile-content h2 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .profile-content p {
+      font-size: 16px;
+      color: #555;
+      margin: 5px 0;
+    }
+    .profile-content p span {
+      text-decoration: underline;
+    }
+    .bottom-left-image {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 200px;
+      height: auto;
+    }
+    .profile-icon {
+      width: 100px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    .language-flags {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      display: flex;
+      gap: 10px;
+    }
+    .flag {
+      width: 30px;
+      height: auto;
+      cursor: pointer;
+    }
+    .flag:hover {
+      transform: scale(1.1);
+    }
+    .edit-button, .save-button, .cancel-button {
+      padding: 10px 20px;
+      background-color: #193583;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .edit-button:hover, .save-button:hover, .cancel-button:hover {
+      background-color: #162d6a;
+    }
+    .cancel-button {
+      background-color: #aaa;
+    }
+    .cancel-button:hover {
+      background-color: #888;
+    }
+    form input {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="language-flags">
+  <img src="bilder/norway.png" alt="Norwegian Flag" class="flag" onclick="changeLanguage('norwegian')">
+  <img src="bilder/flag.png" alt="English Flag" class="flag" onclick="changeLanguage('english')">
+</div>
+
+<div class="line"></div>
+<img src="bilder/icon.png" alt="Profile Icon" class="profile-icon">
+<div class="profile-content">
+  <h2 id="profileText">Rediger Profil</h2>
+  <form id="editProfileForm">
+    <input type="text" id="name" name="name" placeholder="Navn" value="Ola Nordmann">
+    <input type="text" id="position" name="position" placeholder="Stilling" value="Software Engineer">
+    <input type="date" id="dob" name="dob" placeholder="Fødselsdato" value="1990-01-01">
+    <input type="text" id="address" name="address" placeholder="Adresse" value="Example Street 1, 1234 City">
+    <input type="email" id="email" name="email" placeholder="E-post" value="ola.nordmann@example.com">
+    <input type="tel" id="phone" name="phone" placeholder="Telefon" value="12345678">
+    <div>
+      <button type="button" class="save-button" onclick="saveProfile()">Lagre</button>
+      <button type="button" class="cancel-button" onclick="cancelEdit()">Avbryt</button>
+    </div>
+  </form>
+</div>
+
+<div class="line bottom"></div>
+<img src="bilder/Kpmg.png" alt="Bottom Left Image" class="bottom-left-image">
+
+<script>
+  function changeLanguage(language) {
+    if (language === 'norwegian') {
+      document.getElementById('profileText').textContent = 'Rediger Profil';
+      document.querySelector('.save-button').textContent = 'Lagre';
+      document.querySelector('.cancel-button').textContent = 'Avbryt';
+      document.getElementById('name').placeholder = 'Navn';
+      document.getElementById('position').placeholder = 'Stilling';
+      document.getElementById('dob').placeholder = 'Fødselsdato';
+      document.getElementById('address').placeholder = 'Adresse';
+      document.getElementById('email').placeholder = 'E-post';
+      document.getElementById('phone').placeholder = 'Telefon';
+    } else if (language === 'english') {
+      document.getElementById('profileText').textContent = 'Edit Profile';
+      document.querySelector('.save-button').textContent = 'Save';
+      document.querySelector('.cancel-button').textContent = 'Cancel';
+      document.getElementById('name').placeholder = 'Name';
+      document.getElementById('position').placeholder = 'Position';
+      document.getElementById('dob').placeholder = 'Date of Birth';
+      document.getElementById('address').placeholder = 'Address';
+      document.getElementById('email').placeholder = 'Email';
+      document.getElementById('phone').placeholder = 'Phone';
+    }
+  }
+
+  function saveProfile() {
+    alert('Profile saved!');
+  }
+
+  function cancelEdit() {
+    window.location.href = 'profile.html';
+  }
+</script>
+</body>
+</html>

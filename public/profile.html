@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Page</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #F4F4F4;
+      flex-direction: column;
+      position: relative;
+    }
+    .line {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      background-color: #193583;
+    }
+    .line.bottom {
+      top: auto;
+      bottom: 0;
+      height: 20px;
+    }
+    .profile-content {
+      text-align: center;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    .profile-content h2 {
+      font-size: 28px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .profile-content p {
+      font-size: 18px;
+      color: #555;
+      margin: 5px 0;
+    }
+    .profile-content p span {
+      text-decoration: underline;
+    }
+    .bottom-left-image {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 200px;
+      height: auto;
+    }
+    .profile-icon {
+      width: 120px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    .language-flags {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      display: flex;
+      gap: 10px;
+    }
+    .flag {
+      width: 30px;
+      height: auto;
+      cursor: pointer;
+    }
+    .flag:hover {
+      transform: scale(1.1);
+    }
+    .edit-button {
+      padding: 10px 20px;
+      background-color: #193583;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .edit-button:hover {
+      background-color: #162d6a;
+    }
+  </style>
+</head>
+<body>
+
+<div class="language-flags">
+  <img src="bilder/norway.png" alt="Norwegian Flag" class="flag" onclick="changeLanguage('norwegian')">
+  <img src="bilder/flag.png" alt="English Flag" class="flag" onclick="changeLanguage('english')">
+</div>
+
+<div class="line"></div>
+<img src="bilder/icon.png" alt="Profile Icon" class="profile-icon"> <!-- Bilde over profile, usericon -->
+<div class="profile-content">
+  <h2 id="profileText">Min Profil</h2>
+  <p><span id="nameLabel">Navn:</span> <span id="name">Ola Nordmann</span></p>
+  <p id="positionLabel">Stilling: Software Engineer</p>
+  <p id="dobLabel">Fødselsdato: 01.01.1990</p>
+  <p id="addressLabel">Adresse: Example Street 1, 1234 City</p>
+  <p id="emailLabel">E-post: ola.nordmann@example.com</p>
+  <p id="phoneLabel">Telefon: 12345678</p>
+</div>
+
+<button class="edit-button" onclick="location.href='redigerprofil.html'" id="editProfileButton">Rediger profil</button>
+
+<div class="line bottom"></div> <!-- Blå bunnmarg -->
+<img src="bilder/Kpmg.png" alt="Bottom Left Image" class="bottom-left-image"> <!-- KPMG logo nede venstre -->
+
+<script>
+  function changeLanguage(language) {
+    if (language === 'norwegian') {
+      document.getElementById('profileText').textContent = 'Min Profil';
+      document.getElementById('nameLabel').textContent = 'Navn:';
+      document.getElementById('positionLabel').textContent = 'Stilling: Software Engineer';
+      document.getElementById('dobLabel').textContent = 'Fødselsdato: 01.01.1990';
+      document.getElementById('addressLabel').textContent = 'Adresse: Example Street 1, 1234 City';
+      document.getElementById('emailLabel').textContent = 'E-post: ola.nordmann@example.com';
+      document.getElementById('phoneLabel').textContent = 'Telefon: 12345678';
+      document.getElementById('editProfileButton').textContent = 'Rediger profil';
+    } else if (language === 'english') {
+      document.getElementById('profileText').textContent = 'My Profile';
+      document.getElementById('nameLabel').textContent = 'Name:';
+      document.getElementById('positionLabel').textContent = 'Position: Software Engineer';
+      document.getElementById('dobLabel').textContent = 'Date of Birth: 01.01.1990';
+      document.getElementById('addressLabel').textContent = 'Address: Example Street 1, 1234 City';
+      document.getElementById('emailLabel').textContent = 'Email: ola.nordmann@example.com';
+      document.getElementById('phoneLabel').textContent = 'Phone: 12345678';
+      document.getElementById('editProfileButton').textContent = 'Edit Profile';
+    }
+  }
+</script>
+</body>
+</html>

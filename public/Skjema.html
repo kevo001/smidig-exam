@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Skjema.css">
+</head>
+
+<body>
+    <div class="top-bar">
+        <div class="logo">Habilitetsregisteret</div>
+        <div class="icons">
+            <input type="checkbox" id="bell-checkbox" class="bell-checkbox">
+            <label for="bell-checkbox">
+                <img src="/Bell.png" alt="Bell Icon" class="icon">
+            </label>
+            <div class="notifications">
+                <p>Du har ingen nye varsler</p>
+            </div>
+            <img src="/User.png" alt="User Icon" class="icon">
+            <img src="/Flag.png" alt="Norwegian Flag Icon" class="icon">
+        </div>
+    </div>
+
+    <button class="info">
+        <img src="/info.png" alt="Info">
+    </button>
+    
+    <form action='/submit1' method='POST'>
+        <div>
+            <label for="land">Land <span class="required"> * </span></label> 
+            <select id="land" name="land">
+                <option value=""></option>
+                <option value="Norge">Norge</option>
+            </select>
+        </div>
+        <br>
+        <div>    
+            <label for="org-navn">Navn på organisasjon  <span class="required"> * </span></label>
+            <input type="text" id="orgNavn" name="orgNavn">
+        </div>
+        <br>
+        <div>    
+            <label for="org-nummer">Organisasjonsnummer  <span class="required"> * </span></label>
+            <input type="number" id="orgNummer" name="orgNummer">
+        </div>
+        <br>
+        <div>    
+            <label>Er selskapet børsnotert?  <span class="required"> * </span></label>
+            <div class="checkbox-group">
+                <label for="bors-ja">Ja
+                    <input type="radio" id="bors-ja" name="borsnotert" value="ja">
+                </label>
+                <label for="bors-nei">Nei
+                    <input type="radio" id="bors-nei" name="borsnotert" value="nei">
+                </label>
+            </div>
+        </div>
+        <br>
+        <div>
+            <label for="aksjeklasse">Aksjeklasse  <span class="required"> * </span></label>
+            <select id="aksjeklasse" name="aksjeklasse">
+                <option value=""></option>
+                <option value="klasse">Klasse</option>
+            </select>
+        </div>
+        <br>
+        <div>    
+            <label for="antall">Antall Aksjer  <span class="required"> * </span></label>
+            <input type="number" id="antall" name="antall">
+        </div>
+        <br>
+        <div>    
+            <label>Status drift i selskapet?  <span class="required"> * </span></label>
+            <div class="checkbox-group">
+                <label for="aktiv">Aktiv
+                    <input type="radio" id="aktiv" name="driftstatus" value="aktiv">
+                </label>
+                <label for="ikke-aktiv">Ikke Aktiv
+                    <input type="radio" id="ikke-aktiv" name="driftstatus" value="ikke-aktiv">
+                </label>
+            </div>
+        </div>
+        <br>
+        <div>    
+            <label for="fra">Eierskap fra</label>
+            <input type="date" id="fra" name="fra">
+            <label for="til">Eierskap til</label>
+            <input type="date" id="til" name="til">
+        </div>
+        <br>
+        <div>    
+            <label for="kommentar">Kommentar</label>
+            <textarea id="kommentar" name="kommentar" rows="4"></textarea>
+        </div>
+        <br>
+        <div>    
+            <label>Er forholdet relevant for din habilitet?  <span class="required"> * </span></label>
+            <div class="checkbox-group">
+                <label for="habilitet-ja">Ja
+                    <input type="radio" id="habilitet-ja" name="habilitet" value="ja">
+                </label>
+                <label for="habilitet-nei">Nei
+                    <input type="radio" id="habilitet-nei" name="habilitet" value="nei">
+                </label>
+            </div>
+        </div>
+        <br>
+        <div class="buttons">
+            <button type="button" class="cancel">AVBRYT</button>
+            <button type="submit" class="submit">BEKREFT</button>
+        </div>
+        <br>
+
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+        <div class="step-indicator">Step 1 of 4</div>
+    </form>
+
+   
+</body>
+</html>
