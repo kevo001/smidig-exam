@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="no">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opplyse om Rolle</title>
+    <link rel="stylesheet" href="SkjemaTo.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="logo"><button class="logo-btn"><a href="/Landing.html"> Habilitetsregisteret </a>  </button></div>
+        <div class="icons">
+            <input type="checkbox" id="bell-checkbox" class="bell-checkbox">
+            <label for="bell-checkbox">
+                <img src="/Bilder/Bell.png" alt="Bell Icon" class="icon">
+            </label>
+            <div class="notifications">
+                <p>Du har ingen nye varsler</p>
+            </div>
+            <img src="/Bilder/User.png" alt="User Icon" class="icon">
+            <img src="/Bilder/Flag.png" alt="Norwegian Flag Icon" class="icon">
+        </div>
+    </div>
+
+    <button id="imgButton">
+        <img src="/Bilder/Info.png" alt="Info" class="InfoImage">  
+    </button>
+    <div id="infoField">
+        <br> 
+        <br> 
+        Dersom du skal inngå (eller allerede innehar) roller som ikke fremkommer i habilitetesregisteret i dag, må du registrere disse. Roller og eierskap skal som utgangspunkt søkes og godkjent før inngåelse 
+        <br> <br>
+        - Roller kan være administrative posisjoner, verv (internt og ekstrent, på vegne av Develop eller som privatperson), oppdrag. ansettelsesforhold eller biverv (når den ansatte påtar seg lønnet arbied i tillegg til hovedarveid).
+        <br> 
+        <br>- Det skal føres opp næringsvirksomhet og forhold hvor du er driver av virksomhet for eksempel etablering, utvikling og drift av en virksomhet (organisasjon, bedrift, firma, foretak, selsakp etc.) som bruker ressurser for frembringe et økonomisk resulat, eller ideelle organisasjoner.
+        
+    </div>
+    
+    <div class="container">
+        <div class="logo-container">
+            <img src="/Bilder/Kpmg.png" alt="KPMG Logo" class="logo">
+        </div>
+
+        <header>
+            <h1>Opplyse om eksisterende eller tidligere rolle</h1>
+        </header>
+
+        <form>
+            <div class="form-group">
+                <label for="land">Land</label>
+                <select id="land" name="land">
+                    <option value="">Velg...</option>
+                    <option value="SE">Sverige</option>
+                    <option value="NO">Norge</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="org-name">Navn på organisasjon <span class="required">*</span></label>
+                <input type="text" id="org-name" name="org-name">
+            </div>
+
+            <div class="form-group">
+                <label for="org-number">Organisasjonsnummer <span class="required">*</span></label>
+                <input type="text" id="org-number" name="org-number">
+            </div>
+
+            <div class="form-group">
+                <label for="role-type">Type Rolle <span class="required">*</span></label>
+                <select id="role-type" name="role-type">
+                    <option value="">Velg...</option>
+                    <option value="role1">Rolle 1</option>
+                    <option value="role2">Rolle 2</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="role-title">Tittel på rolle <span class="required">*</span></label>
+                <input type="text" id="role-title" name="role-title">
+            </div>
+
+            <div class="form-group">
+                <label for="municipality">Kommunen rollen utøves i <span class="required">*</span></label>
+                <div class="municipality-inputs">
+                    <input type="text" id="postnr" name="postnr" placeholder="Postnr">
+                    <input type="text" id="poststed" name="poststed" placeholder="Poststed">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="monthly-salary">Månedlig honorar (NOK) <span class="required">*</span></label>
+                <input type="text" id="monthly-salary" name="monthly-salary">
+            </div>
+
+            <div class="form-group">
+                <label for="monthly-hours">Månedlig timeforbruk</label>
+                <input type="text" id="monthly-hours" name="monthly-hours">
+            </div>
+
+            <div class="form-group">
+                <label for="position-from">Posisjon fra (ikke påkrevd)</label>
+                <input type="text" id="position-from" name="position-from">
+            </div>
+
+            <div class="form-group">
+                <label for="position-to">Posisjon til (ikke påkrevd)</label>
+                <input type="text" id="position-to" name="position-to">
+            </div>
+
+            <div class="form-group">
+                <label for="comments">Kommentar</label>
+                <textarea id="comments" name="comments"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Er forholdet relevant for din habilitet?</label>
+                <div class="radio-group">
+                    <label for="relevant-yes"><input type="radio" id="relevant-yes" name="relevant" value="yes"> Ja</label>
+                    <label for="relevant-no"><input type="radio" id="relevant-no" name="relevant" value="no"> Nei</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <span class="required">*</span> Påkrevde felt
+            </div>
+
+            <div class="form-actions">
+                <a href="/Skjema/SkjemaEn.html" class="cancel-button">AVBRYT</a>
+                <a href="/Skjema/SkjemaTre.html" class="confirm-button">BEKREFT</a>
+            </div>
+        </form>
+
+        <footer>
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="step-indicator">Step 2 of 4</div>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('imgButton').addEventListener('click', function() {
+            var infoField = document.getElementById('infoField');
+            if (infoField.style.display === 'none' || infoField.style.display === '') {
+                infoField.style.display = 'block';
+                infoField.style.maxHeight = infoField.scrollHeight + "px";
+            } else {
+                infoField.style.display = 'none';
+                infoField.style.maxHeight = '0';
+            }
+        });
+    </script>
+</body>
+</html>
+
+

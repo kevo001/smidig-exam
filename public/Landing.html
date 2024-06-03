@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Layout</title>
+    <link rel="stylesheet" href="CSS/Landing.css">
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="logo">Habilitetsregisteret</div>
+        <div class="icons">
+            <input type="checkbox" id="bell-checkbox" class="bell-checkbox">
+            <label for="bell-checkbox">
+                <img src="bilder/Bell.png" alt="Bell Icon" class="icon">
+            </label>
+            <div class="notifications">
+                <p>Du har ingen nye varsler</p>
+                </div>
+            <img src="bilder/Bell.png" alt="User Icon" class="icon">
+            <img src="bilder/norway.png" alt="Norwegian Flag Icon" class="icon">
+        </div>
+    </div>
+    <div class="container">
+        <button class="card" onclick="scaleUp(this); showPopup('popup-1')">
+            <div class="card-content">
+            </div>
+            <div class="card-footer">
+                <p>Eierinteresser</p>
+                <span class="arrow">→</span>
+            </div>
+        </button>
+        <button class="card" onclick="scaleUp(this); showPopup('popup-2')">
+            <div class="card-content"></div>
+            <div class="card-footer">
+                <p>Roller</p>
+                <span class="arrow">→</span>
+            </div>
+        </button>
+        <button class="card" onclick="scaleUp(this); showPopup('popup-3')">
+            <div class="card-content"></div>
+            <div class="card-footer">
+                <p>Relasjoner</p>
+                <span class="arrow">→</span>
+            </div>
+        </button>
+        <button class="card" onclick="scaleUp(this); showPopup('popup-4')">
+            <div class="card-content"></div>
+            <div class="card-footer">
+                <p>Annet</p>
+                <span class="arrow">→</span>
+            </div>
+        </button>
+    </div>
+
+    <div id="popup-1" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="hidePopup('popup-1')">&times;</span>
+            <p>Eierinteresser</p>
+            <button id="leggtil-1" class="leggtil"><a href="/Skjema/SkjemaEn.html"> Legg til </a>  </button>
+        </div>
+    </div>
+    <div id="popup-2" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="hidePopup('popup-2')">&times;</span>
+            <p>Roller</p>
+            <button id="leggtil-2" class="leggtil"><a href="/Skjema/SkjemaTo.html"> Legg til </a>  </button>
+        </div>
+    </div>
+    <div id="popup-3" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="hidePopup('popup-3')">&times;</span>
+            <p>Relasjoner</p>
+            <button id="leggtil-3" class="leggtil"><a href="/Skjema/SkjemaTre.html"> Legg til </a>  </button>
+        </div>
+    </div>
+    <div id="popup-4" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="hidePopup('popup-4')">&times;</span>
+            <p>Annet</p>
+            <button id="leggtil-4" class="leggtil"><a href="/Skjema/SkjemaFire.html"> Legg til </a> </button>
+        </div>
+    </div>
+
+    <script>
+        function scaleUp(element) {
+            element.classList.toggle('scale-up');
+        }
+
+        function showPopup(popupId) {
+            document.getElementById(popupId).style.display = 'block';
+        }
+
+        function hidePopup(popupId) {
+            document.getElementById(popupId).style.display = 'none';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+/* Basic Styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+    font-family: 'Helvetica', Arial, sans-serif;
+    background-size: cover;
+}
+
+/* Header and Footer Common Styles */
+.header, .footer {
+    background-color: #003366;
+    color: white;
+    z-index: 2; 
+    position: relative;
+}
+
+/* Top and Bottom Bar Styles */
+.top-bar, .bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #003366;
+    color: white;
+    position: relative;
+}
+
+.top-bar .logo, .bottom-bar .logo {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.top-bar .icons, .bottom-bar .icons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.top-bar .icons .icon, .bottom-bar .icons .icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+/* Notification Checkbox */
+.bell-checkbox {
+    display: none;
+}
+
+/* Show notifications if checkbox is checked */
+.bell-checkbox:checked + label + .notifications {
+    display: block;
+}
+
+/* Notification Box Styles */
+.notifications {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    z-index: 3;
+}
+
+.notifications p {
+    margin: 0;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Text Box Styles */
+.text-box {
+    top: 14%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 80%;
+    height: 7%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.692); 
+    border: 1px solid #cccccc; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    text-align: center;
+    opacity: 25%;
+}
+
+/* Welcome Bar Styles */
+.welcome-bar {
+    text-align: center;
+    padding: 50px;
+    background-color: #333;
+    color: white;
+    background-image: url('/Bilder/Top_photo.JPG'); 
+    background-size: cover;
+    background-position: center;
+    line-height: 1.5;
+    z-index: 2; 
+    position: relative;
+}
+
+.welcome-bar h1 {
+    margin: 0;
+}
+
+.welcome-bar p {
+    margin: 0;
+    font-size: 1.1em;
+    opacity: 0.8;
+}
+
+/* Main Content Styles */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: calc(100vh - 200px); 
+    text-align: center;
+    line-height: 1.5;
+    padding-top: 50px; 
+    position: relative;
+    z-index: 2; 
+}
+
+/* Welcome Box Styles */
+.welcome-box {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px;
+    line-height: 1.6;
+    position: relative;
+    z-index: 3; 
+}
+
+.welcome-box h2 {
+    margin-top: 0;
+    font-size: 2em;
+    color: #333;
+    font-weight: 400;
+}
+
+.welcome-box p {
+    background-color: #e7f1ff;
+    padding: 20px;
+    border-radius: 12px;
+    color: #333;
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+/* Button Styles */
+.buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.welcome-box button {
+    background-color: hsl(152, 95%, 38%);
+    color: white;
+    padding: 20px 50px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.welcome-box button:hover {
+    background-color: #0056b3;
+}
+
+.secondary-button {
+    background-color: hsl(200, 70%, 40%);
+    padding: 10px 25px;
+    font-size: 0.6em; 
+}
+
+.secondary-button:hover {
+    background-color: hsl(200, 70%, 35%);
+}
+
+/* Footer Styles */
+.footer {
+    text-align: center;
+    padding: 0px;
+    position: relative;
+    height: 100px;
+    font-size: 1.5em; 
+    line-height: 1.5;
+    z-index: 2; 
+}
+
+.footer-logo {
+    position: absolute;
+    left: 4%;
+    bottom: 2%; 
+    transform: translateX(-50%);
+}
+
+.footer-logo img {
+    width: 150px;
+}
+
+/* Bottom Bar Styles */
+.bottom-bar {
+    background-color: #003366;
+    padding: 20px 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.2em; 
+    line-height: 1.5;
+    z-index: 2; 
+}

@@ -131,7 +131,7 @@
 
 <div class="language-flags">
   <img src="bilder/norway.png" alt="Norwegian Flag" class="flag" onclick="changeLanguage('norwegian')">
-  <img src="bilder/flag.png" alt="English Flag" class="flag" onclick="changeLanguage('english')">
+  <img src="bilder/flagEng.png" alt="English Flag" class="flag" onclick="changeLanguage('english')">
 </div>
 
 <div class="line"></div>
@@ -139,8 +139,8 @@
 <div class="login-container">
   <h2 id="loginText">Logg inn</h2>
   <form id="loginForm">
-    <label for="username" id="usernameLabel">Brukernavn:</label>
-    <input type="text" id="username" name="username" required>
+    <label for="email" id="emailLabel">Email:</label>
+    <input type="text" id="email" name="email" required>
 
     <label for="password" id="passwordLabel">Passord:</label>
     <input type="password" id="password" name="password" required>
@@ -156,42 +156,47 @@
 <img src="bilder/Kpmg.png" alt="Bottom Left Image" class="bottom-left-image"> <!-- KPMG logo nede venstre -->
 
 <script>
-  function changeLanguage(language) {
-    if (language === 'norwegian') {
-      document.getElementById('loginText').textContent = 'Logg inn';
-      document.getElementById('usernameLabel').textContent = 'Brukernavn:';
-      document.getElementById('passwordLabel').textContent = 'Passord:';
-      document.getElementById('loginButton').textContent = 'Logg inn';
-      document.getElementById('forgotPasswordButton').textContent = 'Glemt passord?';
-      document.getElementById('registerButton').textContent = 'Registrer deg';
-    } else if (language === 'english') {
-      document.getElementById('loginText').textContent = 'Login';
-      document.getElementById('usernameLabel').textContent = 'Username:';
-      document.getElementById('passwordLabel').textContent = 'Password:';
-      document.getElementById('loginButton').textContent = 'Login';
-      document.getElementById('forgotPasswordButton').textContent = 'Forgot password?';
-      document.getElementById('registerButton').textContent = 'Register';
-    }
-  }
-
-  document.getElementById('loginForm').addEventListener('submit', function(event) {
+  document.getElementById('loginForm').addEventListener('submit', async function(event) {
     event.preventDefault(); // Prevent the form from submitting
 
-    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
     // Basic validation
-    if (username === '' || password === '') {
-      alert('Please enter both username and password');
-    } else {
-      // Simple authentication check (for demonstration purposes only)
-      if (username === 'user' && password === 'pass') {
-        alert('Login successful!');
+    if (email === '' || password === '') {
+      alert('Please enter both email and password');
+      return;
+    }
+
+    // Create an object with the form data
+    const loginData = {
+      email,
+      password
+    };
+
+    try {
+      // Send the login data to the server
+      const response = await fetch('/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(loginData)
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        alert('Login successful');
+        window.location.href = '/Hovedside.html'; // Redirect to the desired page or update the UI
       } else {
-        alert('Invalid username or password');
+        alert(data.message);
       }
+    } catch (error) {
+      console.error('Error logging in:', error);
+      alert('An error occurred while logging in. Please try again.');
     }
   });
 </script>
 </body>
 </html>
+
