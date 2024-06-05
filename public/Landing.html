@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Card Layout</title>
+    <title>Habilitetsregisteret</title>
     <link rel="stylesheet" href="CSS/Landing.css">
 </head>
 <body>
 
     <div class="top-bar">
-        <div class="logo">Habilitetsregisteret</div>
+        <div class="logo">
+            <a href="Landing.html" style="text-decoration: none; color: inherit;">Habilitetsregisteret</a>
+        </div>
         <div class="icons">
             <input type="checkbox" id="bell-checkbox" class="bell-checkbox">
             <label for="bell-checkbox">
@@ -17,14 +19,18 @@
             </label>
             <div class="notifications">
                 <p>Du har ingen nye varsler</p>
-                </div>
-            <img src="bilder/Bell.png" alt="User Icon" class="icon">
+            </div>
+            <img src="bilder/User.png" alt="User Icon" class="icon">
             <img src="bilder/norway.png" alt="Norwegian Flag Icon" class="icon">
         </div>
     </div>
     <div class="container">
         <button class="card" onclick="scaleUp(this); showPopup('popup-1')">
             <div class="card-content">
+                <div class="list-preview" id="preview-1"></div>
+                <br>
+                <div class="nyttForhold"> <a id="nyttForhold-btn" href="Skjema/SkjemaEn.html"> Legg Til Nytt Forhold </a>
+                </div>
             </div>
             <div class="card-footer">
                 <p>Eierinteresser</p>
@@ -32,21 +38,35 @@
             </div>
         </button>
         <button class="card" onclick="scaleUp(this); showPopup('popup-2')">
-            <div class="card-content"></div>
+            <div class="card-content">
+                <div class="list-preview" id="preview-2"></div>
+                <br>
+                <div class="nyttForhold"> <a id="nyttForhold-btn" href="Skjema/SkjemaTo.html"> Legg Til Nytt Forhold </a>
+                </div>
+            </div>
             <div class="card-footer">
                 <p>Roller</p>
                 <span class="arrow">→</span>
             </div>
         </button>
         <button class="card" onclick="scaleUp(this); showPopup('popup-3')">
-            <div class="card-content"></div>
+            <div class="card-content">
+                <div class="list-preview" id="preview-3"></div>
+                <br> 
+                <div class="nyttForhold"> <a id="nyttForhold-btn" href="Skjema/SkjemaTre.html"> Legg Til Nytt Forhold </a>
+                </div>
+            </div>
             <div class="card-footer">
                 <p>Relasjoner</p>
                 <span class="arrow">→</span>
             </div>
         </button>
         <button class="card" onclick="scaleUp(this); showPopup('popup-4')">
-            <div class="card-content"></div>
+            <div class="card-content">
+                
+                <div class="nyttForhold"> <a id="nyttForhold-btn" href="Skjema/SkjemaFire.html"> Legg Til Nytt Forhold </a>
+                </div>
+            </div>
             <div class="card-footer">
                 <p>Annet</p>
                 <span class="arrow">→</span>
@@ -58,28 +78,112 @@
         <div class="popup-content">
             <span class="close" onclick="hidePopup('popup-1')">&times;</span>
             <p>Eierinteresser</p>
-            <button id="leggtil-1" class="leggtil"><a href="/Skjema/SkjemaEn.html"> Legg til </a>  </button>
+            <button class="list-btn" onclick="toggleList('list1', this)">Nåværende</button>
+            <button class="list-btn" onclick="toggleList('list2', this)">Tidligere</button>
+            <button class="list-btn" onclick="toggleList('list3', this)">Søknader</button> 
+            <div id="list1" class="list-container">
+                <ul id="list1-items"> 
+                    <li>Telenor ASA </li>
+                    <li>Equinor ASA</li>
+                </ul>
+            </div>
+            <div id="list2" class="list-container">
+                <ul id="list2-items">
+                    <li>Yara International ASA</li>
+                    <li>DNB ASA</li>
+                </ul>
+            </div>
+            <div id="list3" class="list-container">
+                <ul id="list3-items">
+                    <li>Schibsted ASA</li>
+                    <li>Orkla ASA</li>
+                </ul>
+            </div>
+            <button id="leggtil-1" class="leggtil"><a id="Skjema1" href="/Skjema/SkjemaEn.html"> Legg til </a></button>
         </div>
     </div>
     <div id="popup-2" class="popup">
         <div class="popup-content">
             <span class="close" onclick="hidePopup('popup-2')">&times;</span>
             <p>Roller</p>
-            <button id="leggtil-2" class="leggtil"><a href="/Skjema/SkjemaTo.html"> Legg til </a>  </button>
+            <button class="list-btn" onclick="toggleList('list4', this)">Nåværende</button>
+            <button class="list-btn" onclick="toggleList('list5', this)">Tidligere</button>
+            <button class="list-btn" onclick="toggleList('list6', this)">Søknader</button> 
+            <div id="list4" class="list-container">
+                <ul id="list4-items"> 
+                    <li>Styreleder - Telenor ASA</li>
+                    <li>Daglig leder - Equinor ASA</li>
+                </ul>
+            </div>
+            <div id="list5" class="list-container">
+                <ul id="list5-items">
+                    <li>Styreleder - Yara International ASA</li>
+                    <li>Daglig leder - DNB ASA</li>
+                </ul>
+            </div>
+            <div id="list6" class="list-container">
+                <ul id="list6-items">
+                    <li>Styreleder - Schibsted ASA</li>
+                    <li>Daglig leder - Orkla ASA</li>
+                </ul>
+            </div>
+            <button id="leggtil-2" class="leggtil"><a id="Skjema2" href="/Skjema/SkjemaTo.html"> Legg til </a></button>
         </div>
     </div>
     <div id="popup-3" class="popup">
         <div class="popup-content">
             <span class="close" onclick="hidePopup('popup-3')">&times;</span>
             <p>Relasjoner</p>
-            <button id="leggtil-3" class="leggtil"><a href="/Skjema/SkjemaTre.html"> Legg til </a>  </button>
+            <button class="list-btn" onclick="toggleList('list7', this)">Nåværende</button>
+            <button class="list-btn" onclick="toggleList('list8', this)">Tidligere</button>
+            <button class="list-btn" onclick="toggleList('list9', this)">Søknader</button> 
+            <div id="list7" class="list-container">
+                <ul id="list7-items"> 
+                    <li>Familie - Telenor ASA</li>
+                    <li>Venner - Equinor ASA</li>
+                </ul>
+            </div>
+            <div id="list8" class="list-container">
+                <ul id="list8-items">
+                    <li>Familie - Yara International ASA</li>
+                    <li>Venner - DNB ASA</li>
+                </ul>
+            </div>
+            <div id="list9" class="list-container">
+                <ul id="list9-items">
+                    <li>Familie - Schibsted ASA</li>
+                    <li>Venner - Orkla ASA</li>
+                </ul>
+            </div>
+            <button id="leggtil-3" class="leggtil"><a id="Skjema3" href="/Skjema/SkjemaTre.html"> Legg til </a></button>
         </div>
     </div>
     <div id="popup-4" class="popup">
         <div class="popup-content">
             <span class="close" onclick="hidePopup('popup-4')">&times;</span>
             <p>Annet</p>
-            <button id="leggtil-4" class="leggtil"><a href="/Skjema/SkjemaFire.html"> Legg til </a> </button>
+            <button class="list-btn" onclick="toggleList('list10', this)">Nåværende</button>
+            <button class="list-btn" onclick="toggleList('list11', this)">Tidligere</button>
+            <button class="list-btn" onclick="toggleList('list12', this)">Søknader</button> 
+            <div id="list10" class="list-container">
+                <ul id="list10-items"> 
+                    <li>Prosjekt - Telenor ASA</li>
+                    <li>Konsulent - Equinor ASA</li>
+                </ul>
+            </div>
+            <div id="list11" class="list-container">
+                <ul id="list11-items">
+                    <li>Prosjekt - Yara International ASA</li>
+                    <li>Konsulent - DNB ASA</li>
+                </ul>
+            </div>
+            <div id="list12" class="list-container">
+                <ul id="list12-items">
+                    <li>Prosjekt - Schibsted ASA</li>
+                    <li>Konsulent - Orkla ASA</li>
+                </ul>
+            </div>
+            <button id="leggtil-4" class="leggtil"><a id="Skjema4" href="/Skjema/SkjemaFire.html"> Legg til </a></button>
         </div>
     </div>
 
@@ -95,6 +199,43 @@
         function hidePopup(popupId) {
             document.getElementById(popupId).style.display = 'none';
         }
+
+        function toggleList(listId, button) {
+            document.querySelectorAll('.list-container').forEach(function(el) {
+                el.style.display = 'none';
+            });
+
+            document.querySelectorAll('.popup-content button').forEach(function(btn) {
+                btn.classList.remove('active-button');
+            });
+
+            var selectedList = document.getElementById(listId);
+            selectedList.style.display = 'block';
+            
+            button.classList.add('active-button');
+        }
+
+        function updateListPreviews() {
+            var list1Items = document.querySelectorAll('#list1-items li');
+            var list2Items = document.querySelectorAll('#list2-items li');
+            var list3Items = document.querySelectorAll('#list3-items li');
+            var list4Items = document.querySelectorAll('#list4-items li');
+            var list5Items = document.querySelectorAll('#list5-items li');
+            var list6Items = document.querySelectorAll('#list6-items li');
+            var list7Items = document.querySelectorAll('#list7-items li');
+            var list8Items = document.querySelectorAll('#list8-items li');
+            var list9Items = document.querySelectorAll('#list9-items li');
+            var list10Items = document.querySelectorAll('#list10-items li');
+            var list11Items = document.querySelectorAll('#list11-items li');
+            var list12Items = document.querySelectorAll('#list12-items li');
+
+            document.getElementById('preview-1').innerText = list1Items.length > 0 ? list1Items[0].innerText : 'No items';
+            document.getElementById('preview-2').innerText = list4Items.length > 0 ? list4Items[0].innerText : 'No items';
+            document.getElementById('preview-3').innerText = list7Items.length > 0 ? list7Items[0].innerText : 'No items';
+            document.getElementById('preview-4').innerText = list10Items.length > 0 ? list10Items[0].innerText : 'No items';
+        }
+
+        updateListPreviews();
     </script>
 </body>
 </html>

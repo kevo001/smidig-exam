@@ -3,7 +3,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Helvetica', Arial, sans-serif;
-    background-color: #b8b9ba;
+    background-color: #f0f0f0;
     overflow: hidden; /
     
 }
@@ -41,6 +41,7 @@ html, body {
     height: 24px;
     cursor: pointer;
 }
+
 
 .bell-checkbox {
     display: none;

@@ -8,7 +8,9 @@
 </head>
 <body>
     <header class="top-bar">
-        <div class="logo">Habilitetsregisteret</div>
+        <div class="logo">
+            <a href="Landing.html" style="text-decoration: none; color: inherit;">Habilitetsregisteret</a>
+        </div>
         <div class="icons">
             <input type="checkbox" id="bell-checkbox" class="bell-checkbox">
             <label for="bell-checkbox">
@@ -26,8 +28,8 @@
             <img src="/Bilder/Smiley.gif" alt="Smiley" class="smiley-icon">
             <p>Takk for at du har oppdatert dine opplysninger. Din innsats bidrar til å sikre at informasjonen er nøyaktig og oppdatert. Vi setter stor pris på ditt samarbeid!</p>
             <div class="buttons">
-                <button class="secondary-button">Glemt noe?</button>
-                <button>Gå til hovedsiden</button>
+                <button class="glemt-noe" onclick="location.href='Landing.html'" id="glemt-noe-button">Glemt noe?</button>
+                <button class="hovedside-kpmg" onclick="location.href='www.kpmg.com'" id="hovedside-kpmg-button">Gå til hovedsiden</button>
             </div>
         </div>
     </main>

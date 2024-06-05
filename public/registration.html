@@ -133,34 +133,34 @@
 <div class="registration-container">
   <h2 id="registrationText">Registrering</h2>
   <form id="registrationForm">
-    <label for="fname">Navn:</label>
-    <input type="text" id="fname" name="fname" required>
+    <label for="fname" id="fname">Navn:</label>
+    <input type="text" name="fname" required>
 
-    <label for="lname">Etternavn:</label>
-    <input type="text" id="lname" name="lname" required>
+    <label for="lname" id="lname">Etternavn:</label>
+    <input type="text" name="lname" required>
 
-    <label for="department">Avdeling:</label>
-    <input type="text" id="department" name="department" required>
+    <label for="department" id="department">Avdeling:</label>
+    <input type="text" name="department" required>
 
-    <label for="position">Posisjon:</label>
-    <input type="text" id="position" name="position" required>
+    <label for="position" id="position">Posisjon:</label>
+    <input type="text" name="position" required>
 
-    <label for="dateOfBirth">Date of Birth:</label>
-    <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+    <label for="dateOfBirth" id="dateOfBirth">Date of Birth:</label>
+    <input type="date" name="dateOfBirth" required>
 
-    <label for="adress">Adresse:</label>
-    <input type="text" id="adress" name="adress" required>
+    <label for="adress" id="adress">Adresse:</label>
+    <input type="text" name="adress" required>
 
-    <label for="email">E-Mail:</label>
-    <input type="email" id="email" name="email" required>
+    <label for="email" id="email">E-Mail:</label>
+    <input type="email" name="email" required>
 
-    <label for="tlf">Telefon:</label>
-    <input type="text" id="tlf" name="tlf" required>
+    <label for="tlf" id="tlf">Telefon:</label>
+    <input type="text" name="tlf" required>
 
-    <label for="password">Passord:</label>
-    <input type="password" id="password" name="password" required>
+    <label for="password" id="password">Passord:</label>
+    <input type="password" name="password" required>
 
-    <button type="submit">Registrer</button>
+    <button type="submit" id="register">Registrer</button>
   </form>
 </div>
 <div class="line bottom"></div>
@@ -169,6 +169,34 @@
 <a href="login.html"><img src="bilder/back.png" alt="Back Arrow" class="back-arrow"></a> <!-- Tilbake knapp -->
 
 <script>
+  function changeLanguage(language) {
+    if (language === 'norwegian') {
+      document.getElementById('registrationText').textContent = 'Registrering';
+      document.getElementById('fname').textContent = 'Navn:';
+      document.getElementById('lname').textContent = 'Etternavn:';
+      document.getElementById('department').textContent = 'Avdeling:';
+      document.getElementById('position').textContent = 'Posisjon:';
+      document.getElementById('dateOfBirth').textContent = 'Fødselsdato';
+      document.getElementById('adress').textContent = 'Adresse';
+      document.getElementById('email').textContent = 'E-Mail';
+      document.getElementById('tlf').textContent = 'Telefon';
+      document.getElementById('password').textContent = 'Passord';
+      document.getElementById('register').textContent = 'Registrer';
+    } else if (language === 'english') {
+      document.getElementById('registrationText').textContent = 'Registration';
+      document.getElementById('fname').textContent = 'First name:';
+      document.getElementById('lname').textContent = 'Last name:';
+      document.getElementById('department').textContent = 'Department:';
+      document.getElementById('position').textContent = 'Position:';
+      document.getElementById('dateOfBirth').textContent = 'Date of birth';
+      document.getElementById('adress').textContent = 'Address';
+      document.getElementById('email').textContent = 'E-Mail';
+      document.getElementById('tlf').textContent = 'Phone nr:';
+      document.getElementById('password').textContent = 'Password';
+      document.getElementById('register').textContent = 'Register';
+    }
+  }
+
   document.getElementById('registrationForm').addEventListener('submit', async function(event) {
     try {
       event.preventDefault(); // Prevent the form from submitting

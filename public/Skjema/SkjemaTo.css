@@ -5,7 +5,7 @@ html, body {
     padding: 0;
     overflow: hidden;
     font-family: 'Helvetica', Arial, sans-serif;
-    background-color: #d3cfcf;
+    background-color: #f0f0f0;
     overflow: auto;
 }
 
@@ -97,8 +97,8 @@ a:visited {
     position: relative;
     margin-top: 20px;
     padding: 10px;
-    border: 1px solid #ccc;
-    background-color: white;
+    border: 2px solid #ccc;
+    background-color: #f0f0f0;
     transition: max-height 0.5s ease-out;
     overflow: hidden;
     width: 41%;
@@ -129,7 +129,7 @@ a:visited {
     width: 100px;
     position: fixed;
     left: 19%; /* Juster etter behov */
-    background-color: #d3cfcf;
+    background-color: #f0f0f0;
     border: none;
     top: 10%; /* Juster etter behov */
     z-index: 1000; /* Legg til denne linjen */

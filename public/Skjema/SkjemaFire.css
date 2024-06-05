@@ -4,7 +4,7 @@ html, body {
     padding: 0;
     overflow: hidden;
     font-family: 'Helvetica', Arial, sans-serif;
-    background-color:#b8b9ba
+    background-color: #f0f0f0
 }
 
 .logo-btn {
@@ -21,9 +21,9 @@ a {
     text-decoration: none;
 }
 
-a:visited {
+.logo-redirect:visited {
     text-decoration: none;
-    color: aliceblue;
+    color:aliceblue;
     background-color: #003366;
 }
 
@@ -94,8 +94,8 @@ a:visited {
     position: relative;
     margin-top: 20px;
     padding: 10px;
-    border: 1px solid #ccc;
-    background-color: white;
+    border: 2px solid #ccc;
+    background-color: #f0f0f0;
     transition: max-height 0.5s ease-out;
     overflow: hidden;
     width: 41%;
@@ -126,7 +126,7 @@ a:visited {
     width: 100px;
     position: fixed;
     left: 22%;
-    background-color:#b8b9ba;
+    background-color: #f0f0f0;
     border: none;
     top: 10%;
 }
@@ -206,6 +206,7 @@ form {
 .add-button:hover, .confirm-button:hover {
     background-color: #003366;
     color: white;
+    
 }
 
 /* ========== Form Actions ========== */
@@ -222,8 +223,8 @@ form {
     cursor: pointer;
     font-size: 1em;
     font-weight: bold;
-    background-color: #ccc;
-    color: black;
+    background-color: #003366;
+    color: white;
     transition: background-color 0.3s;
     text-decoration: none; 
 }
@@ -231,12 +232,6 @@ form {
 .cancel-button:hover {
     background-color: #b0b0b0;
     text-decoration: none; 
-}
-
-
-
-.confirm-button:hover {
-    background-color: #2c5282;
 }
 
 /* ========== Footer ========== */
