@@ -8,39 +8,56 @@ html, body {
     background-size: cover;
 }
 
-/* Header and Footer Common Styles */
-.header, .footer {
+.logo-btn {
     background-color: #003366;
-    color: white;
-    z-index: 2; 
-    position: relative;
+    border: none;
+    text-decoration: none;
+    font-weight: bold;
+    color: aliceblue;
+    font-size: 1.25em;
+    font-weight: bold;
 }
 
-/* Top and Bottom Bar Styles */
-.top-bar, .bottom-bar {
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+    color: aliceblue;
+    background-color: #003366;
+}
+
+
+/* ========== Top Bar ========== */
+.top-bar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     background-color: #003366;
     color: white;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
 }
 
-.top-bar .logo, .bottom-bar .logo {
-    font-size: 1.5em;
+.top-bar .logo {
+    font-size: 1.2em;
     font-weight: bold;
-    color: aliceblue;
-    margin-left: 0;
+    margin-left: 0; 
 }
 
-.top-bar .icons, .bottom-bar .icons {
+.top-bar .icons {
     display: flex;
     gap: 10px;
     align-items: center;
+    margin-left: auto;
 }
 
-.top-bar .icons .icon, .bottom-bar .icons .icon {
+.top-bar .icons .icon {
     width: 24px;
     height: 24px;
     cursor: pointer;
@@ -75,23 +92,6 @@ html, body {
     margin: 0;
     color: #333;
     line-height: 1.5;
-}
-
-/* Text Box Styles */
-.text-box {
-    top: 14%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    width: 80%;
-    height: 7%;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.692); 
-    border: 1px solid #cccccc; 
-    border-radius: 10px; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-    text-align: center;
-    opacity: 25%;
 }
 
 /* Welcome Bar Styles */

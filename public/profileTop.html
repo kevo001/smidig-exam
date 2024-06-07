@@ -4,30 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profile Page</title>
-  <link rel="stylesheet" href="CSS/profile.css">
+  <link rel="stylesheet" href="CSS/profileTop.css">
 </head>
 <body>
-  <div class="top-bar">
-    <div class="logo"><button class="logo-btn"><a href="/Landing.html" class="logo-redirect" id="logoText">Habilitetsregisteret</a></button></div>
-    <div class="icons">
-        <input type="checkbox" id="bell-checkbox" class="bell-checkbox">
-        <label for="bell-checkbox">
-            <img src="Bilder/Bell.png" alt="Bell Icon" class="icon">
-        </label>
-        <div class="notifications">
-            <p>Du har ingen nye varsler</p>
-        </div>
-        <a href="profileTop.html">
-          <img src="bilder/User.png" alt="User Icon" class="icon">
-        </a>
-        <div class="language-flags">
-          <img src="bilder/norway.png" alt="Norwegian Flag" class="flag" onclick="changeLanguage('norwegian')">
-          <img src="bilder/flagEng.png" alt="English Flag" class="flag" onclick="changeLanguage('english')">
+
+  <body style="background-color: #f0f0f0;">
+    <div class="top-bar">
+        <div class="logo"><button class="logo-btn"><a href="/Landing.html" class="logo-redirect" id="logoText">Habilitetsregisteret</a></button></div>
+        <div class="icons">
+            <input type="checkbox" id="bell-checkbox" class="bell-checkbox">
+            <label for="bell-checkbox">
+                <img src="Bilder/Bell.png" alt="Bell Icon" class="icon">
+            </label>
+            <div class="notifications">
+                <p>Du har ingen nye varsler</p>
+            </div>
+            <a href="profileTop.html">
+              <img src="bilder/User.png" alt="User Icon" class="icon">
+            </a>
+            <div class="language-flags">
+              <img src="bilder/norway.png" alt="Norwegian Flag" class="flag" onclick="changeLanguage('norwegian')">
+              <img src="bilder/flagEng.png" alt="English Flag" class="flag" onclick="changeLanguage('english')">
+            </div>
         </div>
     </div>
-</div>
 
-<a href="Landing.html"><img src="bilder/back.png" alt="Back Arrow" class="back-arrow"></a> <!-- Tilbake knapp -->
 
 <div class="line"></div>
 <img src="bilder/icon.png" alt="Profile Icon" class="profile-icon"> <!-- Bilde over profile, usericon -->
@@ -45,6 +46,10 @@
 
 <div class="line bottom"></div> <!-- Blå bunnmarg -->
 <img src="bilder/Kpmg.png" alt="Bottom Left Image" class="bottom-left-image"> <!-- KPMG logo nede venstre -->
+
+<footer>
+  <div class="bottom-bar"></div>
+</footer>
 
 <script>
   function changeLanguage(language) {

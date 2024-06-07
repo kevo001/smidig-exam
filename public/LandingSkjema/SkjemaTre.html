@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opplyse om relasjon</title>
+    <link rel="stylesheet" href="Skjematre.css">
+</head>
+<body>
+    <!-- ========== Top Bar ========== -->
+    <div class="top-bar">
+        <div class="logo"><button class="logo-btn"><a href="/Landing.html"> Habilitetsregisteret </a>  </button></div>
+        <div class="icons">
+            <input type="checkbox" id="bell-checkbox" class="bell-checkbox">
+            <label for="bell-checkbox">
+                <img src="/Bilder/Bell.png" alt="Bell Icon" class="icon">
+            </label>
+            <div class="notifications">
+                <p>Du har ingen nye varsler</p>
+            </div>
+            <img src="/Bilder/User.png" alt="User Icon" class="icon">
+            <img src="/Bilder/Flag.png" alt="Norwegian Flag Icon" class="icon">
+        </div>
+    </div>
+
+
+    <button id="imgButton">
+        <img src="/Bilder/Info.png" alt="Info" class="InfoImage">  
+    </button>
+    <div id="infoField">
+        <br> 
+        <br> 
+        Vennligst registrer dine nærstående relasjoner, for eksempel ektefelle/samboer, barn og foreldre. Du skal kun oppgi informasjonen dersom relasjonen kan representere en mulig inhabilitet og skape usikkerhet rundt din og Develop sin habilitet.
+        
+        <br> 
+        <br>- Det er også relevant å oppgi andre relasjoner som innehar sentrale roller innen konsulent- og rådgivningsbransjen, samt hos leverandører eller entreprenører innen bygg- eller anleggsbransjen.
+        
+    </div>
+
+    <!-- ========== Container ========== -->
+    <div class="container">
+        <!-- Logo Section -->
+        <div class="logo-container">
+            <img src="/Bilder/Kpmg.png" alt="KPMG Logo" class="logo">
+        </div>
+
+        <!-- Header Section -->
+        <header>
+            <h1>Opplyse om eksisterende eller tidligere relasjon</h1>
+        </header>
+
+        <!-- Form Section -->
+        <form>
+            <!-- First Name Field -->
+            <div class="form-group">
+                <label for="first-name">Fornavn/mellomnavn <span class="required">*</span></label>
+                <input type="text" id="first-name" name="first-name">
+            </div>
+
+            <!-- Last Name Field -->
+            <div class="form-group">
+                <label for="last-name">Etternavn <span class="required">*</span></label>
+                <input type="text" id="last-name" name="last-name">
+            </div>
+
+            <!-- Date of Birth Fields -->
+            <div class="form-group">
+                <label for="dob">Fødselsdato <span class="required">*</span></label>
+                <input type="text" id="dob" name="dob" placeholder="dd">
+                <input type="text" id="dob-month" name="dob-month" placeholder="mm">
+                <input type="text" id="dob-year" name="dob-year" placeholder="yyyy">
+            </div>
+
+            <!-- Abroad Radio Buttons -->
+            <div class="form-group">
+                <label for="abroad">Bor du i utlandet <span class="required">*</span></label>
+                <div class="radio-group">
+                    <label for="abroad-yes" style ="color: black;"><input type="radio" id="abroad-yes" name="abroad" value="yes"><b>Ja</b> </label>
+                    <label for="abroad-no" style ="color: black;"><input type="radio" id="abroad-no" name="abroad" value="no"><b>Nei</b></label>
+                </div>
+            </div>
+
+            <!-- Address Fields -->
+            <div class="form-group">
+                <label for="address">Adresse <span class="required">*</span></label>
+                <input type="text" id="address" name="address">
+                <input type="text" id="postnr" name="postnr" placeholder="Postnr">
+                <input type="text" id="poststed" name="poststed" placeholder="Poststed">
+            </div>
+
+            <!-- Relation Type Dropdown -->
+            <div class="form-group">
+                <label for="relation-type">Type relasjon <span class="required">*</span></label>
+                <select id="relation-type" name="relation-type">
+                    <option value="">Velg...</option>
+                    <option value="relation1">Relasjon 1</option>
+                    <option value="relation2">Relasjon 2</option>
+                </select>
+            </div>
+
+            <!-- Comments Field -->
+            <div class="form-group">
+                <label for="comments">Kommentar</label>
+                <textarea id="comments" name="comments"></textarea>
+            </div>
+
+            <!-- Required Fields Notice -->
+            <div class="form-group">
+                <span class="required">*</span> Påkrevde felt
+            </div>
+
+            <!-- Form Action Buttons -->
+            <div class="form-actions">
+                <a href="/Landing.html" class="cancel-button">AVBRYT</a>
+                <a href="/Landing.html" class="confirm-button">BEKREFT</a>
+            </div>
+        </form>
+
+        
+    </div>
+
+    <script>
+        document.getElementById('imgButton').addEventListener('click', function() {
+            var infoField = document.getElementById('infoField');
+            if (infoField.style.display === 'none' || infoField.style.display === '') {
+                infoField.style.display = 'block';
+                infoField.style.maxHeight = infoField.scrollHeight + "px";
+            } else {
+                infoField.style.display = 'none';
+                infoField.style.maxHeight = '0';
+            }
+        });
+    </script>
+
+</body>
+</html>

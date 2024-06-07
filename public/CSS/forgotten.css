@@ -87,7 +87,7 @@ body {
   }
   .back-arrow {
     position: absolute;
-    top: 30px;
+    top: 70px;
     left: 20px;
     width: 50px;
     height: auto;
@@ -97,17 +97,80 @@ body {
     transform: scale(1.1);
   }
   .language-flags {
-    position: absolute;
-    top: 30px;
-    right: 30px;
     display: flex;
     gap: 10px;
   }
+
   .flag {
     width: 30px;
     height: auto;
     cursor: pointer;
   }
+
   .flag:hover {
     transform: scale(1.1);
   }
+
+  .top-bar {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #003366;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.top-bar .logo {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-left: 0; 
+}
+
+.top-bar .icons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-left: auto;
+}
+
+.top-bar .icons .icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+/* Notification Checkbox */
+.bell-checkbox {
+    display: none;
+}
+
+/* Show notifications if checkbox is checked */
+.bell-checkbox:checked + label + .notifications {
+    display: block;
+}
+
+/* Notification Box Styles */
+.notifications {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    z-index: 3;
+}
+
+.notifications p {
+    margin: 0;
+    color: #333;
+    line-height: 1.5;
+}

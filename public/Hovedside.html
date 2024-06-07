@@ -7,37 +7,38 @@
     <link rel="stylesheet" href="CSS/Hovedside.css">
 </head>
 <body style="background-color: #f0f0f0;">
-    <header>
-        <div class="top-bar">
-            <div class="logo">
-                <a href="Landing.html" style="text-decoration: none; color: inherit;">Habilitetsregisteret</a>
-            </div>
-            <div class="icons">
-                <input type="checkbox" id="bell-checkbox" class="bell-checkbox">
-                <label for="bell-checkbox">
-                    <img src="Bilder/Bell.png" alt="Bell Icon" class="icon">
-                </label>
-                <div class="notifications">
-                    <p>Du har ingen nye varsler</p>
-                </div>
-                <img src="Bilder/User.png" alt="User Icon" class="icon">
-                <img src="Bilder/Flag.png" alt="Norwegian Flag Icon" class="icon">
-            </div>
+    <div class="top-bar">
+        <div class="logo">
+            <button class="logo-btn">
+                <a href="/Landing.html" class="logo-redirect" id="logoText">Habilitetsregisteret</a>
+            </button>
         </div>
-        <div class="welcome-bar">
-            <h1>Velkommen, Firsname Lastname!</h1>
-            <p>Selger</p>
+        <div class="icons">
+            <input type="checkbox" id="bell-checkbox" class="bell-checkbox">
+            <label for="bell-checkbox">
+                <img src="Bilder/Bell.png" alt="Bell Icon" class="icon">
+            </label>
+            <div class="notifications">
+                <p id="notificationMessage">Du har ingen nye varsler</p>
+            </div>
+            <a href="profileTop.html">
+                <img src="bilder/User.png" alt="User Icon" class="icon">
+            </a>
+            <img src="bilder/norway.png" alt="Norwegian Flag" class="icon" onclick="changeLanguage('norwegian')">
+            <img src="bilder/flagEng.png" alt="English Flag" class="icon" onclick="changeLanguage('english')">
         </div>
-    </header>
+    </div>
+    <div class="welcome-bar">
+        <h1 id="welcome-text">Velkommen, Ola Nordmann!</h1>
+        <p id="seller-text">Selger</p>
+    </div>
     <main>
         <div class="welcome-box">
-            <h1>Hei!</h1>
-            <p>Du må melde deg inn for å komme videre
-
-                For å sikre at habilitetsvurderingene er rettferdige og objektive, ber vi deg registrere deg i Habilitetsregisteret. Du kan enten fylle inn opplysningene manuelt, eller la oss hente inn dataene for deg fra offentlige registre og andre kilder. Dine opplysninger behandles konfidensielt og sikkert. Velg den metoden som passer deg best for å komme videre.</p>
+            <h1 id="hi-text">Hei!</h1>
+            <p id="welcomeMessage">Du må melde deg inn for å komme videre. For å sikre at habilitetsvurderingene er rettferdige og objektive, ber vi deg registrere deg i Habilitetsregisteret. Du kan enten fylle inn opplysningene manuelt, eller la oss hente inn dataene for deg fra offentlige registre og andre kilder. Dine opplysninger behandles konfidensielt og sikkert. Velg den metoden som passer deg best for å komme videre.</p>
             <div class="buttons">
-                <button onclick ="location.href='/Skjema/SkjemaEn.html'">Meld inn manuelt her</button>
-                <button class="secondary-button">La oss hente inn data for deg</button>
+                <button onclick="location.href='/Skjema/SkjemaEn.html'" id="manualButton">Meld inn manuelt her</button>
+                <button class="secondary-button" id="autoButton">La oss hente inn data for deg</button>
             </div>
         </div>
     </main>
@@ -47,5 +48,26 @@
         </div>
         <div class="bottom-bar"></div>
     </footer>
+    <script>
+        function changeLanguage(language) {
+            if (language === 'norwegian') {
+                document.getElementById('welcome-text').textContent = 'Velkommen, Ola Nordmann!';
+                document.getElementById('seller-text').textContent = 'Selger';
+                document.getElementById('hi-text').textContent = 'Hei!';
+                document.getElementById('notificationMessage').textContent = 'Du har ingen nye varsler';
+                document.getElementById('welcomeMessage').textContent = 'Du må melde deg inn for å komme videre. For å sikre at habilitetsvurderingene er rettferdige og objektive, ber vi deg registrere deg i Habilitetsregisteret. Du kan enten fylle inn opplysningene manuelt, eller la oss hente inn dataene for deg fra offentlige registre og andre kilder. Dine opplysninger behandles konfidensielt og sikkert. Velg den metoden som passer deg best for å komme videre.';
+                document.getElementById('manualButton').textContent = 'Meld inn manuelt her';
+                document.getElementById('autoButton').textContent = 'La oss hente inn data for deg';
+            } else if (language === 'english') {
+                document.getElementById('welcome-text').textContent = 'Welcome, Ola Nordmann!';
+                document.getElementById('seller-text').textContent = 'Seller';
+                document.getElementById('hi-text').textContent = 'Hi!';
+                document.getElementById('notificationMessage').textContent = 'You have no new notifications';
+                document.getElementById('welcomeMessage').textContent = 'You need to register to proceed. To ensure that the assessments of impartiality are fair and objective, we ask you to register in the Register of Impartiality. You can either fill in the information manually, or let us retrieve the data for you from public registers and other sources. Your information will be treated confidentially and securely. Choose the method that suits you best to proceed.';
+                document.getElementById('manualButton').textContent = 'Register manually here';
+                document.getElementById('autoButton').textContent = 'Let us retrieve data for you';
+            }
+        }
+    </script>
 </body>
 </html>

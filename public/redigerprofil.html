@@ -4,114 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edit Profile</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #F4F4F4;
-      flex-direction: column;
-      position: relative;
-    }
-    .line {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 20px;
-      background-color: #193583;
-    }
-    .line.bottom {
-      top: auto;
-      bottom: 0;
-      height: 20px;
-    }
-    .profile-content {
-      width: 300px; /* Adjusted width */
-      text-align: center;
-      padding: 20px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      margin-bottom: 20px;
-    }
-    .profile-content h2 {
-      font-size: 24px;
-      color: #333;
-      margin-bottom: 20px;
-    }
-    .profile-content p {
-      font-size: 16px;
-      color: #555;
-      margin: 5px 0;
-    }
-    .profile-content p span {
-      text-decoration: underline;
-    }
-    .bottom-left-image {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      width: 200px;
-      height: auto;
-    }
-    .profile-icon {
-      width: 100px;
-      height: auto;
-      margin-bottom: 20px;
-    }
-    .language-flags {
-      position: absolute;
-      top: 30px;
-      right: 30px;
-      display: flex;
-      gap: 10px;
-    }
-    .flag {
-      width: 30px;
-      height: auto;
-      cursor: pointer;
-    }
-    .flag:hover {
-      transform: scale(1.1);
-    }
-    .edit-button, .save-button, .cancel-button {
-      padding: 10px 20px;
-      background-color: #193583;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-    .edit-button:hover, .save-button:hover, .cancel-button:hover {
-      background-color: #162d6a;
-    }
-    .cancel-button {
-      background-color: #aaa;
-    }
-    .cancel-button:hover {
-      background-color: #888;
-    }
-    form input {
-      width: calc(100% - 20px);
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      font-size: 16px;
-    }
-  </style>
+  <link rel="stylesheet" href="CSS/redigerprofil.css">
 </head>
 <body>
-
-<div class="language-flags">
-  <img src="bilder/norway.png" alt="Norwegian Flag" class="flag" onclick="changeLanguage('norwegian')">
-  <img src="bilder/flag.png" alt="English Flag" class="flag" onclick="changeLanguage('english')">
+  <div class="top-bar">
+    <div class="logo"><button class="logo-btn"><a href="/Landing.html" class="logo-redirect" id="logoText">Habilitetsregisteret</a></button></div>
+    <div class="icons">
+        <input type="checkbox" id="bell-checkbox" class="bell-checkbox">
+        <label for="bell-checkbox">
+            <img src="Bilder/Bell.png" alt="Bell Icon" class="icon">
+        </label>
+        <div class="notifications">
+            <p>Du har ingen nye varsler</p>
+        </div>
+        <a href="profileTop.html">
+          <img src="bilder/User.png" alt="User Icon" class="icon">
+        </a>
+        <div class="language-flags">
+          <img src="bilder/norway.png" alt="Norwegian Flag" class="flag" onclick="changeLanguage('norwegian')">
+          <img src="bilder/flagEng.png" alt="English Flag" class="flag" onclick="changeLanguage('english')">
+        </div>
+    </div>
 </div>
 
 <div class="line"></div>

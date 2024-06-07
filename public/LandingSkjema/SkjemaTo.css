@@ -301,26 +301,3 @@ footer {
     border-radius: 4px;
 }
 
-/* ========== Step Indicator ========== */
-.step-indicator {
-    text-align: center;
-    font-weight: bold;
-    color: #007bff;
-    margin-top: 10px;
-}
-
-/* ========== Progress Bar ========== */
-.progress-container {
-    width: 100%;
-    background-color: #ddd;
-    border-radius: 25px;
-    overflow: hidden;
-    margin: 20px 0;
-}
-
-.progress-bar {
-    width: 50%;
-    height: 20px;
-    background: linear-gradient(to right, #4dabff, #2c5282);
-    border-radius: 25px 0 0 25px;
-}

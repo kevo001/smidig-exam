@@ -4,32 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Habilitetsregisteret</title>
-    <link rel="stylesheet" href="CSS/Landing.css">
+    <link rel="stylesheet" href="/CSS/Landing.css">
 </head>
 <body>
 
     <div class="top-bar">
-        <div class="logo">
-            <a href="Landing.html" style="text-decoration: none; color: inherit;">Habilitetsregisteret</a>
-        </div>
+        <div class="logo">Habilitetsregisteret</div>
         <div class="icons">
             <input type="checkbox" id="bell-checkbox" class="bell-checkbox">
             <label for="bell-checkbox">
-                <img src="bilder/Bell.png" alt="Bell Icon" class="icon">
+                <img src="../bilder/Bell.png" alt="Bell Icon" class="icon">
             </label>
             <div class="notifications">
                 <p>Du har ingen nye varsler</p>
             </div>
-            <img src="bilder/User.png" alt="User Icon" class="icon">
-            <img src="bilder/norway.png" alt="Norwegian Flag Icon" class="icon">
+            <a href="profileTop.html">
+                <img src="bilder/User.png" alt="User Icon" class="icon">
+            </a>
+            <img src="../bilder/Flag.png" alt="Norwegian Flag Icon" class="icon">
         </div>
     </div>
     <div class="container">
         <button class="card" onclick="scaleUp(this); showPopup('popup-1')">
             <div class="card-content">
                 <div class="list-preview" id="preview-1"></div>
-                <br>
-                <div class="nyttForhold"> <a id="nyttForhold-btn" href="Skjema/SkjemaEn.html"> Legg Til Nytt Forhold </a>
+                <div class="nyttForhold"> <a id="nyttForhold-btn" href="LandingSkjema/SkjemaEn.html"> Legg Til Nytt Forhold </a>
                 </div>
             </div>
             <div class="card-footer">
@@ -40,8 +39,7 @@
         <button class="card" onclick="scaleUp(this); showPopup('popup-2')">
             <div class="card-content">
                 <div class="list-preview" id="preview-2"></div>
-                <br>
-                <div class="nyttForhold"> <a id="nyttForhold-btn" href="Skjema/SkjemaTo.html"> Legg Til Nytt Forhold </a>
+                <div class="nyttForhold"> <a id="nyttForhold-btn" href="LandingSkjema/SkjemaTo.html"> Legg Til Nytt Forhold </a>
                 </div>
             </div>
             <div class="card-footer">
@@ -52,8 +50,7 @@
         <button class="card" onclick="scaleUp(this); showPopup('popup-3')">
             <div class="card-content">
                 <div class="list-preview" id="preview-3"></div>
-                <br> 
-                <div class="nyttForhold"> <a id="nyttForhold-btn" href="Skjema/SkjemaTre.html"> Legg Til Nytt Forhold </a>
+                <div class="nyttForhold"> <a id="nyttForhold-btn" href="LandingSkjema/SkjemaTre.html"> Legg Til Nytt Forhold </a>
                 </div>
             </div>
             <div class="card-footer">
@@ -63,8 +60,8 @@
         </button>
         <button class="card" onclick="scaleUp(this); showPopup('popup-4')">
             <div class="card-content">
-                
-                <div class="nyttForhold"> <a id="nyttForhold-btn" href="Skjema/SkjemaFire.html"> Legg Til Nytt Forhold </a>
+                <div class="list-preview" id="preview-4"></div>
+                <div class="nyttForhold"> <a id="nyttForhold-btn" href="LandingSkjema/SkjemaFire.html"> Legg Til Nytt Forhold </a>
                 </div>
             </div>
             <div class="card-footer">
@@ -81,24 +78,136 @@
             <button class="list-btn" onclick="toggleList('list1', this)">Nåværende</button>
             <button class="list-btn" onclick="toggleList('list2', this)">Tidligere</button>
             <button class="list-btn" onclick="toggleList('list3', this)">Søknader</button> 
+            <div class="popup-box">
             <div id="list1" class="list-container">
                 <ul id="list1-items"> 
-                    <li>Telenor ASA </li>
-                    <li>Equinor ASA</li>
+                    <li class="history-item"> 
+                        <div class="company-info"> 
+                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <div class="company-text"> 
+                                <p class="company-name">TELENOR ASA</p> 
+                                <p>Styrets leder</p> 
+                            </div> 
+                            <p class="update-date">Oppdatert 21-05-2024</p> 
+                        </div> 
+                        
+                        <div class="actions"> 
+                            <a href="#">Gå til sak</a> 
+                            <a href="#">Endre</a> 
+                            <img src="../bilder/verification.png" alt="Status Icon" class="status-icon"> 
+                        </div> 
+                    </li>
+                    <li class="history-item"> 
+                        <div class="company-info"> 
+                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <div class="company-text"> 
+                                <p class="company-name">TELENOR ASA</p> 
+                                <p>Styrets leder</p> 
+                            </div> 
+                            <p class="update-date">Oppdatert 21-05-2024</p> 
+                        </div> 
+                         
+                        <div class="actions"> 
+                            <a href="#">Gå til sak</a> 
+                            <a href="#">Endre</a> 
+                            <img src="../bilder/verification.png" alt="Status Icon" class="status-icon"> 
+                        </div> 
+                    </li>
+                    <li class="history-item"> 
+                        <div class="company-info"> 
+                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <div class="company-text"> 
+                                <p class="company-name">TELENOR ASA</p> 
+                                <p>Styrets leder</p> 
+                            </div> 
+                            <p class="update-date">Oppdatert 21-05-2024</p> 
+                        </div> 
+                             
+                        <div class="actions"> 
+                            <a href="#">Gå til sak</a> 
+                            <a href="#">Endre</a> 
+                            <img src="../bilder/verification.png" alt="Status Icon" class="status-icon"> 
+                        </div> 
+                    </li>
                 </ul>
             </div>
+            </div>
+            <div class="popup-box">
             <div id="list2" class="list-container">
                 <ul id="list2-items">
-                    <li>Yara International ASA</li>
-                    <li>DNB ASA</li>
+                    <li class="history-item"> 
+                        <div class="company-info"> 
+                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <div class="company-text"> 
+                                <p class="company-name">DNB ASA</p> 
+                                <p>Styremedlem</p> 
+                            </div> 
+                            <p class="update-date">Oppdatert 10-03-2023</p> 
+                        </div> 
+                        <div class="status">Avsluttet</div> 
+                        <div class="actions"> 
+                            <a href="#">Gå til sak</a> 
+                            <a href="#">Endre</a> 
+                            <img src="../bilder/verification.png" alt="Status Icon" class="status-icon"> 
+                        </div> 
+                    </li>
+                    <li class="history-item"> 
+                        <div class="company-info"> 
+                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <div class="company-text"> 
+                                <p class="company-name">Nordea</p> 
+                                <p>Finansdirektør</p> 
+                            </div> 
+                            <p class="update-date">Oppdatert 15-08-2022</p> 
+                        </div> 
+                        <div class="status">Avsluttet</div> 
+                        <div class="actions"> 
+                            <a href="#">Gå til sak</a> 
+                            <a href="#">Endre</a> 
+                            <img src="../bilder/verification.png" alt="Status Icon" class="status-icon"> 
+                        </div> 
+                    </li>
                 </ul>
             </div>
+            </div>
+            <div class="popup-box">
             <div id="list3" class="list-container">
                 <ul id="list3-items">
-                    <li>Schibsted ASA</li>
-                    <li>Orkla ASA</li>
+                    <li class="history-item"> 
+                        <div class="company-info"> 
+                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <div class="company-text"> 
+                                <p class="company-name">Schibsted</p> 
+                                <p>Marketing Director</p> 
+                            </div> 
+                            <p class="update-date">Oppdatert 05-02-2024</p> 
+                        </div> 
+                        <div class="status">Pending</div> 
+                        <div class="actions"> 
+                            <a href="#">Gå til sak</a> 
+                            <a href="#">Endre</a> 
+                            <img src="../bilder/verification.png" alt="Status Icon" class="status-icon"> 
+                        </div> 
+                    </li>
+                    <li class="history-item"> 
+                        <div class="company-info"> 
+                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <div class="company-text"> 
+                                <p class="company-name">Hydro</p> 
+                                <p>Operations Manager</p> 
+                            </div> 
+                            <p class="update-date">Oppdatert 10-01-2024</p> 
+                        </div> 
+                        <div class="status">Pending</div> 
+                        <div class="actions"> 
+                            <a href="#">Gå til sak</a> 
+                            <a href="#">Endre</a> 
+                            <img src="../bilder/verification.png" alt="Status Icon" class="status-icon"> 
+                        </div> 
+                    </li>
                 </ul>
             </div>
+        </div>
             <button id="leggtil-1" class="leggtil"><a id="Skjema1" href="/Skjema/SkjemaEn.html"> Legg til </a></button>
         </div>
     </div>
@@ -109,23 +218,122 @@
             <button class="list-btn" onclick="toggleList('list4', this)">Nåværende</button>
             <button class="list-btn" onclick="toggleList('list5', this)">Tidligere</button>
             <button class="list-btn" onclick="toggleList('list6', this)">Søknader</button> 
+            <div class="popup-box">
             <div id="list4" class="list-container">
                 <ul id="list4-items"> 
-                    <li>Styreleder - Telenor ASA</li>
-                    <li>Daglig leder - Equinor ASA</li>
+                    <li class="history-item"> 
+                        <div class="company-info"> 
+                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <div class="company-text"> 
+                                <p class="company-name">EQUINOR ASA</p> 
+                                <p>Styrets leder</p> 
+                            </div> 
+                            <p class="update-date">Oppdatert 21-05-2024</p> 
+                        </div> 
+                         
+                        <div class="actions"> 
+                            <a href="#">Gå til sak</a> 
+                            <a href="#">Endre</a> 
+                            <img src="../bilder/verification.png" alt="Status Icon" class="status-icon"> 
+                        </div> 
+                    </li>
+                    <li class="history-item"> 
+                        <div class="company-info"> 
+                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <div class="company-text"> 
+                                <p class="company-name">EQUINOR ASA</p> 
+                                <p>Styrets leder</p> 
+                            </div> 
+                            <p class="update-date">Oppdatert 21-05-2024</p> 
+                        </div> 
+                       
+                        <div class="actions"> 
+                            <a href="#">Gå til sak</a> 
+                            <a href="#">Endre</a> 
+                            <img src="../bilder/verification.png" alt="Status Icon" class="status-icon"> 
+                        </div> 
+                    
+                    
+                
+                      
                 </ul>
             </div>
+            </div>
+            <div class="popup-box">
             <div id="list5" class="list-container">
                 <ul id="list5-items">
-                    <li>Styreleder - Yara International ASA</li>
-                    <li>Daglig leder - DNB ASA</li>
+                    <li class="history-item"> 
+                        <div class="company-info"> 
+                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <div class="company-text"> 
+                                <p class="company-name">Storebrand</p> 
+                                <p>CEO</p> 
+                            </div> 
+                            <p class="update-date">Oppdatert 05-12-2021</p> 
+                        </div> 
+                        <div class="status">Avsluttet</div> 
+                        <div class="actions"> 
+                            <a href="#">Gå til sak</a> 
+                            <a href="#">Endre</a> 
+                            <img src="../bilder/verification.png" alt="Status Icon" class="status-icon"> 
+                        </div> 
+                    </li>
+                    <li class="history-item"> 
+                        <div class="company-info"> 
+                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <div class="company-text"> 
+                                <p class="company-name">Gjensidige</p> 
+                                <p>COO</p> 
+                            </div> 
+                            <p class="update-date">Oppdatert 22-11-2020</p> 
+                        </div> 
+                        <div class="status">Avsluttet</div> 
+                        <div class="actions"> 
+                            <a href="#">Gå til sak</a> 
+                            <a href="#">Endre</a> 
+                            <img src="../bilder/verification.png" alt="Status Icon" class="status-icon"> 
+                        </div> 
+                    </li>
                 </ul>
             </div>
+            </div>
+            <div class="popup-box">
             <div id="list6" class="list-container">
                 <ul id="list6-items">
-                    <li>Styreleder - Schibsted ASA</li>
-                    <li>Daglig leder - Orkla ASA</li>
+                    <li class="history-item"> 
+                        <div class="company-info"> 
+                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <div class="company-text"> 
+                                <p class="company-name">Orkla</p> 
+                                <p>Finance Manager</p> 
+                            </div> 
+                            <p class="update-date">Oppdatert 12-12-2023</p> 
+                        </div> 
+                        <div class="status">Pending</div> 
+                        <div class="actions"> 
+                            <a href="#">Gå til sak</a> 
+                            <a href="#">Endre</a> 
+                            <img src="../bilder/verification.png" alt="Status Icon" class="status-icon"> 
+                        </div> 
+                    </li>
+                    <li class="history-item"> 
+                        <div class="company-info"> 
+                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <div class="company-text"> 
+                                <p class="company-name">Norsk Hydro</p> 
+                                <p>Senior Engineer</p> 
+                            </div> 
+                            <p class="update-date">Oppdatert 20-11-2023</p> 
+                        </div> 
+                        <div class="status">Pending</div> 
+                        <div class="actions"> 
+                            <a href="#">Gå til sak</a> 
+                            <a href="#">Endre</a> 
+                            <img src="../bilder/verification.png" alt="Status Icon" class="status-icon"> 
+                        </div> 
+                    </li>
                 </ul>
+            </div>
             </div>
             <button id="leggtil-2" class="leggtil"><a id="Skjema2" href="/Skjema/SkjemaTo.html"> Legg til </a></button>
         </div>
@@ -137,23 +345,101 @@
             <button class="list-btn" onclick="toggleList('list7', this)">Nåværende</button>
             <button class="list-btn" onclick="toggleList('list8', this)">Tidligere</button>
             <button class="list-btn" onclick="toggleList('list9', this)">Søknader</button> 
+            <div class="popup-box">
             <div id="list7" class="list-container">
                 <ul id="list7-items"> 
-                    <li>Familie - Telenor ASA</li>
-                    <li>Venner - Equinor ASA</li>
+                    <li class="history-item"> 
+                        <div class="company-info"> 
+                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <div class="company-text"> 
+                                <p class="company-name">Kari Nordmann</p> 
+                                <p>Ektefelle/Samboer</p> 
+                            </div> 
+                            <p class="update-date">Oppdatert 21-05-2024</p> 
+                        </div> 
+                      
+                        <div class="actions"> 
+                            <a href="#">Gå til sak</a> 
+                            <a href="#">Endre</a> 
+                            <img src="../bilder/verification.png" alt="Status Icon" class="status-icon"> 
+                        </div> 
+                    </li>
                 </ul>
             </div>
             <div id="list8" class="list-container">
                 <ul id="list8-items">
-                    <li>Familie - Yara International ASA</li>
-                    <li>Venner - DNB ASA</li>
+                    <li class="history-item"> 
+                        <div class="company-info"> 
+                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <div class="company-text"> 
+                                <p class="company-name">Aker Solutions</p> 
+                                <p>CTO</p> 
+                            </div> 
+                            <p class="update-date">Oppdatert 01-09-2019</p> 
+                        </div> 
+                        <div class="status">Avsluttet</div> 
+                        <div class="actions"> 
+                            <a href="#">Gå til sak</a> 
+                            <a href="#">Endre</a> 
+                            <img src="../bilder/verification.png" alt="Status Icon" class="status-icon"> 
+                        </div> 
+                    </li>
+                    <li class="history-item"> 
+                        <div class="company-info"> 
+                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <div class="company-text"> 
+                                <p class="company-name">Yara International</p> 
+                                <p>R&D Manager</p> 
+                            </div> 
+                            <p class="update-date">Oppdatert 15-06-2018</p> 
+                        </div> 
+                        <div class="status">Avsluttet</div> 
+                        <div class="actions"> 
+                            <a href="#">Gå til sak</a> 
+                            <a href="#">Endre</a> 
+                            <img src="../bilder/verification.png" alt="Status Icon" class="status-icon"> 
+                        </div> 
+                    </li>
                 </ul>
             </div>
+            </div>
+            <div class="popup-box">
             <div id="list9" class="list-container">
                 <ul id="list9-items">
-                    <li>Familie - Schibsted ASA</li>
-                    <li>Venner - Orkla ASA</li>
+                    <li class="history-item"> 
+                        <div class="company-info"> 
+                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <div class="company-text"> 
+                                <p class="company-name">Aker BP</p> 
+                                <p>HR Director</p> 
+                            </div> 
+                            <p class="update-date">Oppdatert 15-10-2023</p> 
+                        </div> 
+                        <div class="status">Pending</div> 
+                        <div class="actions"> 
+                            <a href="#">Gå til sak</a> 
+                            <a href="#">Endre</a> 
+                            <img src="../bilder/verification.png" alt="Status Icon" class="status-icon"> 
+                        </div> 
+                    </li>
+                    <li class="history-item"> 
+                        <div class="company-info"> 
+                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <div class="company-text"> 
+                                <p class="company-name">Statnett</p> 
+                                <p>IT Manager</p> 
+                            </div> 
+                            <p class="update-date">Oppdatert 02-09-2023</p> 
+                        </div> 
+                        <div class="status">Pending</div> 
+                        <div class="actions"> 
+                            <a href="#">Gå til sak</a> 
+                            <a href="#">Endre</a> 
+                            <img src="../bilder/verification.png" alt="Status Icon" class="status-icon"> 
+                        </div> 
+                    </li>
                 </ul>
+            </div>
             </div>
             <button id="leggtil-3" class="leggtil"><a id="Skjema3" href="/Skjema/SkjemaTre.html"> Legg til </a></button>
         </div>
@@ -165,27 +451,60 @@
             <button class="list-btn" onclick="toggleList('list10', this)">Nåværende</button>
             <button class="list-btn" onclick="toggleList('list11', this)">Tidligere</button>
             <button class="list-btn" onclick="toggleList('list12', this)">Søknader</button> 
+            <div class="popup-box">
             <div id="list10" class="list-container">
-                <ul id="list10-items"> 
-                    <li>Prosjekt - Telenor ASA</li>
-                    <li>Konsulent - Equinor ASA</li>
-                </ul>
+                <ul id="list10-items"></ul>
             </div>
             <div id="list11" class="list-container">
                 <ul id="list11-items">
-                    <li>Prosjekt - Yara International ASA</li>
-                    <li>Konsulent - DNB ASA</li>
+                    <li class="history-item"> 
+                        <div class="company-info"> 
+                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <div class="company-text"> 
+                                <p class="company-name">Telenor</p> 
+                                <p>COO</p> 
+                            </div> 
+                            <p class="update-date">Oppdatert 03-04-2017</p> 
+                        </div> 
+                        <div class="status">Avsluttet</div> 
+                        <div class="actions"> 
+                            <a href="#">Gå til sak</a> 
+                            <a href="#">Endre</a> 
+                            <img src="../bilder/verification.png" alt="Status Icon" class="status-icon"> 
+                        </div> 
+                    </li>
+                    <li class="history-item"> 
+                        <div class="company-info"> 
+                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <div class="company-text"> 
+                                <p class="company-name">Statkraft</p> 
+                                <p>Project Manager</p> 
+                            </div> 
+                            <p class="update-date">Oppdatert 22-07-2016</p> 
+                        </div> 
+                        <div class="status">Avsluttet</div> 
+                        <div class="actions"> 
+                            <a href="#">Gå til sak</a> 
+                            <a href="#">Endre</a> 
+                            <img src="../bilder/verification.png" alt="Status Icon" class="status-icon"> 
+                        </div> 
+                    </li>
                 </ul>
             </div>
             <div id="list12" class="list-container">
-                <ul id="list12-items">
-                    <li>Prosjekt - Schibsted ASA</li>
-                    <li>Konsulent - Orkla ASA</li>
-                </ul>
+                <ul id="list12-items"></ul>
             </div>
             <button id="leggtil-4" class="leggtil"><a id="Skjema4" href="/Skjema/SkjemaFire.html"> Legg til </a></button>
         </div>
     </div>
+    </div>
+    <a  href="Endeside.html">
+        <button class="blue-button">Fullfør</button>
+    </a>
+    <a  href="profilhistorikk.html">
+        <button class="green-button">Profilhistorikk</button>
+    </a>
+
 
     <script>
         function scaleUp(element) {
@@ -216,23 +535,38 @@
         }
 
         function updateListPreviews() {
-            var list1Items = document.querySelectorAll('#list1-items li');
-            var list2Items = document.querySelectorAll('#list2-items li');
-            var list3Items = document.querySelectorAll('#list3-items li');
-            var list4Items = document.querySelectorAll('#list4-items li');
-            var list5Items = document.querySelectorAll('#list5-items li');
-            var list6Items = document.querySelectorAll('#list6-items li');
-            var list7Items = document.querySelectorAll('#list7-items li');
-            var list8Items = document.querySelectorAll('#list8-items li');
-            var list9Items = document.querySelectorAll('#list9-items li');
-            var list10Items = document.querySelectorAll('#list10-items li');
-            var list11Items = document.querySelectorAll('#list11-items li');
-            var list12Items = document.querySelectorAll('#list12-items li');
+            var list1Items = document.querySelectorAll('#list1-items .history-item');
+            var list4Items = document.querySelectorAll('#list4-items .history-item');
+            var list7Items = document.querySelectorAll('#list7-items .history-item');
+            var list10Items = document.querySelectorAll('#list10-items .history-item');
 
-            document.getElementById('preview-1').innerText = list1Items.length > 0 ? list1Items[0].innerText : 'No items';
-            document.getElementById('preview-2').innerText = list4Items.length > 0 ? list4Items[0].innerText : 'No items';
-            document.getElementById('preview-3').innerText = list7Items.length > 0 ? list7Items[0].innerText : 'No items';
-            document.getElementById('preview-4').innerText = list10Items.length > 0 ? list10Items[0].innerText : 'No items';
+            updatePreview('preview-1', list1Items);
+            updatePreview('preview-2', list4Items);
+            updatePreview('preview-3', list7Items);
+            updatePreview('preview-4', list10Items);
+        }
+
+        function updatePreview(previewId, items) {
+            var preview = document.getElementById(previewId);
+            preview.innerHTML = ''; 
+            var itemCount = Math.min(items.length, 2); 
+            for (var i = 0; i < itemCount; i++) {
+                var newItem = items[i].cloneNode(true);
+                newItem.style.marginBottom = '10px'; 
+                preview.appendChild(newItem);
+            }
+
+            if (itemCount === 0) {
+                var emptyMessage = document.createElement('div');
+                emptyMessage.className = 'history-item';
+                emptyMessage.innerHTML = `
+                    <div class="company-info">
+                        <div class="company-text">
+                            <p class="company-name">No items</p>
+                        </div>
+                    </div>`;
+                preview.appendChild(emptyMessage);
+            }
         }
 
         updateListPreviews();

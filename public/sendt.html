@@ -1,80 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Email Verified</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #F4F4F4;
-    }
-    .line {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 20px;
-      background-color: #193583;
-    }
-    .line.bottom {
-      top: auto;
-      bottom: 0;
-      height: 20px;
-    }
-    .email-verified-container {
-      width: 275px;
-      padding: 20px;
-      background: #D9E3FD;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      position: relative;
-    }
-    .email-verified-container::before,
-    .email-verified-container::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background-color: #193583;
-    }
-    .email-verified-container::before {
-      top: 0;
-      border-radius: 8px 8px 0 0;
-    }
-    .email-verified-container::after {
-      bottom: 0;
-      border-radius: 0 0 8px 8px;
-    }
-    .email-verified-container h2 {
-      margin-bottom: 20px;
-    }
-    .email-verified-container p {
-      margin-bottom: 20px;
-    }
-    .bottom-left-image {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      width: 200px;
-      height: auto;
-    }
-  </style>
+  <title>E-post bekreftet</title>
+  <link rel="stylesheet" href="CSS/sendt.css">
 </head>
 <body>
-<div class="line"></div>
-<div class="email-verified-container">
-  <h2>Email Verified</h2>
-  <p>Check your inbox, an email has been sent to reset your password.</p>
-</div>
-<div class="line bottom"></div> <!-- Bunnmarg -->
-<img src="bilder/Kpmg.png" alt="Bottom Left Image" class="bottom-left-image"> <!-- KPMG logo -->
+  <div class="top-bar">
+    <div class="logo" id="logoText">Habilitetsregisteret</div>
+    <div class="icons">
+      <a href="profileTop.html"></a>
+      <div class="language-flags">
+        <img src="bilder/norway.png" alt="Norwegian Flag" class="flag" onclick="changeLanguage('norwegian')">
+        <img src="bilder/flagEng.png" alt="English Flag" class="flag" onclick="changeLanguage('english')">
+      </div>
+    </div>
+  </div>
+  <div class="line"></div>
+  <div class="email-verified-container">
+    <h2 id="emailVerifiedTitle">E-post bekreftet</h2>
+    <p id="emailVerifiedMessage">Sjekk innboksen din, en e-post har blitt sendt for å tilbakestille passordet ditt.</p>
+    <p id="redirectMessage">Omdirigerer til innlogging om <span id="countdown">5</span> sekunder...</p>
+  </div>
+  <div class="line bottom"></div> <!-- Bunnmarg -->
+  <img src="bilder/Kpmg.png" alt="Bottom Left Image" class="bottom-left-image"> <!-- KPMG logo -->
+
+  <script>
+    function changeLanguage(language) {
+      if (language === 'norwegian') {
+        document.getElementById('logoText').textContent = 'Habilitetsregisteret';
+        document.getElementById('emailVerifiedTitle').textContent = 'E-post bekreftet';
+        document.getElementById('emailVerifiedMessage').textContent = 'Sjekk innboksen din, en e-post har blitt sendt for å tilbakestille passordet ditt.';
+        document.getElementById('redirectMessage').innerHTML = 'Omdirigerer til innlogging om <span id="countdown">5</span> sekunder...';
+      } else if (language === 'english') {
+        document.getElementById('logoText').textContent = 'Register of Impartiality';
+        document.getElementById('emailVerifiedTitle').textContent = 'Email Verified';
+        document.getElementById('emailVerifiedMessage').textContent = 'Check your inbox, an email has been sent to reset your password.';
+        document.getElementById('redirectMessage').innerHTML = 'Redirecting to login in <span id="countdown">5</span> seconds...';
+      }
+    }
+
+    function startCountdown() {
+      var countdownElement = document.getElementById('countdown');
+      var countdown = 5;
+
+      var interval = setInterval(function() {
+        countdown--;
+        countdownElement.textContent = countdown;
+
+        if (countdown <= 0) {
+          clearInterval(interval);
+          window.location.href = 'login.html';
+        }
+      }, 1000);
+    }
+
+    window.onload = function() {
+      changeLanguage('norwegian');
+      startCountdown();
+    }
+  </script>
 </body>
 </html>

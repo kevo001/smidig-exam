@@ -7,29 +7,33 @@
     <link rel="stylesheet" href="CSS/Endeside.css">
 </head>
 <body>
-    <header class="top-bar">
-        <div class="logo">
-            <a href="Landing.html" style="text-decoration: none; color: inherit;">Habilitetsregisteret</a>
-        </div>
+    <div class="top-bar">
+        <div class="logo"><button class="logo-btn"><a href="/Landing.html" class="logo-redirect" id="logoText">Habilitetsregisteret</a></button></div>
         <div class="icons">
             <input type="checkbox" id="bell-checkbox" class="bell-checkbox">
             <label for="bell-checkbox">
                 <img src="/Bilder/Bell.png" alt="Bell Icon" class="icon">
             </label>
             <div class="notifications">
-                <p>Du har ingen nye varsler</p>
+                <p id="notificationMessage">Du har ingen nye varsler</p>
             </div>
-            <img src="/Bilder/User.png" alt="User Icon" class="icon">
-            <img src="/Bilder/Flag.png" alt="Norwegian Flag Icon" class="icon">
+            <a href="profileTop.html">
+                <img src="bilder/User.png" alt="User Icon" class="icon">
+            </a>
+            <div class="language-flags">
+                <img src="bilder/norway.png" alt="Norwegian Flag" class="flag" onclick="changeLanguage('norwegian')">
+                <img src="bilder/flagEng.png" alt="English Flag" class="flag" onclick="changeLanguage('english')">
+            </div>
         </div>
-    </header>
+    </div>
+
     <main>
         <div class="welcome-box">
             <img src="/Bilder/Smiley.gif" alt="Smiley" class="smiley-icon">
-            <p>Takk for at du har oppdatert dine opplysninger. Din innsats bidrar til å sikre at informasjonen er nøyaktig og oppdatert. Vi setter stor pris på ditt samarbeid!</p>
+            <p id="thankYouMessage">Takk for at du har oppdatert dine opplysninger. Din innsats bidrar til å sikre at informasjonen er nøyaktig og oppdatert. Vi setter stor pris på ditt samarbeid!</p>
             <div class="buttons">
-                <button class="glemt-noe" onclick="location.href='Landing.html'" id="glemt-noe-button">Glemt noe?</button>
-                <button class="hovedside-kpmg" onclick="location.href='www.kpmg.com'" id="hovedside-kpmg-button">Gå til hovedsiden</button>
+                <button class="glemt-noe" onclick="location.href='Landing.html'" id="glemtNoeButton">Glemt noe?</button>
+                <button class="hovedside-kpmg" onclick="location.href='https://www.kpmg.com'" id="hovedsideKpmgButton">Gå til hovedsiden</button>
             </div>
         </div>
     </main>
@@ -38,5 +42,24 @@
             <img src="/Bilder/Kpmg.png" alt="KPMG Logo">
         </div>
     </footer>
+
+<script>
+    function changeLanguage(language) {
+        if (language === 'norwegian') {
+            document.getElementById('logoText').textContent = 'Habilitetsregisteret';
+            document.getElementById('notificationMessage').textContent = 'Du har ingen nye varsler';
+            document.getElementById('thankYouMessage').textContent = 'Takk for at du har oppdatert dine opplysninger. Din innsats bidrar til å sikre at informasjonen er nøyaktig og oppdatert. Vi setter stor pris på ditt samarbeid!';
+            document.getElementById('glemtNoeButton').textContent = 'Glemt noe?';
+            document.getElementById('hovedsideKpmgButton').textContent = 'Gå til hovedsiden';
+        } else if (language === 'english') {
+            document.getElementById('logoText').textContent = 'Register of Impartiality';
+            document.getElementById('notificationMessage').textContent = 'You have no new notifications';
+            document.getElementById('thankYouMessage').textContent = 'Thank you for updating your information. Your effort helps to ensure that the information is accurate and up-to-date. We greatly appreciate your cooperation!';
+            document.getElementById('glemtNoeButton').textContent = 'Forgot something?';
+            document.getElementById('hovedsideKpmgButton').textContent = 'Go to the main page';
+        }
+    }
+</script>
+
 </body>
 </html>

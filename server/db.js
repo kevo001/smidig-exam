@@ -4,9 +4,9 @@ const mysql = require('mysql2');
 const pool = mysql.createPool({
     connectionLimit: 10,
     host: 'sql8.freesqldatabase.com',
-    user: 'sql8710557',
-    password: 'abXgy2Pw47',
-    database: 'sql8710557'
+    user: 'sql8712194',
+    password: '79YJfeSGaQ',
+    database: 'sql8712194'
 });
 
 module.exports = pool;

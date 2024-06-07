@@ -88,8 +88,7 @@ a:visited {
 }
 
 .logo img, .logo-container .logo {
-    width: 300px; 
-    height: 221px;
+    width: 150px; 
     display: block;
 }
 
@@ -296,30 +295,3 @@ form .step {
     font-size: 0.9em;
 }
 
-.progress-container {
-    width: 100%;
-    background-color: #e7e5e5;
-    border-radius: 25px;
-    overflow: hidden;
-    margin: 20px 0;
-    height: 20px;
-}
-
-.progress-bar {
-    width: 25%; 
-    height: 20px;
-    background: linear-gradient(to right, #4dabff, #2c5282); 
-    border-radius: 25px 0 0 25px;
-}
-
-.step-indicator {
-    text-align: center;
-    font-weight: bold;
-    color: #007bff;
-    margin-top: 10px;
-}
-
-.required {
-    color: red;
-    font-size: 120%;
-}

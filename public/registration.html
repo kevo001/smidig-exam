@@ -4,161 +4,51 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registration</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #F4F4F4;
-    }
-    .line {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 20px;
-      background-color: #193583;
-    }
-    .line.bottom {
-      top: auto;
-      bottom: 0;
-      height: 20px;
-    }
-    .registration-container {
-      width: 500px;
-      padding: 20px;
-      background: #D9E3FD;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      position: relative;
-    }
-    .registration-container::before,
-    .registration-container::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background-color: #193583;
-    }
-    .registration-container::before {
-      top: 0;
-      border-radius: 8px 8px 0 0;
-    }
-    .registration-container::after {
-      bottom: 0;
-      border-radius: 0 0 8px 8px;
-    }
-    .registration-container h2 {
-      margin-bottom: 20px;
-    }
-    .registration-container form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .registration-container label {
-      align-self: flex-start;
-      margin: 10px 0 5px;
-    }
-    .registration-container input {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      border: 1px solid #F4F4F4;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-    .registration-container button {
-      width: 100%;
-      padding: 10px;
-      background-color: #193583;
-      border: none;
-      border-radius: 4px;
-      color: #F4F4F4;
-      cursor: pointer;
-    }
-    .registration-container button:hover {
-      background-color: #193583;
-    }
-    .bottom-left-image {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      width: 200px;
-      height: auto;
-    }
-    .language-flags {
-      position: absolute;
-      top: 30px;
-      right: 30px;
-      display: flex;
-      gap: 10px;
-    }
-    .flag {
-      width: 30px;
-      height: auto;
-      cursor: pointer;
-    }
-    .flag:hover {
-      transform: scale(1.1);
-    }
-    .back-arrow {
-      position: absolute;
-      top: 30px;
-      left: 20px;
-      width: 50px;
-      height: auto;
-      cursor: pointer;
-    }
-    .back-arrow:hover {
-      transform: scale(1.1);
-    }
-  </style>
+  <link rel="stylesheet" href="CSS/registration.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bcryptjs/2.4.3/bcrypt.min.js"></script>
-</head>
 </head>
 <body>
 
-<div class="language-flags">
-  <img src="bilder/norway.png" alt="Norwegian Flag" class="flag" onclick="changeLanguage('norwegian')">
-  <img src="bilder/flagEng.png" alt="English Flag" class="flag" onclick="changeLanguage('english')">
+  <div class="top-bar">
+    <div class="logo">Habilitetsregisteret</div>
+    <div class="icons">
+        <div class="language-flags">
+          <img src="bilder/norway.png" alt="Norwegian Flag" class="flag" onclick="changeLanguage('norwegian')">
+          <img src="bilder/flagEng.png" alt="English Flag" class="flag" onclick="changeLanguage('english')">
+        </div>
+    </div>
 </div>
 
 <div class="line"></div> <!-- Top line -->
 <div class="registration-container">
   <h2 id="registrationText">Registrering</h2>
   <form id="registrationForm">
-    <label for="fname" id="fname">Navn:</label>
-    <input type="text" name="fname" required>
+    <label for="fname">Navn:</label>
+    <input type="text" id="fname" name="fname" required>
 
-    <label for="lname" id="lname">Etternavn:</label>
-    <input type="text" name="lname" required>
+    <label for="lname">Etternavn:</label>
+    <input type="text" id="lname" name="lname" required>
 
-    <label for="department" id="department">Avdeling:</label>
-    <input type="text" name="department" required>
+    <label for="department">Avdeling:</label>
+    <input type="text" id="department" name="department" required>
 
-    <label for="position" id="position">Posisjon:</label>
-    <input type="text" name="position" required>
+    <label for="position">Posisjon:</label>
+    <input type="text" id="position" name="position" required>
 
-    <label for="dateOfBirth" id="dateOfBirth">Date of Birth:</label>
-    <input type="date" name="dateOfBirth" required>
+    <label for="dateOfBirth">Date of Birth:</label>
+    <input type="date" id="dateOfBirth" name="dateOfBirth" required>
 
-    <label for="adress" id="adress">Adresse:</label>
-    <input type="text" name="adress" required>
+    <label for="address">Adresse:</label>
+    <input type="text" id="address" name="address" required>
 
-    <label for="email" id="email">E-Mail:</label>
-    <input type="email" name="email" required>
+    <label for="email">E-Mail:</label>
+    <input type="email" id="email" name="email" required>
 
-    <label for="tlf" id="tlf">Telefon:</label>
-    <input type="text" name="tlf" required>
+    <label for="tlf">Telefon:</label>
+    <input type="text" id="tlf" name="tlf" required>
 
-    <label for="password" id="password">Passord:</label>
-    <input type="password" name="password" required>
+    <label for="password">Passord:</label>
+    <input type="password" id="password" name="password" required>
 
     <button type="submit" id="register">Registrer</button>
   </form>
@@ -172,27 +62,27 @@
   function changeLanguage(language) {
     if (language === 'norwegian') {
       document.getElementById('registrationText').textContent = 'Registrering';
-      document.getElementById('fname').textContent = 'Navn:';
-      document.getElementById('lname').textContent = 'Etternavn:';
-      document.getElementById('department').textContent = 'Avdeling:';
-      document.getElementById('position').textContent = 'Posisjon:';
-      document.getElementById('dateOfBirth').textContent = 'Fødselsdato';
-      document.getElementById('adress').textContent = 'Adresse';
-      document.getElementById('email').textContent = 'E-Mail';
-      document.getElementById('tlf').textContent = 'Telefon';
-      document.getElementById('password').textContent = 'Passord';
+      document.querySelector('label[for="fname"]').textContent = 'Navn:';
+      document.querySelector('label[for="lname"]').textContent = 'Etternavn:';
+      document.querySelector('label[for="department"]').textContent = 'Avdeling:';
+      document.querySelector('label[for="position"]').textContent = 'Posisjon:';
+      document.querySelector('label[for="dateOfBirth"]').textContent = 'Fødselsdato';
+      document.querySelector('label[for="address"]').textContent = 'Adresse';
+      document.querySelector('label[for="email"]').textContent = 'E-Mail';
+      document.querySelector('label[for="tlf"]').textContent = 'Telefon';
+      document.querySelector('label[for="password"]').textContent = 'Passord';
       document.getElementById('register').textContent = 'Registrer';
     } else if (language === 'english') {
       document.getElementById('registrationText').textContent = 'Registration';
-      document.getElementById('fname').textContent = 'First name:';
-      document.getElementById('lname').textContent = 'Last name:';
-      document.getElementById('department').textContent = 'Department:';
-      document.getElementById('position').textContent = 'Position:';
-      document.getElementById('dateOfBirth').textContent = 'Date of birth';
-      document.getElementById('adress').textContent = 'Address';
-      document.getElementById('email').textContent = 'E-Mail';
-      document.getElementById('tlf').textContent = 'Phone nr:';
-      document.getElementById('password').textContent = 'Password';
+      document.querySelector('label[for="fname"]').textContent = 'First name:';
+      document.querySelector('label[for="lname"]').textContent = 'Last name:';
+      document.querySelector('label[for="department"]').textContent = 'Department:';
+      document.querySelector('label[for="position"]').textContent = 'Position:';
+      document.querySelector('label[for="dateOfBirth"]').textContent = 'Date of birth';
+      document.querySelector('label[for="address"]').textContent = 'Address';
+      document.querySelector('label[for="email"]').textContent = 'E-Mail';
+      document.querySelector('label[for="tlf"]').textContent = 'Phone nr:';
+      document.querySelector('label[for="password"]').textContent = 'Password';
       document.getElementById('register').textContent = 'Register';
     }
   }
@@ -206,13 +96,13 @@
       const department = document.getElementById('department').value;
       const position = document.getElementById('position').value;
       const dateOfBirth = document.getElementById('dateOfBirth').value;
-      const adress = document.getElementById('adress').value;
+      const address = document.getElementById('address').value;
       const email = document.getElementById('email').value;
       const tlf = document.getElementById('tlf').value;
       const password = document.getElementById('password').value;
 
       // Basic validation
-      if (fname === '' || lname === '' || department === '' || position === '' || dateOfBirth === '' || adress === '' || email === '' || tlf === '' || password === '') {
+      if (fname === '' || lname === '' || department === '' || position === '' || dateOfBirth === '' || address === '' || email === '' || tlf === '' || password === '') {
         throw new Error('Please fill in all fields');
       }
 
@@ -223,7 +113,7 @@
         department,
         position,
         dateOfBirth,
-        adress,
+        address,
         email,
         tlf,
         password

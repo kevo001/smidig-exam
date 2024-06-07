@@ -9,6 +9,25 @@ body, html {
     flex-direction: column;
 }
 
+.logo-btn {
+    background-color: #003366;
+    border: none;
+    text-decoration: none;
+    font-weight: bold;
+    color: aliceblue;
+    font-size: 1.25em;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+    color: aliceblue;
+    background-color: #003366;
+}
+
 .top-bar {
     background-color: #003366;
     border-bottom: 1px solid #ccc;
@@ -40,21 +59,36 @@ body, html {
     height: 20px;
 }
 
-.notifications {
+/* Notification Checkbox */
+.bell-checkbox {
     display: none;
-    position: absolute;
-    top: 50px;
-    right: 20px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 10px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
 }
 
+/* Show notifications if checkbox is checked */
 .bell-checkbox:checked + label + .notifications {
     display: block;
 }
 
+/* Notification Box Styles */
+.notifications {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    z-index: 3;
+}
+
+.notifications p {
+    margin: 0;
+    color: #333;
+    line-height: 1.5;
+}
 
 .container {
     display: grid;
@@ -70,8 +104,8 @@ body, html {
 button.card {
     all: unset;
     cursor: pointer;
-    width: 400px;
-    height: 300px;
+    width: 600px;
+    height: 400px;
     background-color: #a6b1c4;
     border-radius: 20px;
     display: flex;
@@ -81,6 +115,7 @@ button.card {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
     position: relative;
+    overflow: hidden;
 }
 
 .card-content {
@@ -92,38 +127,14 @@ button.card {
 }
 
 .card:hover {
-    scale: 1.05;
-}
-
-.list-preview {
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 10px;
-    margin-bottom: 10px; 
-    text-align: center;
-}
-
-.add-new {
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    margin-top: auto;
-    align-self: center;
-}
-
-.add-new:hover {
-    background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 .card-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 10%;
 }
 
 .card-footer .arrow {
@@ -152,6 +163,10 @@ button.card {
     height: 70%;
     border-radius: 20px;
     position: relative;
+}
+
+.popup-box {
+    max-width: 90%;
 }
 
 .close {
@@ -230,7 +245,6 @@ button.card {
     color: #fff;
 } 
 
-
 .leggtil {
     background-color: #003366;
     position: absolute;
@@ -255,24 +269,25 @@ button.card {
 }
 
 .nyttForhold {
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
+    background-color: #ffff;
     border-radius: 10px;
     margin-bottom: 10px; 
-    text-align: center;
     width: 100%;
-    height: 30px;
-    padding-top: 10px;
+    height: 20%;
+    margin-left: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
 }
 
 #nyttForhold-btn {
     border-radius: 10px;
     margin-bottom: 10px; 
-    text-align: center;
     text-decoration: none;
     color: black;
-    width: 100%;
-    padding-top: 10px;
+    margin-top: 20px;
+    z-index: 1;
 }
 
 #nyttForhold-btn::after, :visited {
@@ -282,4 +297,226 @@ button.card {
 
 a:visited {
     text-decoration: none;
+}
+
+#verification {
+    width: 50px;
+    position: relative;
+    margin-left: auto; 
+    margin-right: 20px;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    line-height: 0.1;
+    height: 70px;
+}
+
+h3 {
+    margin: 0px;
+}
+
+.box a {
+    position: relative;
+    margin-left: 300px;
+    margin-bottom: 0;
+}
+
+.box p {
+    margin-top: 0;
+}
+
+h6 {
+    margin-bottom: 0;
+}
+    
+.list-preview {
+    background-color: #a6b1c4;
+    border: none;
+    border-radius: 10px;
+    padding: 10px; 
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    height: auto;  
+    width: auto;
+}
+
+.list-preview .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    line-height: 0.1;
+}
+
+.list-preview h3 {
+    margin: 0px;
+}
+
+.list-preview p {
+    margin-top: 0;
+}
+
+.list-preview img {
+    width: 20px;
+    height: 20px;
+}
+
+.history-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: white;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-left: 0px;
+    width: 100%;
+}
+
+
+.company-info {
+    display: flex;
+    align-items: center;
+    height: 7vh;
+}
+
+.company-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.company-text {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+}
+
+.company-name {
+    font-weight: bold;
+    margin-top: 10%;
+}
+
+.update-date {
+    font-size: 0.9em;
+    color: gray;
+    margin-left: 20px;
+}
+
+.status {
+    padding: 5px 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin-left: auto;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+}
+
+.actions a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: blue;
+}
+
+.status-icon {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+}
+
+#preview-1 {
+    background-color:#a6b1c4;
+    border: none;
+}
+
+.card-content {
+    overflow: hidden;
+    padding: 10px;
+    box-sizing: border-box;
+    
+}
+
+.card-footer {
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+button.card {
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.card-content h3, .card-content p {
+    margin: 0;
+}
+
+.language-flags {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    gap: 10px;
+}
+
+.flag {
+    width: 30px;
+    height: auto;
+    cursor: pointer;
+}
+
+  .flag:hover {
+    transform: scale(1.1);
+}
+
+.green-button {
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: fixed;
+    right: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 180px;
+}
+
+.green-button:hover {
+    background-color: #218838;
+}
+
+.blue-button{
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: fixed;
+    right: 100px;
+    top: 40%;
+    transform: translateY(-50%);
+}
+
+.blue-button:hover{
+    background-color: #218838 ;
 }

@@ -21,8 +21,13 @@
         <div class="notifications">
             <p>Du har ingen nye varsler</p>
         </div>
-        <img src="bilder/User.png" alt="User Icon" class="icon">
-        <img src="bilder/flagEng.png" alt="Norwegian Flag Icon" class="icon">
+        <a href="profileTop.html">
+          <img src="bilder/User.png" alt="User Icon" class="icon">
+        </a>
+        <div class="language-flags">
+          <img src="bilder/norway.png" alt="Norwegian Flag" class="flag" onclick="changeLanguage('norwegian')">
+          <img src="bilder/flagEng.png" alt="English Flag" class="flag" onclick="changeLanguage('english')">
+      </div>
     </div>
 </div>
 
@@ -311,25 +316,37 @@
 <div class="line bottom"></div>
 <img src="bilder/Kpmg.png" alt="Bottom Left Image" class="bottom-left-image">
 
-<a href="main.html"><img src="bilder/back.png" alt="Back Arrow" class="back-arrow"></a> <!-- Tilbake knapp -->
+<a href="Landing.html"><img src="bilder/back.png" alt="Back Arrow" class="back-arrow"></a> <!-- Tilbake knapp -->
 
 <script>
-  function changeLanguage(language) {
+   function changeLanguage(language) {
     const profilhistorikkText = document.getElementById('profilhistorikkText');
     const recentlyAddedText = document.getElementById('recentlyAddedText');
-    const labels = document.querySelectorAll('.profilhistorikk-container label');
-    const buttons = document.querySelectorAll('.profilhistorikk-container button');
+    const noNotificationsText = document.getElementById('noNotificationsText');
+    const boardMemberText = document.getElementById('boardMemberText');
+    const processingText = document.getElementById('processingText');
+    const goToCaseText = document.getElementById('goToCaseText');
+    const editText = document.getElementById('editText');
 
     if (language === 'norwegian') {
       profilhistorikkText.textContent = 'Profilhistorikk';
       recentlyAddedText.textContent = 'Nylig lagt til:';
-      // Other translations if needed
+      noNotificationsText.textContent = 'Du har ingen nye varsler';
+      boardMemberText.textContent = 'Styrets leder';
+      processingText.textContent = 'Under behandling';
+      goToCaseText.textContent = 'Gå til sak';
+      editText.textContent = 'Endre';
+      
     } else if (language === 'english') {
       profilhistorikkText.textContent = 'Profile History';
       recentlyAddedText.textContent = 'Recently Added:';
-      // Other translations if needed
+      noNotificationsText.textContent = 'You have no new notifications';
+      boardMemberText.textContent = 'Board Member';
+      processingText.textContent = 'Processing';
+      goToCaseText.textContent = 'Go to case';
+      editText.textContent = 'Edit';
     }
-  }
+  } 
 </script>
 </body>
 </html>
