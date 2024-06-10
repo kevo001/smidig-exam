@@ -9,6 +9,27 @@ body {
   flex-direction: column;
   position: relative;
 }
+
+.logo-btn {
+  background-color: #003366;
+  border: none;
+  text-decoration: none;
+  font-weight: bold;
+  color: aliceblue;
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+  color: aliceblue;
+  background-color: #003366;
+}
+
 .line {
   position: fixed;
   top: 0;

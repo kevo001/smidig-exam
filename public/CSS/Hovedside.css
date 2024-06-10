@@ -34,7 +34,7 @@ a:visited {
     display: flex;
     align-items: center;
     padding: 10px 20px;
-    background-color: #003366;
+    background-color: #00338D;
     color: white;
     position: fixed;
     top: 0;
@@ -217,7 +217,7 @@ main {
 
 /* Bottom Bar Styles */
 .bottom-bar {
-    background-color: #003366;
+    background-color: #00338D;
     padding: 20px 20px;
     position: absolute;
     bottom: 0;
