@@ -9,7 +9,7 @@ body {
 }
 
 .logo-btn {
-  background-color: #003366;
+  background-color: #00338D;
   border: none;
   text-decoration: none;
   font-weight: bold;
@@ -25,7 +25,7 @@ a {
 a:visited {
   text-decoration: none;
   color: aliceblue;
-  background-color: #003366;
+  background-color: #00338D;
 }
 
 .line {
@@ -34,7 +34,7 @@ a:visited {
   left: 0;
   width: 100%;
   height: 20px;
-  background-color: #193583;
+  background-color: #00338D;
 }
 
 .line.bottom {
@@ -45,18 +45,29 @@ a:visited {
 
 .profilhistorikk-container {
   width: 50%;
-  height: calc(100vh - 280px); /* Full height minus top and bottom lines */
+  height: calc(95vh - 280px); /* Full height minus top and bottom lines */
   padding: 20px;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 110px 0 0 20px;
+  margin: 12% 0 0 25%;
   overflow-y: auto;
 }
 
 h2, h3 {
   margin: 0;
   padding: 10px 0;
+}
+
+.header-div {
+  position: absolute;
+  width: 50%;
+  display: inline-block;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 5% 0 0 25%;
 }
 
 .profile-history {
@@ -147,8 +158,7 @@ h2, h3 {
 
 .back-arrow {
   position: absolute;
-  top: 55px;
-  left: 20px;
+  margin: 4% 0 0 -75%;
   width: 50px;
   height: auto;
   cursor: pointer;
@@ -158,7 +168,7 @@ h2, h3 {
   display: flex;
   align-items: center;
   padding: 10px 20px;
-  background-color: #003366;
+  background-color: #00338D;
   color: white;
   position: fixed;
   top: 0;

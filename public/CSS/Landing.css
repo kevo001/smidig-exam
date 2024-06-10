@@ -1,21 +1,21 @@
 body, html {
-    height: 100%;
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: #d3d6db;
     font-family: Arial, sans-serif;
-    flex-direction: column;
+    background-color: #D9E3FD;
 }
 
 .logo-btn {
-    background-color: #003366;
+    background-color: #00338D;
     border: none;
     text-decoration: none;
     font-weight: bold;
     color: aliceblue;
     font-size: 1.25em;
+}
+
+.border span {
+    align-items: center;
 }
 
 a {
@@ -25,29 +25,30 @@ a {
 a:visited {
     text-decoration: none;
     color: aliceblue;
-    background-color: #003366;
+    background-color: #00338D;
 }
 
 .top-bar {
-    background-color: #003366;
-    border-bottom: 1px solid #ccc;
-    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #00338D;
+    padding: 10.5px 20px;
+    color: white;
     width: 100%;
-    z-index: 1000;
-    top: 0;
-    position: fixed;
+    box-sizing: border-box
 }
 
 .top-bar .logo {
-    font-size: 1.5em;
     font-weight: bold;
     color: aliceblue;
-    margin-left: 20px;
+    margin-left: 0px;
 }
-
+.logo p {
+    padding: 1px 6px;
+    margin: 0;
+    font-size: 1.5em;
+}
 .icons {
     display: flex;
     align-items: center;
@@ -55,8 +56,68 @@ a:visited {
 
 .icons .icon {
     margin-left: 15px;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
+}
+.header-middle {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    justify-content: space-between;
+    border-bottom: 2px solid #00338D;
+}
+
+.alert-box {
+    display: flex;
+    align-items: center;
+}
+
+.alert-icon {
+    color: red;
+    margin-right: 10px;
+}
+
+.border {
+    display: flex;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #00338D;
+    align-items: center;
+    justify-content: center;
+}
+
+.alert-button {
+    background-color: #00338D;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.stacked-txt {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.header-button {
+    background-color: #00338D;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: medium;
+}
+
+main {
+    padding-top: 20px;
 }
 
 /* Notification Checkbox */
@@ -92,13 +153,11 @@ a:visited {
 
 .container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    justify-content: center;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto;
     align-items: center;
-    width: 100%;
-    max-width: 840px;
-    padding: 100px 20px 20px;
+    justify-content: center;
+    gap: 20px;
 }
 
 button.card {
@@ -106,7 +165,7 @@ button.card {
     cursor: pointer;
     width: 600px;
     height: 400px;
-    background-color: #a6b1c4;
+    background-color: #ffff;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -155,7 +214,7 @@ button.card {
 }
 
 .popup-content {
-    background-color: #a6b1c4;
+    background-color: #ffff;
     margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
@@ -170,7 +229,7 @@ button.card {
 }
 
 .close {
-    color: #ffffff;
+    color: grey;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -189,7 +248,7 @@ button.card {
 }
 
 .list-btn {
-    background-color: #a6b1c4;
+    background-color: #ffff;
     border: none;
     font-size: 100%;
     border-bottom: 2px solid grey;
@@ -203,7 +262,7 @@ button.card {
 }
 
 .active-button {
-    border-bottom: 2px solid #003366;
+    border-bottom: 2px solid #00338D;
 }
 
 #Skjema1 {
@@ -246,7 +305,7 @@ button.card {
 } 
 
 .leggtil {
-    background-color: #003366;
+    background-color: #00338D;
     position: absolute;
     right: 5%;
     bottom: 5%;
@@ -257,7 +316,7 @@ button.card {
 }
 
 .leggtil:after:visited {
-    background-color: #003366;
+    background-color: #00338D;
     position: absolute;
     right: 5%;
     bottom: 5%;
@@ -269,7 +328,7 @@ button.card {
 }
 
 .nyttForhold {
-    background-color: #ffff;
+    background-color: #D9E3FD;
     border-radius: 10px;
     margin-bottom: 10px; 
     width: 100%;
@@ -278,7 +337,6 @@ button.card {
     text-align: center;
     display: flex;
     justify-content: center;
-    z-index: 1;
 }
 
 #nyttForhold-btn {
@@ -287,7 +345,6 @@ button.card {
     text-decoration: none;
     color: black;
     margin-top: 20px;
-    z-index: 1;
 }
 
 #nyttForhold-btn::after, :visited {
@@ -333,7 +390,7 @@ h6 {
 }
     
 .list-preview {
-    background-color: #a6b1c4;
+    background-color: #ffff;
     border: none;
     border-radius: 10px;
     padding: 10px; 
@@ -372,7 +429,7 @@ h6 {
     justify-content: space-between;
     padding: 10px;
     border: 1px solid #ccc;
-    background-color: white;
+    background-color: #D9E3FD;;
     margin-bottom: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -404,6 +461,10 @@ h6 {
     margin-top: 10%;
 }
 
+.company-text p {
+    margin: 0;
+}
+
 .update-date {
     font-size: 0.9em;
     color: gray;
@@ -412,7 +473,7 @@ h6 {
 
 .status {
     padding: 5px 10px;
-    background-color: #ddd;
+    background-color: #ffff;
     border-radius: 5px;
     margin-left: auto;
 }
@@ -435,7 +496,6 @@ h6 {
 }
 
 #preview-1 {
-    background-color:#a6b1c4;
     border: none;
 }
 
@@ -479,7 +539,7 @@ button.card {
 }
 
 .green-button {
-    background-color: #003366;
+    background-color: #00338D;
     color: white;
     border: none;
     padding: 15px 30px;
@@ -501,7 +561,7 @@ button.card {
 }
 
 .blue-button{
-    background-color: #003366;
+    background-color: #00338D;
     color: white;
     border: none;
     padding: 15px 30px;
@@ -520,3 +580,4 @@ button.card {
 .blue-button:hover{
     background-color: #218838 ;
 }
+

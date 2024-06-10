@@ -18,8 +18,9 @@
             <div class="notifications">
                 <p>Du har ingen nye varsler</p>
             </div>
-            <img src="/Bilder/User.png" alt="User Icon" class="icon">
-            <img src="/Bilder/Flag.png" alt="Norwegian Flag Icon" class="icon">
+            <a href="/profileTop.html"><img src="/Bilder/User.png" alt="User Icon" class="icon"></a>
+            <img src="/bilder/norway.png" alt="Norwegian Flag" class="icon" onclick="changeLanguage('norwegian')">
+            <img src="/bilder/flagEng.png" alt="English Flag" class="icon" onclick="changeLanguage('english')">
         </div>
     </div>
 
@@ -46,26 +47,26 @@
 
         <!-- Header Section -->
         <header>
-            <h1>Opplyse om eksisterende eller tidligere relasjon</h1>
+            <h1 id="title-text">Opplyse om eksisterende eller tidligere relasjon</h1>
         </header>
 
         <!-- Form Section -->
         <form>
             <!-- First Name Field -->
             <div class="form-group">
-                <label for="first-name">Fornavn/mellomnavn <span class="required">*</span></label>
+                <label for="first-name" id="first-name-label">Fornavn/mellomnavn <span class="required">*</span></label>
                 <input type="text" id="first-name" name="first-name">
             </div>
 
             <!-- Last Name Field -->
             <div class="form-group">
-                <label for="last-name">Etternavn <span class="required">*</span></label>
+                <label for="last-name" id="last-name-label">Etternavn <span class="required">*</span></label>
                 <input type="text" id="last-name" name="last-name">
             </div>
 
             <!-- Date of Birth Fields -->
             <div class="form-group">
-                <label for="dob">Fødselsdato <span class="required">*</span></label>
+                <label for="dob" id="dob-label">Fødselsdato <span class="required">*</span></label>
                 <input type="text" id="dob" name="dob" placeholder="dd">
                 <input type="text" id="dob-month" name="dob-month" placeholder="mm">
                 <input type="text" id="dob-year" name="dob-year" placeholder="yyyy">
@@ -73,16 +74,16 @@
 
             <!-- Abroad Radio Buttons -->
             <div class="form-group">
-                <label for="abroad">Bor du i utlandet <span class="required">*</span></label>
+                <label for="abroad" id="abroad-label">Bor du i utlandet <span class="required">*</span></label>
                 <div class="radio-group">
-                    <label for="abroad-yes" style ="color: black;"><input type="radio" id="abroad-yes" name="abroad" value="yes"><b>Ja</b> </label>
-                    <label for="abroad-no" style ="color: black;"><input type="radio" id="abroad-no" name="abroad" value="no"><b>Nei</b></label>
+                    <label for="abroad-yes" id="abroad-yes" style ="color: black;"><input type="radio" name="abroad" value="yes"><b>Ja</b> </label>
+                    <label for="abroad-no" id="abroad-no" style ="color: black;"><input type="radio" name="abroad" value="no"><b>Nei</b></label>
                 </div>
             </div>
 
             <!-- Address Fields -->
             <div class="form-group">
-                <label for="address">Adresse <span class="required">*</span></label>
+                <label for="address" id="address-label">Adresse <span class="required">*</span></label>
                 <input type="text" id="address" name="address">
                 <input type="text" id="postnr" name="postnr" placeholder="Postnr">
                 <input type="text" id="poststed" name="poststed" placeholder="Poststed">
@@ -90,7 +91,7 @@
 
             <!-- Relation Type Dropdown -->
             <div class="form-group">
-                <label for="relation-type">Type relasjon <span class="required">*</span></label>
+                <label for="relation-type" id="relation-type-label">Type relasjon <span class="required">*</span></label>
                 <select id="relation-type" name="relation-type">
                     <option value="">Velg...</option>
                     <option value="relation1">Relasjon 1</option>
@@ -100,19 +101,19 @@
 
             <!-- Comments Field -->
             <div class="form-group">
-                <label for="comments">Kommentar</label>
+                <label for="comments" id="comments-label">Kommentar</label>
                 <textarea id="comments" name="comments"></textarea>
             </div>
 
             <!-- Required Fields Notice -->
             <div class="form-group">
-                <span class="required">*</span> Påkrevde felt
+                <p id="required-text"><span class="required">*</span> <span id="required-label">Påkrevde felter</span></p>
             </div>
 
             <!-- Form Action Buttons -->
             <div class="form-actions">
-                <a href="/Skjema/SkjemaTo.html" class="cancel-button">AVBRYT</a>
-                <a href="/Skjema/SkjemaFire.html" class="confirm-button">BEKREFT</a>
+                <a href="/Skjema/SkjemaTo.html" class="cancel-button" id="cancel-button-text">AVBRYT</a>
+                <a href="/Skjema/SkjemaFire.html" class="confirm-button" id="submit-button-text">BEKREFT</a>
             </div>
         </form>
 
@@ -121,7 +122,7 @@
             <div class="progress-container">
                 <div class="progress-bar"></div>
             </div>
-            <div class="step-indicator">Step 3 of 4</div>
+            <div class="step-indicator" id="step-indicator-text">Step 3 of 4</div>
         </footer>
     </div>
 
@@ -136,6 +137,42 @@
                 infoField.style.maxHeight = '0';
             }
         });
+
+        function changeLanguage(language) {
+    if (language === 'norwegian') {
+        document.getElementById('title-text').innerHTML = 'Opplyse om eksisterende eller tidligere relasjon';
+        document.getElementById('first-name-label').innerHTML = 'Fornavn/mellomnavn <span class="required">*</span>';
+        document.getElementById('last-name-label').innerHTML = 'Etternavn <span class="required">*</span>';
+        document.getElementById('dob-label').innerHTML = 'Fødselsdato <span class="required">*</span>';
+        document.getElementById('abroad-label').innerHTML = 'Bor du i utlandet <span class="required">*</span>';
+        document.getElementById('abroad-yes').innerHTML = '<input type="radio" name="abroad" value="yes"><b>Ja</b>';
+        document.getElementById('abroad-no').innerHTML = '<input type="radio" name="abroad" value="no"><b>Nei</b>';
+        document.getElementById('address-label').innerHTML = 'Adresse <span class="required">*</span>';
+        document.getElementById('relation-type-label').innerHTML = 'Type relasjon <span class="required">*</span>';
+        document.getElementById('comments-label').innerHTML = 'Kommentar';
+        document.getElementById('postnr').placeholder = 'Postnr';
+        document.getElementById('poststed').placeholder = 'Poststed';
+        document.getElementById('required-text').innerHTML = '<span class="required">*</span> <span id="required-label">Påkrevde felter</span>';
+        document.getElementById('cancel-button-text').innerHTML = 'AVBRYT';
+        document.getElementById('submit-button-text').innerHTML = 'BEKREFT';
+    } else if (language === 'english') {
+        document.getElementById('title-text').innerHTML = 'Declare existing or previous relationship';
+        document.getElementById('first-name-label').innerHTML = 'First name/middle name <span class="required">*</span>';
+        document.getElementById('last-name-label').innerHTML = 'Last name <span class="required">*</span>';
+        document.getElementById('dob-label').innerHTML = 'Date of birth <span class="required">*</span>';
+        document.getElementById('abroad-label').innerHTML = 'Do you live abroad? <span class="required">*</span>';
+        document.getElementById('abroad-yes').innerHTML = '<input type="radio" name="abroad" value="yes"><b>Yes</b>';
+        document.getElementById('abroad-no').innerHTML = '<input type="radio" name="abroad" value="no"><b>No</b>';
+        document.getElementById('address-label').innerHTML = 'Address <span class="required">*</span>';
+        document.getElementById('relation-type-label').innerHTML = 'Relation type <span class="required">*</span>';
+        document.getElementById('comments-label').innerHTML = 'Comment';
+        document.getElementById('postnr').placeholder = 'Postcode';
+        document.getElementById('poststed').placeholder = 'Place';
+        document.getElementById('required-text').innerHTML = '<span class="required">*</span> <span id="required-label">Required fields</span>';
+        document.getElementById('cancel-button-text').innerHTML = 'CANCEL';
+        document.getElementById('submit-button-text').innerHTML = 'CONFIRM';
+    }
+}
     </script>
 
 </body>

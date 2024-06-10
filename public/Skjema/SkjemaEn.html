@@ -20,8 +20,9 @@
             <div class="notifications">
                 <p>Du har ingen nye varsler</p>
             </div>
-            <img src="/Bilder/User.png" alt="User Icon" class="icon">
-            <img src="/Bilder/Flag.png" alt="Norwegian Flag Icon" class="icon">
+            <a href="profileTop.html"><img src="/Bilder/User.png" alt="User Icon" class="icon"></a>
+            <img src="/bilder/norway.png" alt="Norwegian Flag" class="icon" onclick="changeLanguage('norwegian')">
+            <img src="/bilder/flagEng.png" alt="English Flag" class="icon" onclick="changeLanguage('english')">
         </div>
     </div>
     <button id="imgButton">
@@ -37,8 +38,6 @@
         <br> <br>- Eierinteresser i verdipapirfond trenger du ikke registrere.
     </div>
 
-
-    
     <form>
         <div class="logo-container">
             <div class="logo">
@@ -47,9 +46,9 @@
         </div>
         <div>
             <header>
-                <h2>Opplyse om eksisterende eller tidligere eierinteresse</h1>
+                <h2 id="title-text">Opplyse om eksisterende eller tidligere eierinteresse</h1>
             </header>
-            <label for="land">Land <span class="required"> * </span></label> 
+            <label for="land" id="country-text">Land <span class="required"> * </span></label> 
             <select id="land" name="land">
                 <option value=""></option>
                 <option value="Norge">Norge</option>
@@ -57,29 +56,29 @@
         </div>
         <br>
         <div>    
-            <label for="org-navn">Navn på organisasjon  <span class="required"> * </span></label>
+            <label for="org-navn" id="orgName-text">Navn på organisasjon  <span class="required"> * </span></label>
             <input type="text" id="org-navn" name="org-navn">
         </div>
         <br>
         <div>    
-            <label for="org-nummer">Organisasjonsnummer  <span class="required"> * </span></label>
+            <label for="org-nummer" id="orgNumber-text">Organisasjonsnummer  <span class="required"> * </span></label>
             <input type="number" id="org-nummer" name="org-nummer">
         </div>
         <br>
         <div>    
-            <label>Er selskapet børsnotert?  <span class="required"> * </span></label>
+            <label id="radio-text">Er selskapet børsnotert?  <span class="required"> * </span></label>
             <div class="checkbox-group">
-                <label for="bors-ja">Ja
+                <label for="bors-ja" id="yes-text">Ja
                     <input type="radio" id="bors-ja" name="borsnotert" value="ja">
                 </label>
-                <label for="bors-nei">Nei
+                <label for="bors-nei" id="no-text">Nei
                     <input type="radio" id="bors-nei" name="borsnotert" value="nei">
                 </label>
             </div>
         </div>
         <br>
-        <div>
-            <label for="aksjeklasse">Aksjeklasse  <span class="required"> * </span></label>
+        <div>    
+            <label for="aksjeklasse" id="class-text">Aksjeklasse  <span class="required"> * </span></label>
             <select id="aksjeklasse" name="aksjeklasse">
                 <option value=""></option>
                 <option value="klasse">Klasse</option>
@@ -87,53 +86,54 @@
         </div>
         <br>
         <div>    
-            <label for="antall">Antall Aksjer  <span class="required"> * </span></label>
+            <label for="antall" id="shares-text">Antall Aksjer  <span class="required"> * </span></label>
             <input type="number" id="antall" name="antall">
         </div>
         <br>
         <div>    
-            <label>Status drift i selskapet?  <span class="required"> * </span></label>
+            <label id="status-text">Status drift i selskapet?  <span class="required"> * </span></label>
             <div class="checkbox-group">
-                <label for="aktiv">Aktiv
+                <label for="aktiv" id="active-text">Aktiv
                     <input type="radio" id="aktiv" name="driftstatus" value="aktiv">
                 </label>
-                <label for="ikke-aktiv">Ikke Aktiv
+                <label for="ikke-aktiv" id="inactive-text">Ikke Aktiv
                     <input type="radio" id="ikke-aktiv" name="driftstatus" value="ikke-aktiv">
                 </label>
             </div>
         </div>
         <br>
         <div>    
-            <label for="fra">Eierskap fra</label>
+            <label for="fra" id="from-text">Eierskap fra</label>
             <input type="date" id="fra" name="fra">
-            <label for="til">Eierskap til</label>
+            <label for="til" id="to-text">Eierskap til</label>
             <input type="date" id="til" name="til">
         </div>
         <br>
         <div>    
-            <label for="kommentar">Kommentar</label>
+            <label for="kommentar" id="comment-text">Kommentar</label>
             <textarea id="kommentar" name="kommentar" rows="4"></textarea>
         </div>
         <br>
         <div>    
-            <label>Er forholdet relevant for din habilitet?  <span class="required"> * </span></label>
+            <label id="relevant-text">Er forholdet relevant for din habilitet?  <span class="required"> * </span></label>
             <div class="checkbox-group">
-                <label for="habilitet-ja">Ja
+                <label for="habilitet-ja" id="relevant-yes-text">Ja
                     <input type="radio" id="habilitet-ja" name="habilitet" value="ja">
                 </label>
-                <label for="habilitet-nei">Nei
+                <label for="habilitet-nei" id="relevant-no-text">Nei
                     <input type="radio" id="habilitet-nei" name="habilitet" value="nei">
                 </label>
             </div>
         </div>
         
         <div class="form-group">
-            <span class="required">*</span> Påkrevde felt
+            <p id="required-text"><span class="required">*</span> <span id="required-label">Påkrevde felter</span></p>
         </div>
         <br>
         <div class="buttons">
-            <a href="/Hovedside.html" class="cancel-button">AVBRYT</a>
-            <a href="/Skjema/SkjemaTo.html" class="submit-button">BEKREFT</a>
+            
+            <a href="/Hovedside.html" class="cancel-button" id="cancel-button-text">AVBRYT</a>
+            <a href="/Skjema/SkjemaTo.html" class="submit-button" id="submit-button-text">BEKREFT</a>
         </div>
         
         <div class="progress-container">
@@ -153,6 +153,53 @@
                 infoField.style.maxHeight = '0';
             }
         });
+        function changeLanguage(language) {
+            if (language === 'norwegian') {
+                document.getElementById('title-text').innerHTML = 'Opplyse om eksisterende eller tidligere eierinteresse';
+                document.getElementById('country-text').innerHTML = 'Land <span class="required"> * </span>';
+                document.getElementById('orgName-text').innerHTML = 'Navn på organisasjon  <span class="required"> * </span>';
+                document.getElementById('orgNumber-text').innerHTML = 'Organisasjonsnummer  <span class="required"> * </span>';
+                document.getElementById('radio-text').innerHTML = 'Er selskapet børsnotert?  <span class="required"> * </span>';
+                document.getElementById('yes-text').innerHTML = 'Ja <input type="radio" id="bors-ja" name="borsnotert" value="ja">';
+                document.getElementById('no-text').innerHTML = 'Nei <input type="radio" id="bors-nei" name="borsnotert" value="nei">';
+                document.getElementById('class-text').innerHTML = 'Aksjeklasse  <span class="required"> * </span>';
+                document.getElementById('shares-text').innerHTML = 'Antall Aksjer  <span class="required"> * </span>';
+                document.getElementById('status-text').innerHTML = 'Status drift i selskapet?  <span class="required"> * </span>';
+                document.getElementById('active-text').innerHTML = 'Aktiv <input type="radio" id="aktiv" name="driftstatus" value="aktiv">';
+                document.getElementById('inactive-text').innerHTML = 'Ikke Aktiv <input type="radio" id="ikke-aktiv" name="driftstatus" value="ikke-aktiv">';
+                document.getElementById('from-text').innerHTML = 'Eierskap fra';
+                document.getElementById('to-text').innerHTML = 'Eierskap til';
+                document.getElementById('comment-text').innerHTML = 'Kommentar';
+                document.getElementById('relevant-text').innerHTML = 'Er forholdet relevant for din habilitet?  <span class="required"> * </span>';
+                document.getElementById('relevant-yes-text').innerHTML = 'Ja <input type="radio" id="habilitet-ja" name="habilitet" value="ja">';
+                document.getElementById('relevant-no-text').innerHTML = 'Nei <input type="radio" id="habilitet-nei" name="habilitet" value="nei">';
+                document.getElementById('required-text').innerHTML = '<span class="required">*</span> <span id="required-label">Påkrevde felter</span>';
+                document.getElementById('cancel-button-text').innerHTML = 'AVBRYT';
+                document.getElementById('submit-button-text').innerHTML = 'BEKREFT';
+            } else if (language === 'english') {
+                document.getElementById('title-text').innerHTML = 'Inform about existing or previous ownership interest';
+                document.getElementById('country-text').innerHTML = 'Country <span class="required"> * </span>';
+                document.getElementById('orgName-text').innerHTML = 'Name of Organization <span class="required"> * </span>';
+                document.getElementById('orgNumber-text').innerHTML = 'Organization number  <span class="required"> * </span>';
+                document.getElementById('radio-text').innerHTML = 'Is the company listed on the stock exchange? <span class="required"> * </span>';
+                document.getElementById('yes-text').innerHTML = 'Yes <input type="radio" id="bors-ja" name="borsnotert" value="ja">';
+                document.getElementById('no-text').innerHTML = 'No <input type="radio" id="bors-nei" name="borsnotert" value="nei">';
+                document.getElementById('class-text').innerHTML = 'Class of shares  <span class="required"> * </span>';
+                document.getElementById('shares-text').innerHTML = 'Number of shares  <span class="required"> * </span>';
+                document.getElementById('status-text').innerHTML = 'Operational status in the company?  <span class="required"> * </span>';
+                document.getElementById('active-text').innerHTML = 'Active <input type="radio" id="aktiv" name="driftstatus" value="aktiv">';
+                document.getElementById('inactive-text').innerHTML = 'Inactive <input type="radio" id="ikke-aktiv" name="driftstatus" value="ikke-aktiv">';
+                document.getElementById('from-text').innerHTML = 'Ownership from';
+                document.getElementById('to-text').innerHTML = 'Ownership to';
+                document.getElementById('comment-text').innerHTML = 'Comment';
+                document.getElementById('relevant-text').innerHTML = 'Is the relationship relevant to your impartiality?  <span class="required"> * </span>';
+                document.getElementById('relevant-yes-text').innerHTML = 'Yes <input type="radio" id="habilitet-ja" name="habilitet" value="ja">';
+                document.getElementById('relevant-no-text').innerHTML = 'No <input type="radio" id="habilitet-nei" name="habilitet" value="nei">';
+                document.getElementById('required-text').innerHTML = '<span class="required">*</span> <span id="required-label">Required fields</span>';
+                document.getElementById('cancel-button-text').innerHTML = 'CANCEL';
+                document.getElementById('submit-button-text').innerHTML = 'CONFIRM';
+            }
+        }
     </script>
 </body>
 </html>

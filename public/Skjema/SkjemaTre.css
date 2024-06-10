@@ -13,7 +13,7 @@ body {
 }
 
 .logo-btn {
-    background-color: #003366;
+    background-color: #00338D;
     border: none;
     text-decoration: none;
     font-weight: bold;
@@ -28,7 +28,7 @@ a {
 a:visited {
     text-decoration: none;
     color: aliceblue;
-    background-color: #003366;
+    background-color: #00338D;
 }
 
 /* ==========Top Bar Styles========== */
@@ -36,7 +36,7 @@ a:visited {
     display: flex;
     align-items: center;
     padding: 10px 20px;
-    background-color: #003366;
+    background-color: #00338D;
     color: white;
     position: fixed;
     top: 0;
@@ -267,7 +267,7 @@ form {
 }
 
 .cancel-button:hover {
-    background-color: #b0b0b0;
+    background-color: #00225e;
     text-decoration: none;
 }
 
@@ -278,7 +278,7 @@ form {
 }
 
 .confirm-button:hover {
-    background-color: #2c5282;
+    background-color: #00225e;
 }
 
 /* ==========Footer Styles========== */

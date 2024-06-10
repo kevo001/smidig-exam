@@ -11,7 +11,7 @@ body {
 }
 
 .logo-btn {
-  background-color: #003366;
+  background-color: #00338D;
   border: none;
   text-decoration: none;
   font-weight: bold;
@@ -27,7 +27,7 @@ a {
 a:visited {
   text-decoration: none;
   color: aliceblue;
-  background-color: #003366;
+  background-color: #00338D;
 }
 
 .back-arrow {
@@ -45,7 +45,7 @@ a:visited {
   left: 0;
   width: 100%;
   height: 20px;
-  background-color: #193583;
+  background-color: #00338D;
 }
 .line.bottom {
   top: auto;
@@ -102,7 +102,7 @@ a:visited {
 }
 .edit-button {
   padding: 10px 20px;
-  background-color: #193583;
+  background-color: #00338D;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -111,13 +111,13 @@ a:visited {
   transition: background-color 0.3s;
 }
 .edit-button:hover {
-  background-color: #162d6a;
+  background-color: #00338D;
 }
 .top-bar {
   display: flex;
   align-items: center;
   padding: 10px 20px;
-  background-color: #003366;
+  background-color: #00338D;
   color: white;
   position: fixed;
   top: 0;

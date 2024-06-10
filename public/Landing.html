@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Habilitetsregisteret</title>
-    <link rel="stylesheet" href="/CSS/Landing.css">
+    <link rel="stylesheet" href="css/landing.css">
 </head>
 <body>
-
     <div class="top-bar">
-        <div class="logo"><button class="logo-btn"><a href="/Landing.html"> Habilitetsregisteret </a>  </button></div>
+        <div class="logo"> 
+            <p>Habilitetsregisteret</p>
+        </div>
         <div class="icons">
             <input type="checkbox" id="bell-checkbox" class="bell-checkbox">
             <label for="bell-checkbox">
@@ -18,14 +19,31 @@
             <div class="notifications">
                 <p>Du har ingen nye varsler</p>
             </div>
-            <a href="profileTop.html">
+            <a href="/profileTop.html">
                 <img src="bilder/User.png" alt="User Icon" class="icon">
             </a>
-            <img src="../bilder/Flag.png" alt="Norwegian Flag Icon" class="icon">
+            <img src="../bilder/norway.png" alt="Norwegian Flag Icon" class="icon">
         </div>
     </div>
+    <div class="header-middle">
+        <div class="border">
+            <span>Du må fullføre selvrapportering</span>
+            <a href="Endeside.html">
+                <button class="alert-button">Fullfør Selvrapportering</button>
+            </a>
+        </div>
+        <div class="header-right">
+            <a href="profilhistorikk.html">
+                <button class="header-button">Se Profilhistorikk</button>
+            </a>
+            <a href="profilhistorikk.html">
+                <button class="header-button">Eksporter Brukerdata</button>
+            </a>
+        </div>
+    </div>
+<main>
     <div class="container">
-        <button class="card" onclick="scaleUp(this); showPopup('popup-1')">
+        <button class="card" onclick="scaleUp(this); showPopup('popup-1'); toggleList('list1');">
             <div class="card-content">
                 <div class="list-preview" id="preview-1"></div>
                 <div class="nyttForhold"> <a id="nyttForhold-btn" href="LandingSkjema/SkjemaEn.html"> Legg Til Nytt Forhold </a>
@@ -36,7 +54,7 @@
                 <span class="arrow">→</span>
             </div>
         </button>
-        <button class="card" onclick="scaleUp(this); showPopup('popup-2')">
+        <button class="card" onclick="scaleUp(this); showPopup('popup-2'); toggleList('list4');">
             <div class="card-content">
                 <div class="list-preview" id="preview-2"></div>
                 <div class="nyttForhold"> <a id="nyttForhold-btn" href="LandingSkjema/SkjemaTo.html"> Legg Til Nytt Forhold </a>
@@ -47,7 +65,7 @@
                 <span class="arrow">→</span>
             </div>
         </button>
-        <button class="card" onclick="scaleUp(this); showPopup('popup-3')">
+        <button class="card" onclick="scaleUp(this); showPopup('popup-3'); toggleList('list7');">
             <div class="card-content">
                 <div class="list-preview" id="preview-3"></div>
                 <div class="nyttForhold"> <a id="nyttForhold-btn" href="LandingSkjema/SkjemaTre.html"> Legg Til Nytt Forhold </a>
@@ -58,7 +76,7 @@
                 <span class="arrow">→</span>
             </div>
         </button>
-        <button class="card" onclick="scaleUp(this); showPopup('popup-4')">
+        <button class="card" onclick="scaleUp(this); showPopup('popup-4'); toggleList('list10');">
             <div class="card-content">
                 <div class="list-preview" id="preview-4"></div>
                 <div class="nyttForhold"> <a id="nyttForhold-btn" href="LandingSkjema/SkjemaFire.html"> Legg Til Nytt Forhold </a>
@@ -83,14 +101,16 @@
                 <ul id="list1-items"> 
                     <li class="history-item"> 
                         <div class="company-info"> 
-                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <img src="/bilder/Eierinteresser.png" alt="Company Icon" class="company-icon"> 
                             <div class="company-text"> 
                                 <p class="company-name">TELENOR ASA</p> 
                                 <p>Styrets leder</p> 
-                            </div> 
-                            <p class="update-date">Oppdatert 21-05-2024</p> 
+                            </div>
                         </div> 
-                        
+                        <div class="stacked-txt">
+                            <p class="update-date">Oppdatert:</p> 
+                            <p class="update-date">21-05-2024</p>
+                        </div> 
                         <div class="actions"> 
                             <a href="#">Gå til sak</a> 
                             <a href="#">Endre</a> 
@@ -99,14 +119,16 @@
                     </li>
                     <li class="history-item"> 
                         <div class="company-info"> 
-                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <img src="/bilder/Eierinteresser.png" alt="Company Icon" class="company-icon"> 
                             <div class="company-text"> 
                                 <p class="company-name">TELENOR ASA</p> 
                                 <p>Styrets leder</p> 
                             </div> 
-                            <p class="update-date">Oppdatert 21-05-2024</p> 
+                        </div>
+                        <div class="stacked-txt">
+                            <p class="update-date">Oppdatert:</p> 
+                            <p class="update-date">21-05-2024</p>
                         </div> 
-                         
                         <div class="actions"> 
                             <a href="#">Gå til sak</a> 
                             <a href="#">Endre</a> 
@@ -115,14 +137,16 @@
                     </li>
                     <li class="history-item"> 
                         <div class="company-info"> 
-                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <img src="/bilder/Eierinteresser.png" alt="Company Icon" class="company-icon"> 
                             <div class="company-text"> 
                                 <p class="company-name">TELENOR ASA</p> 
                                 <p>Styrets leder</p> 
                             </div> 
-                            <p class="update-date">Oppdatert 21-05-2024</p> 
                         </div> 
-                             
+                        <div class="stacked-txt">
+                            <p class="update-date">Oppdatert:</p> 
+                            <p class="update-date">21-05-2024</p>
+                        </div> 
                         <div class="actions"> 
                             <a href="#">Gå til sak</a> 
                             <a href="#">Endre</a> 
@@ -137,12 +161,15 @@
                 <ul id="list2-items">
                     <li class="history-item"> 
                         <div class="company-info"> 
-                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <img src="../bilder/Eierinteresser.png" alt="Company Icon" class="company-icon"> 
                             <div class="company-text"> 
                                 <p class="company-name">DNB ASA</p> 
                                 <p>Styremedlem</p> 
                             </div> 
-                            <p class="update-date">Oppdatert 10-03-2023</p> 
+                        </div> 
+                        <div class="stacked-txt">
+                            <p class="update-date">Oppdatert:</p> 
+                            <p class="update-date">21-05-2024</p>
                         </div> 
                         <div class="status">Avsluttet</div> 
                         <div class="actions"> 
@@ -153,12 +180,15 @@
                     </li>
                     <li class="history-item"> 
                         <div class="company-info"> 
-                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <img src="../bilder/Eierinteresser.png" alt="Company Icon" class="company-icon"> 
                             <div class="company-text"> 
                                 <p class="company-name">Nordea</p> 
                                 <p>Finansdirektør</p> 
                             </div> 
-                            <p class="update-date">Oppdatert 15-08-2022</p> 
+                        </div> 
+                        <div class="stacked-txt">
+                            <p class="update-date">Oppdatert:</p> 
+                            <p class="update-date">21-05-2024</p>
                         </div> 
                         <div class="status">Avsluttet</div> 
                         <div class="actions"> 
@@ -175,12 +205,15 @@
                 <ul id="list3-items">
                     <li class="history-item"> 
                         <div class="company-info"> 
-                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <img src="../bilder/Eierinteresser.png" alt="Company Icon" class="company-icon"> 
                             <div class="company-text"> 
                                 <p class="company-name">Schibsted</p> 
                                 <p>Marketing Director</p> 
                             </div> 
-                            <p class="update-date">Oppdatert 05-02-2024</p> 
+                        </div> 
+                        <div class="stacked-txt">
+                            <p class="update-date">Oppdatert:</p> 
+                            <p class="update-date">21-05-2024</p>
                         </div> 
                         <div class="status">Pending</div> 
                         <div class="actions"> 
@@ -191,12 +224,15 @@
                     </li>
                     <li class="history-item"> 
                         <div class="company-info"> 
-                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <img src="../bilder/Eierinteresser.png" alt="Company Icon" class="company-icon"> 
                             <div class="company-text"> 
                                 <p class="company-name">Hydro</p> 
                                 <p>Operations Manager</p> 
                             </div> 
-                            <p class="update-date">Oppdatert 10-01-2024</p> 
+                        </div> 
+                        <div class="stacked-txt">
+                            <p class="update-date">Oppdatert:</p> 
+                            <p class="update-date">21-05-2024</p>
                         </div> 
                         <div class="status">Pending</div> 
                         <div class="actions"> 
@@ -208,7 +244,7 @@
                 </ul>
             </div>
         </div>
-            <button id="leggtil-1" class="leggtil"><a id="Skjema1" href="/Skjema/SkjemaEn.html"> Legg til </a></button>
+            <button id="leggtil-1" class="leggtil"><a id="Skjema1" href="LandingSkjema/SkjemaEn.html"> Legg til </a></button>
         </div>
     </div>
     <div id="popup-2" class="popup">
@@ -223,14 +259,16 @@
                 <ul id="list4-items"> 
                     <li class="history-item"> 
                         <div class="company-info"> 
-                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <img src="/bilder/roller.png" alt="Company Icon" class="company-icon"> 
                             <div class="company-text"> 
                                 <p class="company-name">EQUINOR ASA</p> 
                                 <p>Styrets leder</p> 
                             </div> 
-                            <p class="update-date">Oppdatert 21-05-2024</p> 
                         </div> 
-                         
+                        <div class="stacked-txt">
+                            <p class="update-date">Oppdatert:</p> 
+                            <p class="update-date">21-05-2024</p>
+                        </div> 
                         <div class="actions"> 
                             <a href="#">Gå til sak</a> 
                             <a href="#">Endre</a> 
@@ -239,23 +277,22 @@
                     </li>
                     <li class="history-item"> 
                         <div class="company-info"> 
-                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <img src="/bilder/roller.png" alt="Company Icon" class="company-icon"> 
                             <div class="company-text"> 
                                 <p class="company-name">EQUINOR ASA</p> 
                                 <p>Styrets leder</p> 
                             </div> 
-                            <p class="update-date">Oppdatert 21-05-2024</p> 
                         </div> 
-                       
+                        <div class="stacked-txt">
+                            <p class="update-date">Oppdatert:</p> 
+                            <p class="update-date">21-05-2024</p>
+                        </div> 
                         <div class="actions"> 
                             <a href="#">Gå til sak</a> 
                             <a href="#">Endre</a> 
                             <img src="../bilder/verification.png" alt="Status Icon" class="status-icon"> 
                         </div> 
-                    
-                    
-                
-                      
+                    </li> 
                 </ul>
             </div>
             </div>
@@ -264,12 +301,15 @@
                 <ul id="list5-items">
                     <li class="history-item"> 
                         <div class="company-info"> 
-                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <img src="/bilder/roller.png" alt="Company Icon" class="company-icon"> 
                             <div class="company-text"> 
                                 <p class="company-name">Storebrand</p> 
                                 <p>CEO</p> 
-                            </div> 
-                            <p class="update-date">Oppdatert 05-12-2021</p> 
+                            </div>
+                        </div> 
+                        <div class="stacked-txt">
+                            <p class="update-date">Oppdatert:</p> 
+                            <p class="update-date">21-05-2024</p>
                         </div> 
                         <div class="status">Avsluttet</div> 
                         <div class="actions"> 
@@ -280,12 +320,15 @@
                     </li>
                     <li class="history-item"> 
                         <div class="company-info"> 
-                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <img src="/bilder/roller.png" alt="Company Icon" class="company-icon"> 
                             <div class="company-text"> 
                                 <p class="company-name">Gjensidige</p> 
                                 <p>COO</p> 
                             </div> 
-                            <p class="update-date">Oppdatert 22-11-2020</p> 
+                        </div> 
+                        <div class="stacked-txt">
+                            <p class="update-date">Oppdatert:</p> 
+                            <p class="update-date">21-05-2024</p>
                         </div> 
                         <div class="status">Avsluttet</div> 
                         <div class="actions"> 
@@ -302,13 +345,16 @@
                 <ul id="list6-items">
                     <li class="history-item"> 
                         <div class="company-info"> 
-                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <img src="/bilder/roller.png" alt="Company Icon" class="company-icon"> 
                             <div class="company-text"> 
                                 <p class="company-name">Orkla</p> 
                                 <p>Finance Manager</p> 
                             </div> 
-                            <p class="update-date">Oppdatert 12-12-2023</p> 
-                        </div> 
+                        </div>
+                        <div class="stacked-txt">
+                            <p class="update-date">Oppdatert:</p> 
+                            <p class="update-date">21-05-2024</p>
+                        </div>  
                         <div class="status">Pending</div> 
                         <div class="actions"> 
                             <a href="#">Gå til sak</a> 
@@ -318,12 +364,15 @@
                     </li>
                     <li class="history-item"> 
                         <div class="company-info"> 
-                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <img src="/bilder/roller.png" alt="Company Icon" class="company-icon"> 
                             <div class="company-text"> 
                                 <p class="company-name">Norsk Hydro</p> 
                                 <p>Senior Engineer</p> 
                             </div> 
-                            <p class="update-date">Oppdatert 20-11-2023</p> 
+                        </div> 
+                        <div class="stacked-txt">
+                            <p class="update-date">Oppdatert:</p> 
+                            <p class="update-date">21-05-2024</p>
                         </div> 
                         <div class="status">Pending</div> 
                         <div class="actions"> 
@@ -335,7 +384,7 @@
                 </ul>
             </div>
             </div>
-            <button id="leggtil-2" class="leggtil"><a id="Skjema2" href="/Skjema/SkjemaTo.html"> Legg til </a></button>
+            <button id="leggtil-2" class="leggtil"><a id="Skjema2" href="LandingSkjema/SkjemaTo.html"> Legg til </a></button>
         </div>
     </div>
     <div id="popup-3" class="popup">
@@ -350,14 +399,16 @@
                 <ul id="list7-items"> 
                     <li class="history-item"> 
                         <div class="company-info"> 
-                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <img src="/bilder/relasjoner.png" alt="Company Icon" class="company-icon"> 
                             <div class="company-text"> 
                                 <p class="company-name">Kari Nordmann</p> 
                                 <p>Ektefelle/Samboer</p> 
                             </div> 
-                            <p class="update-date">Oppdatert 21-05-2024</p> 
                         </div> 
-                      
+                        <div class="stacked-txt">
+                            <p class="update-date">Oppdatert:</p> 
+                            <p class="update-date">21-05-2024</p>
+                        </div>
                         <div class="actions"> 
                             <a href="#">Gå til sak</a> 
                             <a href="#">Endre</a> 
@@ -370,14 +421,17 @@
                 <ul id="list8-items">
                     <li class="history-item"> 
                         <div class="company-info"> 
-                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <img src="/bilder/relasjoner.png" alt="Company Icon" class="company-icon">
                             <div class="company-text"> 
                                 <p class="company-name">Aker Solutions</p> 
                                 <p>CTO</p> 
                             </div> 
-                            <p class="update-date">Oppdatert 01-09-2019</p> 
-                        </div> 
-                        <div class="status">Avsluttet</div> 
+                        </div>
+                        <div class="stacked-txt">
+                            <p class="update-date">Oppdatert:</p> 
+                            <p class="update-date">21-05-2024</p>
+                        </div>  
+                        <div class="status">Avsluttet</div>  
                         <div class="actions"> 
                             <a href="#">Gå til sak</a> 
                             <a href="#">Endre</a> 
@@ -386,12 +440,15 @@
                     </li>
                     <li class="history-item"> 
                         <div class="company-info"> 
-                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <img src="/bilder/relasjoner.png" alt="Company Icon" class="company-icon"> 
                             <div class="company-text"> 
                                 <p class="company-name">Yara International</p> 
                                 <p>R&D Manager</p> 
                             </div> 
-                            <p class="update-date">Oppdatert 15-06-2018</p> 
+                        </div> 
+                        <div class="stacked-txt">
+                            <p class="update-date">Oppdatert:</p> 
+                            <p class="update-date">21-05-2024</p>
                         </div> 
                         <div class="status">Avsluttet</div> 
                         <div class="actions"> 
@@ -408,13 +465,16 @@
                 <ul id="list9-items">
                     <li class="history-item"> 
                         <div class="company-info"> 
-                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <img src="/bilder/relasjoner.png" alt="Company Icon" class="company-icon"> 
                             <div class="company-text"> 
                                 <p class="company-name">Aker BP</p> 
                                 <p>HR Director</p> 
                             </div> 
-                            <p class="update-date">Oppdatert 15-10-2023</p> 
-                        </div> 
+                        </div>
+                        <div class="stacked-txt">
+                            <p class="update-date">Oppdatert:</p> 
+                            <p class="update-date">21-05-2024</p>
+                        </div>  
                         <div class="status">Pending</div> 
                         <div class="actions"> 
                             <a href="#">Gå til sak</a> 
@@ -424,12 +484,15 @@
                     </li>
                     <li class="history-item"> 
                         <div class="company-info"> 
-                            <img src="../bilder/buisnessIcon.png" alt="Company Icon" class="company-icon"> 
+                            <img src="/bilder/relasjoner.png" alt="Company Icon" class="company-icon"> 
                             <div class="company-text"> 
                                 <p class="company-name">Statnett</p> 
                                 <p>IT Manager</p> 
                             </div> 
-                            <p class="update-date">Oppdatert 02-09-2023</p> 
+                        </div> 
+                        <div class="stacked-txt">
+                            <p class="update-date">Oppdatert:</p> 
+                            <p class="update-date">21-05-2024</p>
                         </div> 
                         <div class="status">Pending</div> 
                         <div class="actions"> 
@@ -441,7 +504,7 @@
                 </ul>
             </div>
             </div>
-            <button id="leggtil-3" class="leggtil"><a id="Skjema3" href="/Skjema/SkjemaTre.html"> Legg til </a></button>
+            <button id="leggtil-3" class="leggtil"><a id="Skjema3" href="LandingSkjema/SkjemaTre.html"> Legg til </a></button>
         </div>
     </div>
     <div id="popup-4" class="popup">
@@ -464,7 +527,10 @@
                                 <p class="company-name">Telenor</p> 
                                 <p>COO</p> 
                             </div> 
-                            <p class="update-date">Oppdatert 03-04-2017</p> 
+                        </div>
+                        <div class="stacked-txt">
+                            <p class="update-date">Oppdatert:</p> 
+                            <p class="update-date">21-05-2024</p>
                         </div> 
                         <div class="status">Avsluttet</div> 
                         <div class="actions"> 
@@ -479,9 +545,12 @@
                             <div class="company-text"> 
                                 <p class="company-name">Statkraft</p> 
                                 <p>Project Manager</p> 
-                            </div> 
-                            <p class="update-date">Oppdatert 22-07-2016</p> 
+                            </div>  
                         </div> 
+                        <div class="stacked-txt">
+                            <p class="update-date">Oppdatert:</p> 
+                            <p class="update-date">21-05-2024</p>
+                        </div>
                         <div class="status">Avsluttet</div> 
                         <div class="actions"> 
                             <a href="#">Gå til sak</a> 
@@ -494,17 +563,11 @@
             <div id="list12" class="list-container">
                 <ul id="list12-items"></ul>
             </div>
-            <button id="leggtil-4" class="leggtil"><a id="Skjema4" href="/Skjema/SkjemaFire.html"> Legg til </a></button>
+            <button id="leggtil-4" class="leggtil"><a id="Skjema4" href="LandingSkjema/SkjemaFire.html"> Legg til </a></button>
         </div>
     </div>
     </div>
-    <a  href="Endeside.html">
-        <button class="blue-button">Fullfør</button>
-    </a>
-    <a  href="profilhistorikk.html">
-        <button class="green-button">Profilhistorikk</button>
-    </a>
-
+</main>
 
     <script>
         function scaleUp(element) {
@@ -571,5 +634,8 @@
 
         updateListPreviews();
     </script>
+
+    <div class="bottom-bar"></div>
 </body>
 </html>
+

@@ -9,7 +9,7 @@ html, body {
 }
 
 .logo-btn {
-    background-color: #003366;
+    background-color: #00338D;
     border: none;
     text-decoration: none;
     font-weight: bold;
@@ -25,11 +25,11 @@ a {
 a:visited {
     text-decoration: none;
     color: aliceblue;
-    background-color: #003366;
+    background-color: #00338D;
 }
 
 .header, .footer {
-    background-color: #003366;
+    background-color: #00338D;
     color: white;
     z-index: 2;
     position: relative;
@@ -40,7 +40,7 @@ a:visited {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #003366;
+    background-color: #00338D;
     color: white;
     position: relative;
 }
@@ -112,9 +112,9 @@ main {
     z-index: 3;
 }
 
-.welcome-box .smiley-icon {
+ .smiley-icon {
     width: 200px;
-    height: 200px;
+    height: 225px;
     margin-bottom: 5px; 
 }
 
@@ -180,7 +180,7 @@ main {
 }
 
 .bottom-bar {
-    background-color: #003366;
+    background-color: #00338D;
     padding: 20px 20px;
     position: absolute;
     bottom: 0;

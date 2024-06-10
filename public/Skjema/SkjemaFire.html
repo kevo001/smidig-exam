@@ -18,8 +18,9 @@
             <div class="notifications">
                 <p>Du har ingen nye varsler</p>
             </div>
-            <img src="/Bilder/User.png" alt="User Icon" class="icon">
-            <img src="/Bilder/Flag.png" alt="Norwegian Flag Icon" class="icon">
+            <a href="/profileTop.html"><img src="/Bilder/User.png" alt="User Icon" class="icon"></a>
+            <img src="/bilder/norway.png" alt="Norwegian Flag" class="icon" onclick="changeLanguage('norwegian')">
+            <img src="/bilder/flagEng.png" alt="English Flag" class="icon" onclick="changeLanguage('english')">
         </div>
     </div>
 
@@ -43,26 +44,26 @@
 
         <!-- Header Section -->
         <header>
-            <h1>Annet</h1>
+            <h1 id="title-text">Annet</h1>
         </header>
 
         <!-- Form Section -->
         <form>
             <!-- Other Relationship Button -->
             <div class="form-group">
-                <a href="" class="add-button">Legg til andre forhold</a>
+                <a href="" class="add-button" id="add-other-text">Legg til andre forhold</a>
             </div> 
             <!-- "Eller" Text -->
             <div class="form-group">
-                <p class="or-text">Eller</p>
+                <p class="or-text" id="or-text">Eller</p>
             </div>
             <!-- No Other Relationship Confirmation Button -->
             <div class="form-group">
-                <a href="/landing.html" class="confirm-button">Bekreft at du ikke har andre forhold å oppgi</a>
+                <a href="/landing.html" class="confirm-button" id="confirm-text">Bekreft at du ikke har andre forhold å oppgi</a>
             </div>
             <!-- Form Action Buttons -->
             <div class="form-actions">
-                <a href="/Skjema/Skjematre.html" class="cancel-button">AVBRYT</a>
+                <a href="/Skjema/Skjematre.html" class="cancel-button" id="cancel-button-text">AVBRYT</a>
             </div>
         </form>
 
@@ -86,6 +87,22 @@
                 infoField.style.maxHeight = '0';
             }
         });
+
+        function changeLanguage(language) {
+    if (language === 'norwegian') {
+        document.getElementById('title-text').innerHTML = 'Annet';
+        document.getElementById('add-other-text').innerHTML = 'Legg til andre forhold';
+        document.getElementById('or-text').innerHTML = 'Eller';
+        document.getElementById('confirm-text').innerHTML = 'Bekreft at du ikke har andre forhold å oppgi';
+        document.getElementById('cancel-button-text').innerHTML = 'AVBRYT';
+    } else if (language === 'english') {
+        document.getElementById('title-text').innerHTML = 'Other';
+        document.getElementById('add-other-text').innerHTML = 'Add other relationship';
+        document.getElementById('or-text').innerHTML = 'Or';
+        document.getElementById('confirm-text').innerHTML = 'Confirm that you do not have any other relationships to declare';
+        document.getElementById('cancel-button-text').innerHTML = 'CANCEL';
+    }
+}
     </script>
     
 </body>

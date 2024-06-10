@@ -17,8 +17,9 @@
             <div class="notifications">
                 <p>Du har ingen nye varsler</p>
             </div>
-            <img src="/Bilder/User.png" alt="User Icon" class="icon">
-            <img src="/Bilder/Flag.png" alt="Norwegian Flag Icon" class="icon">
+            <a href="/profileTop.html"><img src="/Bilder/User.png" alt="User Icon" class="icon"></a>
+            <img src="/bilder/norway.png" alt="Norwegian Flag" class="icon" onclick="changeLanguage('norwegian')">
+            <img src="/bilder/flagEng.png" alt="English Flag" class="icon" onclick="changeLanguage('english')">
         </div>
     </div>
 
@@ -42,12 +43,12 @@
         </div>
 
         <header>
-            <h1>Opplyse om eksisterende eller tidligere rolle</h1>
+            <h1 id="title-text">Opplyse om eksisterende eller tidligere rolle</h1>
         </header>
 
         <form>
             <div class="form-group">
-                <label for="land">Land</label>
+                <label for="land" id="country-text">Land <span class="required">*</span></label>
                 <select id="land" name="land">
                     <option value="">Velg...</option>
                     <option value="SE">Sverige</option>
@@ -56,17 +57,17 @@
             </div>
 
             <div class="form-group">
-                <label for="org-name">Navn på organisasjon <span class="required">*</span></label>
+                <label for="org-name" id="orgName-text">Navn på organisasjon <span class="required">*</span></label>
                 <input type="text" id="org-name" name="org-name">
             </div>
 
             <div class="form-group">
-                <label for="org-number">Organisasjonsnummer <span class="required">*</span></label>
+                <label for="org-number" id="orgNumber-text">Organisasjonsnummer <span class="required">*</span></label>
                 <input type="text" id="org-number" name="org-number">
             </div>
 
             <div class="form-group">
-                <label for="role-type">Type Rolle <span class="required">*</span></label>
+                <label for="role-type" id="role-type-text">Type Rolle <span class="required">*</span></label>
                 <select id="role-type" name="role-type">
                     <option value="">Velg...</option>
                     <option value="role1">Rolle 1</option>
@@ -75,12 +76,12 @@
             </div>
 
             <div class="form-group">
-                <label for="role-title">Tittel på rolle <span class="required">*</span></label>
+                <label for="role-title" id="role-title-text">Tittel på rolle <span class="required">*</span></label>
                 <input type="text" id="role-title" name="role-title">
             </div>
 
             <div class="form-group">
-                <label for="municipality">Kommunen rollen utøves i <span class="required">*</span></label>
+                <label for="municipality" id="municipality-text">Kommunen rollen utøves i <span class="required">*</span></label>
                 <div class="municipality-inputs">
                     <input type="text" id="postnr" name="postnr" placeholder="Postnr">
                     <input type="text" id="poststed" name="poststed" placeholder="Poststed">
@@ -88,69 +89,110 @@
             </div>
 
             <div class="form-group">
-                <label for="monthly-salary">Månedlig honorar (NOK) <span class="required">*</span></label>
+                <label for="monthly-salary" id="monthly-salary-text">Månedlig honorar (NOK) <span class="required">*</span></label>
                 <input type="text" id="monthly-salary" name="monthly-salary">
             </div>
 
             <div class="form-group">
-                <label for="monthly-hours">Månedlig timeforbruk</label>
+                <label for="monthly-hours" id="monthly-hours-text">Månedlig timeforbruk</label>
                 <input type="text" id="monthly-hours" name="monthly-hours">
             </div>
 
             <div class="form-group">
-                <label for="position-from">Posisjon fra (ikke påkrevd)</label>
+                <label for="position-from" id="position-from-text">Posisjon fra (ikke påkrevd)</label>
                 <input type="text" id="position-from" name="position-from">
             </div>
 
             <div class="form-group">
-                <label for="position-to">Posisjon til (ikke påkrevd)</label>
+                <label for="position-to" id="position-to-text">Posisjon til (ikke påkrevd)</label>
                 <input type="text" id="position-to" name="position-to">
             </div>
 
             <div class="form-group">
-                <label for="comments">Kommentar</label>
+                <label for="comments" id="comments-text">Kommentar</label>
                 <textarea id="comments" name="comments"></textarea>
             </div>
 
             <div class="form-group">
-                <label>Er forholdet relevant for din habilitet?</label>
+                <label id="relevant-text">Er forholdet relevant for din habilitet?</label>
                 <div class="radio-group">
                     <label for="relevant-yes" style ="color: black;"><input type="radio" id="relevant-yes" name="relevant" value="yes"><b>Ja</b> </label>
-                    <label for="relevant-no"><input type="radio" id="relevant-no" name="relevant" value="no"><b></b> Nei</label>
+                    <label for="relevant-no" style="color: black;"><input type="radio" id="relevant-no" name="relevant" value="no"><b>Nei</b> </label>
                 </div>
             </div>
 
             <div class="form-group">
-                <span class="required">*</span> Påkrevde felt
-            </div>
-
-            <div class="form-actions">
-                <a href="/Skjema/SkjemaEn.html" class="cancel-button">AVBRYT</a>
-                <a href="/Skjema/SkjemaTre.html" class="confirm-button">BEKREFT</a>
-            </div>
-        </form>
-
-        <footer>
-            <div class="progress-container">
-                <div class="progress-bar"></div>
-            </div>
-            <div class="step-indicator">Step 2 of 4</div>
-        </footer>
-    </div>
-
-    <script>
-        document.getElementById('imgButton').addEventListener('click', function() {
-            var infoField = document.getElementById('infoField');
-            if (infoField.style.display === 'none' || infoField.style.display === '') {
-                infoField.style.display = 'block';
-                infoField.style.maxHeight = infoField.scrollHeight + "px";
-            } else {
-                infoField.style.display = 'none';
-                infoField.style.maxHeight = '0';
+                <div class="form-group">
+                    <p id="required-text"><span class="required">*</span> <span id="required-label">Påkrevde felter</span></p>
+                </div>
+    
+                <div class="form-actions">
+                    <a href="/Skjema/SkjemaEn.html" class="cancel-button" id="cancel-button-text">AVBRYT</a>
+                    <a href="/Skjema/SkjemaTre.html" class="confirm-button" id="submit-button-text">BEKREFT</a>
+                </div>
+            </form>
+    
+            <footer>
+                <div class="progress-container">
+                    <div class="progress-bar"></div>
+                </div>
+                <div class="step-indicator" id="step-indicator-text">Step 2 of 4</div>
+            </footer>
+        </div>
+    
+        <script>
+            document.getElementById('imgButton').addEventListener('click', function() {
+                var infoField = document.getElementById('infoField');
+                if (infoField.style.display === 'none' || infoField.style.display === '') {
+                    infoField.style.display = 'block';
+                    infoField.style.maxHeight = infoField.scrollHeight + "px";
+                } else {
+                    infoField.style.display = 'none';
+                    infoField.style.maxHeight = '0';
+                }
+            });
+    
+            function changeLanguage(language) {
+                if (language === 'norwegian') {
+                    document.getElementById('title-text').innerHTML = 'Opplyse om eksisterende eller tidligere rolle';
+                    document.getElementById('country-text').innerHTML = 'Land <span class="required">*</span>';
+                    document.getElementById('orgName-text').innerHTML = 'Navn på organisasjon <span class="required">*</span>';
+                    document.getElementById('orgNumber-text').innerHTML = 'Organisasjonsnummer <span class="required">*</span>';
+                    document.getElementById('role-type-text').innerHTML = 'Type Rolle <span class="required">*</span>';
+                    document.getElementById('role-title-text').innerHTML = 'Tittel på rolle <span class="required">*</span>';
+                    document.getElementById('municipality-text').innerHTML = 'Kommunen rollen utøves i <span class="required">*</span>';
+                    document.getElementById('monthly-salary-text').innerHTML = 'Månedlig honorar (NOK) <span class="required">*</span>';
+                    document.getElementById('monthly-hours-text').innerHTML = 'Månedlig timeforbruk';
+                    document.getElementById('position-from-text').innerHTML = 'Posisjon fra (ikke påkrevd)';
+                    document.getElementById('position-to-text').innerHTML = 'Posisjon til (ikke påkrevd)';
+                    document.getElementById('comments-text').innerHTML = 'Kommentar';
+                    document.getElementById('relevant-text').innerHTML = 'Er forholdet relevant for din habilitet?';
+                    document.getElementById('postnr').placeholder = 'Postnr';
+                    document.getElementById('poststed').placeholder = 'Poststed';
+                    document.getElementById('required-text').innerHTML = '<span class="required">*</span> <span id="required-label">Påkrevde felter</span>';
+                    document.getElementById('cancel-button-text').innerHTML = 'AVBRYT';
+                    document.getElementById('submit-button-text').innerHTML = 'BEKREFT';
+                } else if (language === 'english') {
+                    document.getElementById('title-text').innerHTML = 'Inform about existing or previous role';
+                    document.getElementById('country-text').innerHTML = 'Country <span class="required">*</span>';
+                    document.getElementById('orgName-text').innerHTML = 'Name of organization <span class="required">*</span>';
+                    document.getElementById('orgNumber-text').innerHTML = 'Organization number <span class="required">*</span>';
+                    document.getElementById('role-type-text').innerHTML = 'Type of Role <span class="required">*</span>';
+                    document.getElementById('role-title-text').innerHTML = 'Title of Role <span class="required">*</span>';
+                    document.getElementById('municipality-text').innerHTML = 'Municipality where the role is exercised <span class="required">*</span>';
+                    document.getElementById('monthly-salary-text').innerHTML = 'Monthly salary (NOK) <span class="required">*</span>';
+                    document.getElementById('monthly-hours-text').innerHTML = 'Monthly time commitment';
+                    document.getElementById('position-from-text').innerHTML = 'Position from (not required)';
+                    document.getElementById('position-to-text').innerHTML = 'Position to (not required)';
+                    document.getElementById('comments-text').innerHTML = 'Comment';
+                    document.getElementById('relevant-text').innerHTML = 'Is the relationship relevant to your impartiality?';
+                    document.getElementById('postnr').placeholder = 'Postcode';
+                    document.getElementById('poststed').placeholder = 'Place';
+                    document.getElementById('required-text').innerHTML = '<span class="required">*</span> <span id="required-label">Required fields</span>';
+                    document.getElementById('cancel-button-text').innerHTML = 'CANCEL';
+                    document.getElementById('submit-button-text').innerHTML = 'CONFIRM';
+                }
             }
-        });
-    </script>
-</body>
-</html>
-
-
+        </script>
+    </body>
+    </html>
