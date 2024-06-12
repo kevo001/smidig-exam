@@ -31,7 +31,6 @@ a:visited {
 }
 
 
-/* ========== Top Bar ========== */
 .top-bar {
     display: flex;
     align-items: center;
@@ -164,17 +163,16 @@ a:visited {
     cursor: pointer;
 }
 
-/* Notification Checkbox */
 .bell-checkbox {
     display: none;
 }
 
-/* Show notifications if checkbox is checked */
+
 .bell-checkbox:checked + label + .notifications {
     display: block;
 }
 
-/* Notification Box Styles */
+
 .notifications {
     display: none;
     position: absolute;
@@ -195,7 +193,6 @@ a:visited {
     line-height: 1.5;
 }
 
-/* Footer Styles */
 .footer {
   text-align: center;
   padding: 0px;
@@ -217,8 +214,6 @@ a:visited {
   width: 150px;
 }
 
-/*Bottom Bar Styles*/ 
-
 .line {
   position: fixed;
   top: 0;
@@ -235,8 +230,10 @@ a:visited {
 
 .back-button {
   position: absolute;
-  left: 1%;
-  width: 50px;
-  top: 55px;
+    top: 70px;
+    left: 20px;
+    width: 50px;
+    height: auto;
+    cursor: pointer;
 
 }

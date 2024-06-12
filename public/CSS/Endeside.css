@@ -1,4 +1,4 @@
-/* Basic resets and styling */
+
 html, body {
     height: 100%;
     margin: 0;
@@ -112,7 +112,7 @@ main {
     z-index: 3;
 }
 
- .smiley-icon {
+.welcome-box .smiley-icon {
     width: 200px;
     height: 225px;
     margin-bottom: 5px; 

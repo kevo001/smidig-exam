@@ -122,7 +122,7 @@ a:visited {
 .login-icon {
   width: 100px;
   height: auto;
-  margin-bottom: 20px; /* Space between the icon and the login form */
+  margin-bottom: 20px; 
 }
 .language-flags {
   display: flex;
@@ -172,17 +172,17 @@ a:visited {
   cursor: pointer;
 }
 
-/* Notification Checkbox */
+
 .bell-checkbox {
   display: none;
 }
 
-/* Show notifications if checkbox is checked */
+
 .bell-checkbox:checked + label + .notifications {
   display: block;
 }
 
-/* Notification Box Styles */
+
 .notifications {
   display: none;
   position: absolute;

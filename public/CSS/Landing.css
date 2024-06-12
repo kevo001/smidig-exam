@@ -3,6 +3,7 @@ body, html {
     background-color: #d3d6db;
     font-family: Arial, sans-serif;
     background-color: #D9E3FD;
+    height: 100v
 }
 
 .logo-btn {
@@ -328,7 +329,7 @@ button.card {
 }
 
 .nyttForhold {
-    background-color: #D9E3FD;
+    background-color: #f4f4f4;
     border-radius: 10px;
     margin-bottom: 10px; 
     width: 100%;
@@ -337,19 +338,18 @@ button.card {
     text-align: center;
     display: flex;
     justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    z-index: 1;
 }
 
-#nyttForhold-btn {
+#nyttForhold-btn1, #nyttForhold-btn2, #nyttForhold-btn3, #nyttForhold-btn4{
     border-radius: 10px;
     margin-bottom: 10px; 
     text-decoration: none;
     color: black;
     margin-top: 20px;
-}
-
-#nyttForhold-btn::after, :visited {
-    text-decoration: none;
-    color: black;
+    z-index: 1;
 }
 
 a:visited {
@@ -429,9 +429,9 @@ h6 {
     justify-content: space-between;
     padding: 10px;
     border: 1px solid #ccc;
-    background-color: #D9E3FD;;
+    background-color: #f4f4f4;
     margin-bottom: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-left: 0px;
     width: 100%;

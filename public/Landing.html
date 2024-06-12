@@ -22,22 +22,23 @@
             <a href="/profileTop.html">
                 <img src="bilder/User.png" alt="User Icon" class="icon">
             </a>
-            <img src="../bilder/norway.png" alt="Norwegian Flag Icon" class="icon">
+            <img src="bilder/norway.png" alt="Norwegian Flag" class="icon" onclick="changeLanguage('norwegian')">
+            <img src="bilder/flagEng.png" alt="English Flag" class="icon" onclick="changeLanguage('english')">
         </div>
     </div>
     <div class="header-middle">
         <div class="border">
-            <span>Du må fullføre selvrapportering</span>
+            <span id="rapport-text">Du må fullføre selvrapportering</span>
             <a href="Endeside.html">
-                <button class="alert-button">Fullfør Selvrapportering</button>
+                <button class="alert-button" id="rapport-finish-text">Fullfør Selvrapportering</button>
             </a>
         </div>
         <div class="header-right">
             <a href="profilhistorikk.html">
-                <button class="header-button">Se Profilhistorikk</button>
+                <button class="header-button" id="profile-history-text">Se Profilhistorikk</button>
             </a>
             <a href="profilhistorikk.html">
-                <button class="header-button">Eksporter Brukerdata</button>
+                <button class="header-button" id="export-userdata-text">Eksporter Brukerdata</button>
             </a>
         </div>
     </div>
@@ -46,44 +47,44 @@
         <button class="card" onclick="scaleUp(this); showPopup('popup-1'); toggleList('list1');">
             <div class="card-content">
                 <div class="list-preview" id="preview-1"></div>
-                <div class="nyttForhold"> <a id="nyttForhold-btn" href="LandingSkjema/SkjemaEn.html"> Legg Til Nytt Forhold </a>
+                <div class="nyttForhold"><a id="nyttForhold-btn1" href="LandingSkjema/SkjemaEn.html"> Legg Til Nytt Forhold </a>
                 </div>
             </div>
             <div class="card-footer">
-                <p>Eierinteresser</p>
+                <p id="ownership-text">Eierinteresser</p>
                 <span class="arrow">→</span>
             </div>
         </button>
         <button class="card" onclick="scaleUp(this); showPopup('popup-2'); toggleList('list4');">
             <div class="card-content">
                 <div class="list-preview" id="preview-2"></div>
-                <div class="nyttForhold"> <a id="nyttForhold-btn" href="LandingSkjema/SkjemaTo.html"> Legg Til Nytt Forhold </a>
+                <div class="nyttForhold"><a id="nyttForhold-btn2" href="LandingSkjema/SkjemaTo.html"> Legg Til Nytt Forhold </a>
                 </div>
             </div>
             <div class="card-footer">
-                <p>Roller</p>
+                <p id="role-text">Roller</p>
                 <span class="arrow">→</span>
             </div>
         </button>
         <button class="card" onclick="scaleUp(this); showPopup('popup-3'); toggleList('list7');">
             <div class="card-content">
                 <div class="list-preview" id="preview-3"></div>
-                <div class="nyttForhold"> <a id="nyttForhold-btn" href="LandingSkjema/SkjemaTre.html"> Legg Til Nytt Forhold </a>
+                <div class="nyttForhold"><a id="nyttForhold-btn3" href="LandingSkjema/SkjemaTre.html"> Legg Til Nytt Forhold </a>
                 </div>
             </div>
             <div class="card-footer">
-                <p>Relasjoner</p>
+                <p id="relation-text">Relasjoner</p>
                 <span class="arrow">→</span>
             </div>
         </button>
         <button class="card" onclick="scaleUp(this); showPopup('popup-4'); toggleList('list10');">
             <div class="card-content">
                 <div class="list-preview" id="preview-4"></div>
-                <div class="nyttForhold"> <a id="nyttForhold-btn" href="LandingSkjema/SkjemaFire.html"> Legg Til Nytt Forhold </a>
+                <div class="nyttForhold"> <a id="nyttForhold-btn4" href="LandingSkjema/SkjemaFire.html"> Legg Til Nytt Forhold </a>
                 </div>
             </div>
             <div class="card-footer">
-                <p>Annet</p>
+                <p id="other-text">Annet</p>
                 <span class="arrow">→</span>
             </div>
         </button>
@@ -92,10 +93,10 @@
     <div id="popup-1" class="popup">
         <div class="popup-content">
             <span class="close" onclick="hidePopup('popup-1')">&times;</span>
-            <p>Eierinteresser</p>
-            <button class="list-btn" onclick="toggleList('list1', this)">Nåværende</button>
-            <button class="list-btn" onclick="toggleList('list2', this)">Tidligere</button>
-            <button class="list-btn" onclick="toggleList('list3', this)">Søknader</button> 
+            <p id="ownership2-text">Eierinteresser</p>
+            <button class="list-btn" onclick="toggleList('list1', this)" id="now-button">Nåværende</button>
+            <button class="list-btn" onclick="toggleList('list2', this)" id="earlier-button">Tidligere</button>
+            <button class="list-btn" onclick="toggleList('list3', this)" id="applications-button">Søknader</button> 
             <div class="popup-box">
             <div id="list1" class="list-container">
                 <ul id="list1-items"> 
@@ -104,16 +105,16 @@
                             <img src="/bilder/Eierinteresser.png" alt="Company Icon" class="company-icon"> 
                             <div class="company-text"> 
                                 <p class="company-name">TELENOR ASA</p> 
-                                <p>Styrets leder</p> 
+                                <p id="Chairman-text">Styrets leder</p> 
                             </div>
                         </div> 
                         <div class="stacked-txt">
-                            <p class="update-date">Oppdatert:</p> 
+                            <p class="update-date" id="updated-text">Oppdatert:</p> 
                             <p class="update-date">21-05-2024</p>
                         </div> 
                         <div class="actions"> 
-                            <a href="#">Gå til sak</a> 
-                            <a href="#">Endre</a> 
+                            <a href="#" id="proceed-text">Gå til sak</a> 
+                            <a href="#" id="edit-text">Endre</a> 
                             <img src="../bilder/verification.png" alt="Status Icon" class="status-icon"> 
                         </div> 
                     </li>
@@ -122,16 +123,16 @@
                             <img src="/bilder/Eierinteresser.png" alt="Company Icon" class="company-icon"> 
                             <div class="company-text"> 
                                 <p class="company-name">TELENOR ASA</p> 
-                                <p>Styrets leder</p> 
+                                <p id="Chairman2-text">Styrets leder</p> 
                             </div> 
                         </div>
                         <div class="stacked-txt">
-                            <p class="update-date">Oppdatert:</p> 
+                            <p class="update-date" id="updated2-text">Oppdatert:</p> 
                             <p class="update-date">21-05-2024</p>
                         </div> 
                         <div class="actions"> 
-                            <a href="#">Gå til sak</a> 
-                            <a href="#">Endre</a> 
+                            <a href="#" id="proceed2-text">Gå til sak</a> 
+                            <a href="#" id="edit2-text">Endre</a> 
                             <img src="../bilder/verification.png" alt="Status Icon" class="status-icon"> 
                         </div> 
                     </li>
@@ -140,16 +141,16 @@
                             <img src="/bilder/Eierinteresser.png" alt="Company Icon" class="company-icon"> 
                             <div class="company-text"> 
                                 <p class="company-name">TELENOR ASA</p> 
-                                <p>Styrets leder</p> 
+                                <p id="Chairman3-text">Styrets leder</p> 
                             </div> 
                         </div> 
                         <div class="stacked-txt">
-                            <p class="update-date">Oppdatert:</p> 
+                            <p class="update-date" id="updated3-text">Oppdatert:</p> 
                             <p class="update-date">21-05-2024</p>
                         </div> 
                         <div class="actions"> 
-                            <a href="#">Gå til sak</a> 
-                            <a href="#">Endre</a> 
+                            <a href="#" id="proceed3-text">Gå til sak</a> 
+                            <a href="#" id="edit3-text">Endre</a> 
                             <img src="../bilder/verification.png" alt="Status Icon" class="status-icon"> 
                         </div> 
                     </li>
@@ -164,17 +165,17 @@
                             <img src="../bilder/Eierinteresser.png" alt="Company Icon" class="company-icon"> 
                             <div class="company-text"> 
                                 <p class="company-name">DNB ASA</p> 
-                                <p>Styremedlem</p> 
+                                <p id="Chairman4-text">Styremedlem</p> 
                             </div> 
                         </div> 
                         <div class="stacked-txt">
-                            <p class="update-date">Oppdatert:</p> 
+                            <p class="update-date" id="updated4-text">Oppdatert:</p> 
                             <p class="update-date">21-05-2024</p>
                         </div> 
-                        <div class="status">Avsluttet</div> 
+                        <div class="status" id="terminated-text">Avsluttet</div> 
                         <div class="actions"> 
-                            <a href="#">Gå til sak</a> 
-                            <a href="#">Endre</a> 
+                            <a href="#" id="proceed4-text">Gå til sak</a> 
+                            <a href="#" id="edit4-text">Endre</a> 
                             <img src="../bilder/verification.png" alt="Status Icon" class="status-icon"> 
                         </div> 
                     </li>
@@ -183,17 +184,17 @@
                             <img src="../bilder/Eierinteresser.png" alt="Company Icon" class="company-icon"> 
                             <div class="company-text"> 
                                 <p class="company-name">Nordea</p> 
-                                <p>Finansdirektør</p> 
+                                <p id="financial-director-text">Finansdirektør</p> 
                             </div> 
                         </div> 
                         <div class="stacked-txt">
-                            <p class="update-date">Oppdatert:</p> 
+                            <p class="update-date" id="updated5-text">Oppdatert:</p> 
                             <p class="update-date">21-05-2024</p>
                         </div> 
-                        <div class="status">Avsluttet</div> 
+                        <div class="status" id="terminated2-text">Avsluttet</div> 
                         <div class="actions"> 
-                            <a href="#">Gå til sak</a> 
-                            <a href="#">Endre</a> 
+                            <a href="#" id="proceed5-text">Gå til sak</a> 
+                            <a href="#" id="edit5-text">Endre</a> 
                             <img src="../bilder/verification.png" alt="Status Icon" class="status-icon"> 
                         </div> 
                     </li>
@@ -208,17 +209,17 @@
                             <img src="../bilder/Eierinteresser.png" alt="Company Icon" class="company-icon"> 
                             <div class="company-text"> 
                                 <p class="company-name">Schibsted</p> 
-                                <p>Marketing Director</p> 
+                                <p id="marketing-director-text">Marketing Director</p> 
                             </div> 
                         </div> 
                         <div class="stacked-txt">
-                            <p class="update-date">Oppdatert:</p> 
+                            <p class="update-date" id="updated6-text">Oppdatert:</p> 
                             <p class="update-date">21-05-2024</p>
                         </div> 
-                        <div class="status">Pending</div> 
+                        <div class="status" id="pending-text">Pending</div> 
                         <div class="actions"> 
-                            <a href="#">Gå til sak</a> 
-                            <a href="#">Endre</a> 
+                            <a href="#" id="proceed6-text">Gå til sak</a> 
+                            <a href="#" id="edit6-text">Endre</a> 
                             <img src="../bilder/verification.png" alt="Status Icon" class="status-icon"> 
                         </div> 
                     </li>
@@ -227,17 +228,17 @@
                             <img src="../bilder/Eierinteresser.png" alt="Company Icon" class="company-icon"> 
                             <div class="company-text"> 
                                 <p class="company-name">Hydro</p> 
-                                <p>Operations Manager</p> 
+                                <p id="operations-manager-text">Operations Manager</p> 
                             </div> 
                         </div> 
                         <div class="stacked-txt">
-                            <p class="update-date">Oppdatert:</p> 
+                            <p class="update-date" id="updated7-text">Oppdatert:</p> 
                             <p class="update-date">21-05-2024</p>
                         </div> 
-                        <div class="status">Pending</div> 
+                        <div class="status" id="pending2-text">Pending</div> 
                         <div class="actions"> 
-                            <a href="#">Gå til sak</a> 
-                            <a href="#">Endre</a> 
+                            <a href="#" id="proceed7-text">Gå til sak</a> 
+                            <a href="#" id="edit7-text">Endre</a> 
                             <img src="../bilder/verification.png" alt="Status Icon" class="status-icon"> 
                         </div> 
                     </li>
@@ -250,10 +251,10 @@
     <div id="popup-2" class="popup">
         <div class="popup-content">
             <span class="close" onclick="hidePopup('popup-2')">&times;</span>
-            <p>Roller</p>
-            <button class="list-btn" onclick="toggleList('list4', this)">Nåværende</button>
-            <button class="list-btn" onclick="toggleList('list5', this)">Tidligere</button>
-            <button class="list-btn" onclick="toggleList('list6', this)">Søknader</button> 
+            <p id="role2-text">Roller</p>
+            <button class="list-btn" onclick="toggleList('list4', this)" id="now2-button">Nåværende</button>
+            <button class="list-btn" onclick="toggleList('list5', this)" id="earlier2-button">Tidligere</button>
+            <button class="list-btn" onclick="toggleList('list6', this)" id="applications2-button">Søknader</button> 
             <div class="popup-box">
             <div id="list4" class="list-container">
                 <ul id="list4-items"> 
@@ -262,16 +263,16 @@
                             <img src="/bilder/roller.png" alt="Company Icon" class="company-icon"> 
                             <div class="company-text"> 
                                 <p class="company-name">EQUINOR ASA</p> 
-                                <p>Styrets leder</p> 
+                                <p id="Chairman5-text">Styrets leder</p> 
                             </div> 
                         </div> 
                         <div class="stacked-txt">
-                            <p class="update-date">Oppdatert:</p> 
+                            <p class="update-date" id="updated8-text">Oppdatert:</p> 
                             <p class="update-date">21-05-2024</p>
                         </div> 
                         <div class="actions"> 
-                            <a href="#">Gå til sak</a> 
-                            <a href="#">Endre</a> 
+                            <a href="#" id="proceed8-text">Gå til sak</a> 
+                            <a href="#" id="edit8-text">Endre</a> 
                             <img src="../bilder/verification.png" alt="Status Icon" class="status-icon"> 
                         </div> 
                     </li>
@@ -355,7 +356,7 @@
                             <p class="update-date">Oppdatert:</p> 
                             <p class="update-date">21-05-2024</p>
                         </div>  
-                        <div class="status">Pending</div> 
+                        <div class="status" id="pending3-text">Pending</div> 
                         <div class="actions"> 
                             <a href="#">Gå til sak</a> 
                             <a href="#">Endre</a> 
@@ -374,7 +375,7 @@
                             <p class="update-date">Oppdatert:</p> 
                             <p class="update-date">21-05-2024</p>
                         </div> 
-                        <div class="status">Pending</div> 
+                        <div class="status" id="pending4-text">Pending</div> 
                         <div class="actions"> 
                             <a href="#">Gå til sak</a> 
                             <a href="#">Endre</a> 
@@ -475,7 +476,7 @@
                             <p class="update-date">Oppdatert:</p> 
                             <p class="update-date">21-05-2024</p>
                         </div>  
-                        <div class="status">Pending</div> 
+                        <div class="status" id="pending5-text">Pending</div> 
                         <div class="actions"> 
                             <a href="#">Gå til sak</a> 
                             <a href="#">Endre</a> 
@@ -494,7 +495,7 @@
                             <p class="update-date">Oppdatert:</p> 
                             <p class="update-date">21-05-2024</p>
                         </div> 
-                        <div class="status">Pending</div> 
+                        <div class="status" id="pending6-text">Pending</div> 
                         <div class="actions"> 
                             <a href="#">Gå til sak</a> 
                             <a href="#">Endre</a> 
@@ -633,9 +634,142 @@
         }
 
         updateListPreviews();
-    </script>
 
+        function changeLanguage(language) {
+            if (language === 'norwegian') {
+                document.getElementById('rapport-text').textContent = 'Du må fullføre selvrapportering';
+                document.getElementById('rapport-finish-text').textContent = 'Fullfør Selvrapportering';
+                document.getElementById('profile-history-text').textContent = 'Se Profilhistorikk';
+                document.getElementById('export-userdata-text').textContent = 'Eksporter Brukerdata';
+                document.getElementById('nyttForhold-btn1').textContent = 'Legg Til Nytt Forhold';
+                document.getElementById('nyttForhold-btn2').textContent = 'Legg Til Nytt Forhold';
+                document.getElementById('nyttForhold-btn3').textContent = 'Legg Til Nytt Forhold';
+                document.getElementById('nyttForhold-btn4').textContent = 'Legg Til Nytt Forhold';
+                document.getElementById('ownership-text').textContent = 'Eierinteresser';
+                document.getElementById('role-text').textContent = 'Roller';
+                document.getElementById('relation-text').textContent = 'Relasjoner';
+                document.getElementById('other-text').textContent = 'Annet';
+                document.getElementById('ownership2-text').textContent = 'Eierinteresser';
+                document.getElementById('now-button').textContent = 'Nåværende';
+                document.getElementById('earlier-button').textContent = 'Tidligere';
+                document.getElementById('applications-button').textContent = 'Søknader';
+                document.getElementById('Chairman-text').textContent = 'Styrets leder';
+                document.getElementById('updated-text').textContent = 'Oppdatert:';
+                document.getElementById('proceed-text').textContent = 'Gå til sak';
+                document.getElementById('edit-text').textContent = 'Endre';
+                document.getElementById('Chairman2-text').textContent = 'Styrets leder';
+                document.getElementById('updated2-text').textContent = 'Oppdatert:';
+                document.getElementById('proceed2-text').textContent = 'Gå til sak';
+                document.getElementById('edit2-text').textContent = 'Endre';
+                document.getElementById('Chairman3-text').textContent = 'Styrets leder';
+                document.getElementById('updated3-text').textContent = 'Oppdatert:';
+                document.getElementById('proceed3-text').textContent = 'Gå til sak';
+                document.getElementById('edit3-text').textContent = 'Endre';
+                document.getElementById('Chairman4-text').textContent = 'Styremedlem';
+                document.getElementById('updated4-text').textContent = 'Oppdatert:';
+                document.getElementById('proceed4-text').textContent = 'Gå til sak';
+                document.getElementById('edit4-text').textContent = 'Endre';
+                document.getElementById('financial-director-text').textContent = 'Finansdirektør';
+                document.getElementById('updated5-text').textContent = 'Oppdatert:';
+                document.getElementById('proceed5-text').textContent = 'Gå til sak';
+                document.getElementById('edit5-text').textContent = 'Endre';
+                document.getElementById('marketing-director-text').textContent = 'Marketing Director';
+                document.getElementById('updated6-text').textContent = 'Oppdatert:';
+                document.getElementById('proceed6-text').textContent = 'Gå til sak';
+                document.getElementById('edit6-text').textContent = 'Endre';
+                document.getElementById('operations-manager-text').textContent = 'Operations Manager';
+                document.getElementById('updated7-text').textContent = 'Oppdatert:';
+                document.getElementById('proceed7-text').textContent = 'Gå til sak';
+                document.getElementById('edit7-text').textContent = 'Endre';
+                document.getElementById('terminated-text').textContent = 'Avsluttet';
+                document.getElementById('terminated2-text').textContent = 'Avsluttet';
+                document.getElementById('pending-text').textContent = 'Venter';
+                document.getElementById('pending2-text').textContent = 'Venter';
+                document.getElementById('pending3-text').textContent = 'Venter';
+                document.getElementById('pending4-text').textContent = 'Venter';
+                document.getElementById('pending5-text').textContent = 'Venter';
+                document.getElementById('pending6-text').textContent = 'Venter';
+                document.getElementById('Skjema1').textContent = 'Legg til';
+                document.getElementById('Skjema2').textContent = 'Legg til';
+                document.getElementById('Skjema3').textContent = 'Legg til';
+                document.getElementById('Skjema4').textContent = 'Legg til';
+                document.getElementById('role2-text')
+                document.getElementById('now2-button').textContent = 'Nåværende';
+                document.getElementById('earlier2-button').textContent = 'Tidligere';
+                document.getElementById('applications2-button').textContent = 'Søknader';
+                document.getElementById('edit8-text').textContent = 'Endre';
+                document.getElementById('Chairman5-text').textContent = 'Styrets leder';
+                document.getElementById('updated8-text').textContent = 'Oppdatert:';
+                document.getElementById('proceed8-text').textContent = 'Gå til sak';
+
+            } else if (language === 'english') {
+                document.getElementById('rapport-text').textContent = 'You must complete self-reporting';
+                document.getElementById('rapport-finish-text').textContent = 'Complete Self-reporting';
+                document.getElementById('profile-history-text').textContent = 'View Profile History';
+                document.getElementById('export-userdata-text').textContent = 'Export User Data';
+                document.getElementById('nyttForhold-btn1').textContent = 'Add New Relation';
+                document.getElementById('nyttForhold-btn2').textContent = 'Add New Relation';
+                document.getElementById('nyttForhold-btn3').textContent = 'Add New Relation';
+                document.getElementById('nyttForhold-btn4').textContent = 'Add New Relation';
+                document.getElementById('ownership-text').textContent = 'Ownership';
+                document.getElementById('role-text').textContent = 'Roles';
+                document.getElementById('relation-text').textContent = 'Relations';
+                document.getElementById('other-text').textContent = 'Other';
+                document.getElementById('ownership2-text').textContent = 'Ownership';
+                document.getElementById('now-button').textContent = 'Current';
+                document.getElementById('earlier-button').textContent = 'Earlier';
+                document.getElementById('applications-button').textContent = 'Applications';
+                document.getElementById('Chairman-text').textContent = 'Chairman';
+                document.getElementById('updated-text').textContent = 'Updated:';
+                document.getElementById('proceed-text').textContent = 'Proceed to case';
+                document.getElementById('edit-text').textContent = 'Edit';    
+                document.getElementById('Chairman2-text').textContent = 'Chairman';
+                document.getElementById('updated2-text').textContent = 'Updated:';
+                document.getElementById('proceed2-text').textContent = 'Proceed to case';
+                document.getElementById('edit2-text').textContent = 'Edit';
+                document.getElementById('Chairman3-text').textContent = 'Chairman';
+                document.getElementById('updated3-text').textContent = 'Updated:';
+                document.getElementById('proceed3-text').textContent = 'Proceed to case';
+                document.getElementById('edit3-text').textContent = 'Edit';
+                document.getElementById('Chairman4-text').textContent = 'Chairman';
+                document.getElementById('updated4-text').textContent = 'Updated:';
+                document.getElementById('proceed4-text').textContent = 'Proceed to case';
+                document.getElementById('edit4-text').textContent = 'Edit';
+                document.getElementById('financial-director-text').textContent = 'Financial Director';
+                document.getElementById('updated5-text').textContent = 'Updated:';
+                document.getElementById('proceed5-text').textContent = 'Proceed to case';
+                document.getElementById('edit5-text').textContent = 'Edit';
+                document.getElementById('marketing-director-text').textContent = 'Marketing Director';
+                document.getElementById('updated6-text').textContent = 'Updated:';
+                document.getElementById('proceed6-text').textContent = 'Proceed to case';
+                document.getElementById('edit6-text').textContent = 'Edit';
+                document.getElementById('operations-manager-text').textContent = 'Operations Manager';
+                document.getElementById('updated7-text').textContent = 'Updated:';
+                document.getElementById('proceed7-text').textContent = 'Proceed to case';
+                document.getElementById('edit7-text').textContent = 'Edit';
+                document.getElementById('terminated-text').textContent = 'Terminated';
+                document.getElementById('terminated2-text').textContent = 'Terminated';
+                document.getElementById('pending-text').textContent = 'Pending';
+                document.getElementById('pending2-text').textContent = 'Pending';
+                document.getElementById('pending3-text').textContent = 'Pending';
+                document.getElementById('pending4-text').textContent = 'Pending';
+                document.getElementById('pending5-text').textContent = 'Pending';
+                document.getElementById('pending6-text').textContent = 'Pending';
+                document.getElementById('Skjema1').textContent = 'Add';
+                document.getElementById('skjema2').textContent = 'Add';
+                document.getElementById('skjema3').textContent = 'Add';
+                document.getElementById('skjema4').textContent = 'Add';
+                document.getElementById('role2-text')
+                document.getElementById('now2-button').textContent = 'Current';
+                document.getElementById('earlier2-button').textContent = 'Earlier';
+                document.getElementById('applications2-button').textContent = 'Applications';
+                document.getElementById('edit8-text').textContent = 'Edit';
+                document.getElementById('Chairman5-text').textContent = 'Chairman';
+                document.getElementById('updated8-text').textContent = 'Updated:';
+                document.getElementById('proceed8-text').textContent = 'Proceed to case';
+            }
+        }
+    </script>
     <div class="bottom-bar"></div>
 </body>
 </html>
-

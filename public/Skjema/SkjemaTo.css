@@ -1,4 +1,4 @@
-/* ========== Global Styles ========== */
+
 html, body {
     height: 100%;
     margin: 0;
@@ -29,7 +29,6 @@ a:visited {
     background-color: #00338D;
 }
 
-/* ========== Top Bar ========== */
 .top-bar {
     display: flex;
     align-items: center;
@@ -63,7 +62,6 @@ a:visited {
     cursor: pointer;
 }
 
-/* ========== Notifications ========== */
 .bell-checkbox {
     display: none;
 }
@@ -128,15 +126,13 @@ a:visited {
     cursor: pointer;
     width: 100px;
     position: fixed;
-    left: 19%; /* Juster etter behov */
+    left: 19%; 
     background-color: #f0f0f0;
     border: none;
-    top: 10%; /* Juster etter behov */
-    z-index: 1000; /* Legg til denne linjen */
+    top: 10%; 
+    z-index: 1000; 
     }
 
-
-/* ========== Container ========== */
 .container {
     width: 89%;
     max-width: 800px;
@@ -148,7 +144,6 @@ a:visited {
     border: 4px solid #00338D; 
 }
 
-/* ========== Header ========== */
 header {
     text-align: center;
     margin-bottom: 20px;
@@ -184,7 +179,6 @@ h1 {
     margin: 0;
 }
 
-/* ========== Form ========== */
 form {
     display: flex;
     flex-direction: column;
@@ -213,7 +207,6 @@ form {
     resize: vertical;
 }
 
-/* ========== Municipality Inputs ========== */
 .municipality-inputs {
     display: flex;
     gap: 10px;
@@ -227,7 +220,6 @@ form {
     color: red;
 }
 
-/* ========== Radio Group ========== */
 .radio-group {
     display: flex;
     align-items: center;
@@ -246,7 +238,6 @@ form {
     margin: 0 5px 0 0;
 }
 
-/* ========== Form Actions ========== */
 .form-actions {
     display: flex;
     justify-content: space-between;
@@ -285,7 +276,6 @@ form {
     background-color: #00225e;
 }
 
-/* ========== Footer ========== */
 footer {
     margin-top: 20px;
     text-align: center;
@@ -301,7 +291,6 @@ footer {
     border-radius: 4px;
 }
 
-/* ========== Step Indicator ========== */
 .step-indicator {
     text-align: center;
     font-weight: bold;
@@ -309,7 +298,6 @@ footer {
     margin-top: 10px;
 }
 
-/* ========== Progress Bar ========== */
 .progress-container {
     width: 100%;
     background-color: #ddd;

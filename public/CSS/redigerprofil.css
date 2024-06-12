@@ -43,7 +43,7 @@ a:visited {
     height: 20px;
   }
   .profile-content {
-    width: 300px; /* Adjusted width */
+    width: 300px; 
     text-align: center;
     padding: 20px;
     background: #fff;
@@ -153,17 +153,17 @@ a:visited {
     cursor: pointer;
   }
   
-  /* Notification Checkbox */
+  
   .bell-checkbox {
     display: none;
   }
   
-  /* Show notifications if checkbox is checked */
+ 
   .bell-checkbox:checked + label + .notifications {
     display: block;
   }
   
-  /* Notification Box Styles */
+ 
   .notifications {
     display: none;
     position: absolute;

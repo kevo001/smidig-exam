@@ -60,7 +60,6 @@ a {
     cursor: pointer;
 }
 
-/* ========== Notifications ========== */
 .bell-checkbox {
     display: none;
 }
@@ -131,7 +130,6 @@ a {
     top: 10%;
 }
 
-/* ========== Container ========== */
 .container {
     width: 50%;
     background: #ffffff;
@@ -143,7 +141,6 @@ a {
     height: 60%;
 }
 
-/* ========== Header ========== */
 header {
     text-align: center;
     margin-bottom: 20px;
@@ -179,7 +176,7 @@ h1 {
     margin: 0;
 }
 
-/* ========== Form ========== */
+
 form {
     display: flex;
     flex-direction: column;
@@ -208,7 +205,7 @@ form {
     
 }
 
-/* ========== Form Actions ========== */
+
 .form-actions {
     display: flex;
     justify-content: space-between;
@@ -233,7 +230,7 @@ form {
     text-decoration: none; 
 }
 
-/* ========== Footer ========== */
+
 footer {
     margin-top: 20px;
     text-align: center;
@@ -249,7 +246,7 @@ footer {
     border-radius: 4px;
 }
 
-/* ========== Step Indicator ========== */
+
 .step-indicator {
     text-align: center;
     font-weight: bold;
@@ -257,7 +254,7 @@ footer {
     margin-top: 10px;
 }
 
-/* ========== Progress Bar ========== */
+
 .progress-container {
     width: 100%;
     background-color: #ddd;

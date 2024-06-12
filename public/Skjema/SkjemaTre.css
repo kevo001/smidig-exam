@@ -1,4 +1,4 @@
-/* ==========Global Styles========== */
+
 html, body {
     height: 100%;
     margin: 0;
@@ -31,7 +31,6 @@ a:visited {
     background-color: #00338D;
 }
 
-/* ==========Top Bar Styles========== */
 .top-bar {
     display: flex;
     align-items: center;
@@ -64,7 +63,6 @@ a:visited {
     cursor: pointer;
 }
 
-/* ==========Notifications Styles========== */
 .bell-checkbox {
     display: none;
 }
@@ -135,7 +133,6 @@ a:visited {
     top: 10%;
 }
 
-/* ==========Container Styles========== */
 .container {
     width: 89%;
     max-width: 800px;
@@ -147,7 +144,6 @@ a:visited {
     border: 4px solid #003366;
 }
 
-/* ==========Header Styles========== */
 header {
     text-align: center;
     margin-bottom: 20px;
@@ -183,7 +179,6 @@ h1 {
     margin: 0;
 }
 
-/* ==========Form Styles========== */
 form {
     display: flex;
     flex-direction: column;
@@ -242,7 +237,6 @@ form {
     margin-right: 5px;
 }
 
-/* ==========Form Actions Styles========== */
 .form-actions {
     display: flex;
     justify-content: space-between;
@@ -281,7 +275,6 @@ form {
     background-color: #00225e;
 }
 
-/* ==========Footer Styles========== */
 footer {
     margin-top: 20px;
     text-align: center;
@@ -297,7 +290,6 @@ footer {
     border-radius: 4px;
 }
 
-/* ==========Progress Bar Styles========== */
 .step-indicator {
     text-align: center;
     font-weight: bold;

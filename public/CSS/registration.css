@@ -144,17 +144,17 @@ body {
     cursor: pointer;
 }
 
-/* Notification Checkbox */
+
 .bell-checkbox {
     display: none;
 }
 
-/* Show notifications if checkbox is checked */
+
 .bell-checkbox:checked + label + .notifications {
     display: block;
 }
 
-/* Notification Box Styles */
+
 .notifications {
     display: none;
     position: absolute;
@@ -175,7 +175,7 @@ body {
     line-height: 1.5;
 }
 
-/* Footer Styles */
+
 .footer {
   text-align: center;
   padding: 0px;

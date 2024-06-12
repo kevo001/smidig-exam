@@ -21,8 +21,8 @@
     </div>
 </div>
 
-<a href="login.html"><img src="bilder/back.png" alt="Back Arrow" class="back-arrow"></a> <!-- Tilbake knapp -->
-<div class="line"></div> <!-- Top line -->
+<a href="login.html"><img src="bilder/back.png" alt="Back Arrow" class="back-arrow"></a>
+<div class="line"></div> 
 <div class="forgot-password-container">
   <h2 id="title">Tilbakestill passord</h2>
   <form id="forgotPasswordForm">
@@ -32,33 +32,30 @@
     <button type="submit">Submit</button>
   </form>
 </div>
-<div class="line bottom"></div> <!-- Bunnmarg -->
-<img src="bilder/Kpmg.png" alt="Bottom Left Image" class="bottom-left-image"> <!-- KPMG logo -->
+<div class="line bottom"></div>
+<img src="bilder/Kpmg.png" alt="Bottom Left Image" class="bottom-left-image"> 
 
 <script>
   document.getElementById('forgotPasswordForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the form from submitting
+    event.preventDefault(); 
 
     const email = document.getElementById('email').value;
 
-    // Basic validation
+   
     if (email === '') {
       alert('Please enter your email');
     } else {
-      // Placeholder for actual email processing logic
       alert('A password reset link has been sent to your email.')
-      window.location.href = 'sendt.html'; // Redirect to the confirmation page
+      window.location.href = 'sendt.html'; 
     }
   });
 
   function changeLanguage(language) {
     if (language === 'norwegian') {
-      document.getElementById('title').textContent = 'Tilbakestill passord'; // Translate title
+      document.getElementById('title').textContent = 'Tilbakestill passord'; 
     } else if (language === 'english') {
-      document.getElementById('title').textContent = 'Forgot Password'; // Translate title
+      document.getElementById('title').textContent = 'Forgot Password'; 
     }
-
-    // Add more translation logic for other elements if needed
   }
 </script>
 </body>

@@ -19,7 +19,7 @@
     </div>
 </div>
 
-<div class="line"></div> <!-- Top line -->
+<div class="line"></div> 
 <div class="registration-container">
   <h2 id="registrationText">Registrering</h2>
   <form id="registrationForm">
@@ -56,7 +56,7 @@
 <div class="line bottom"></div>
 <img src="bilder/Kpmg.png" alt="Bottom Left Image" class="bottom-left-image">
 
-<a href="login.html"><img src="bilder/back.png" alt="Back Arrow" class="back-arrow"></a> <!-- Tilbake knapp -->
+<a href="login.html"><img src="bilder/back.png" alt="Back Arrow" class="back-arrow"></a> 
 
 <script>
   function changeLanguage(language) {
@@ -89,7 +89,7 @@
 
   document.getElementById('registrationForm').addEventListener('submit', async function(event) {
     try {
-      event.preventDefault(); // Prevent the form from submitting
+      event.preventDefault();
 
       const fname = document.getElementById('fname').value;
       const lname = document.getElementById('lname').value;
@@ -100,13 +100,9 @@
       const email = document.getElementById('email').value;
       const tlf = document.getElementById('tlf').value;
       const password = document.getElementById('password').value;
-
-      // Basic validation
       if (fname === '' || lname === '' || department === '' || position === '' || dateOfBirth === '' || address === '' || email === '' || tlf === '' || password === '') {
         throw new Error('Please fill in all fields');
       }
-
-      // Create an object with the form data
       const formData = {
         fname,
         lname,
@@ -118,8 +114,6 @@
         tlf,
         password
       };
-
-      // Send the form data to the server
       const response = await fetch('/register', {
         method: 'POST',
         headers: {

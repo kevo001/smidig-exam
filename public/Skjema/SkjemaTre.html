@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="Skjematre.css">
 </head>
 <body>
-    <!-- ========== Top Bar ========== -->
     <div class="top-bar">
         <div class="logo"><button class="logo-btn"><a href="/Landing.html"> Habilitetsregisteret </a>  </button></div>
         <div class="icons">
@@ -37,42 +36,28 @@
         <br>- Det er også relevant å oppgi andre relasjoner som innehar sentrale roller innen konsulent- og rådgivningsbransjen, samt hos leverandører eller entreprenører innen bygg- eller anleggsbransjen.
         
     </div>
-
-    <!-- ========== Container ========== -->
     <div class="container">
-        <!-- Logo Section -->
         <div class="logo-container">
             <img src="/Bilder/Kpmg.png" alt="KPMG Logo" class="logo">
         </div>
-
-        <!-- Header Section -->
         <header>
             <h1 id="title-text">Opplyse om eksisterende eller tidligere relasjon</h1>
         </header>
-
-        <!-- Form Section -->
         <form>
-            <!-- First Name Field -->
             <div class="form-group">
                 <label for="first-name" id="first-name-label">Fornavn/mellomnavn <span class="required">*</span></label>
                 <input type="text" id="first-name" name="first-name">
             </div>
-
-            <!-- Last Name Field -->
             <div class="form-group">
                 <label for="last-name" id="last-name-label">Etternavn <span class="required">*</span></label>
                 <input type="text" id="last-name" name="last-name">
             </div>
-
-            <!-- Date of Birth Fields -->
             <div class="form-group">
                 <label for="dob" id="dob-label">Fødselsdato <span class="required">*</span></label>
                 <input type="text" id="dob" name="dob" placeholder="dd">
                 <input type="text" id="dob-month" name="dob-month" placeholder="mm">
                 <input type="text" id="dob-year" name="dob-year" placeholder="yyyy">
             </div>
-
-            <!-- Abroad Radio Buttons -->
             <div class="form-group">
                 <label for="abroad" id="abroad-label">Bor du i utlandet <span class="required">*</span></label>
                 <div class="radio-group">
@@ -80,16 +65,12 @@
                     <label for="abroad-no" id="abroad-no" style ="color: black;"><input type="radio" name="abroad" value="no"><b>Nei</b></label>
                 </div>
             </div>
-
-            <!-- Address Fields -->
             <div class="form-group">
                 <label for="address" id="address-label">Adresse <span class="required">*</span></label>
                 <input type="text" id="address" name="address">
                 <input type="text" id="postnr" name="postnr" placeholder="Postnr">
                 <input type="text" id="poststed" name="poststed" placeholder="Poststed">
             </div>
-
-            <!-- Relation Type Dropdown -->
             <div class="form-group">
                 <label for="relation-type" id="relation-type-label">Type relasjon <span class="required">*</span></label>
                 <select id="relation-type" name="relation-type">
@@ -98,26 +79,18 @@
                     <option value="relation2">Relasjon 2</option>
                 </select>
             </div>
-
-            <!-- Comments Field -->
             <div class="form-group">
                 <label for="comments" id="comments-label">Kommentar</label>
                 <textarea id="comments" name="comments"></textarea>
             </div>
-
-            <!-- Required Fields Notice -->
             <div class="form-group">
                 <p id="required-text"><span class="required">*</span> <span id="required-label">Påkrevde felter</span></p>
             </div>
-
-            <!-- Form Action Buttons -->
             <div class="form-actions">
                 <a href="/Skjema/SkjemaTo.html" class="cancel-button" id="cancel-button-text">AVBRYT</a>
                 <a href="/Skjema/SkjemaFire.html" class="confirm-button" id="submit-button-text">BEKREFT</a>
             </div>
         </form>
-
-        <!-- Footer Section -->
         <footer>
             <div class="progress-container">
                 <div class="progress-bar"></div>
